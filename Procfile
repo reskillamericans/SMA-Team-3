@@ -1,0 +1,1 @@
+web: gunicorn sma_project.wsgi
