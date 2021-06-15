@@ -22,11 +22,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     time_zone = models.CharField(max_length=5, default='EST')
     updated_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
     created_at = models.TimeField(auto_now_add=True, null=True, blank=True, editable=False)
+    is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name', 'phone', 'avatar',
-                       'occupation', 'company', 'bio']
+    REQUIRED_FIELDS = []
     objects = CustomUserManager()
 
     def __str__(self):
-        return self.username
+        return self.email
+
