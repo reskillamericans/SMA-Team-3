@@ -9,26 +9,6 @@ from .models import User
 from django.contrib.auth.models import auth
 
 
-def signin(request):
-    if request.method == 'POST':
-
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-
-        try:
-            user = auth.authenticate(email=email, password=password)
-
-            if user is not None:
-                auth.login(request, user)
-                return render(request,"user_accounts/home.html")
-
-        except ValidationError:
-            messages.error(request, 'Unable to reach auth server')
-            return redirect("user_accounts:signin")
-
-    return render(request, "user_accounts/signin.html")
-
-
 def register(request):
     if request.method == 'POST':
 
@@ -66,6 +46,3 @@ def register(request):
 
     return render(request, "user_accounts/signup.html")
 
-
-def signout(request):
-    return logout_then_login(request)
