@@ -33,7 +33,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class UserSocials(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.OneToOneField(User, on_delete=models.CASCADE)
     linkedin = models.CharField(max_length=255, blank=True, null=True)
     twitter = models.CharField(max_length=255, blank=True, null=True)
     facebook = models.CharField(max_length=255, blank=True, null=True)
