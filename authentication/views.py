@@ -46,3 +46,23 @@ def register(request):
 
     return render(request, "user_accounts/signup.html")
 
+
+def login(request):
+    if request.user.is_authenticated:
+        return redirect('')
+    
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        try:
+            user = authenticate(email=email, password=password)
+
+            if user is not None:
+                auth.login(request, user)
+                return redirect('home')
+        except ValidationError:
+            messages.error(request, 'Unable to reach auth server')
+            return redirect("authentication:signin")
+
+    return render(request, "authentication/sign_in.html")
