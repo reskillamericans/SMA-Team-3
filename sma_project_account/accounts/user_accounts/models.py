@@ -20,8 +20,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     followers_count = models.IntegerField(default=0, editable=False)
     follows_count = models.IntegerField(default=0, editable=False)
     time_zone = models.CharField(max_length=5, default='EST')
-    updated_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
-    created_at = models.TimeField(auto_now_add=True, null=True, blank=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True, editable=False)
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
@@ -31,3 +31,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+
+class UserSocials(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    linkedin = models.CharField(max_length=255, blank=True, null=True)
+    twitter = models.CharField(max_length=255, blank=True, null=True)
+    facebook = models.CharField(max_length=255, blank=True, null=True)
+    instagram = models.CharField(max_length=255, blank=True, null=True)
+    stackoverflow = models.CharField(max_length=255, blank=True, null=True)
+    github = models.CharField(max_length=255, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+
+    def __str__(self):
+        return str(self.user_id)
