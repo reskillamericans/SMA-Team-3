@@ -31,3 +31,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+
+class UserSocials(models.Model):
+    user_id = models.OneToOneField(User, on_delete=models.CASCADE)
+    linkedin = models.CharField(max_length=255, blank=True, null=True)
+    twitter = models.CharField(max_length=255, blank=True, null=True)
+    facebook = models.CharField(max_length=255, blank=True, null=True)
+    instagram = models.CharField(max_length=255, blank=True, null=True)
+    stackoverflow = models.CharField(max_length=255, blank=True, null=True)
+    github = models.CharField(max_length=255, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+
+    def __str__(self):
+        return str(self.user_id)
