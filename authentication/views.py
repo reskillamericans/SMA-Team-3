@@ -12,7 +12,7 @@ from django.contrib.auth.models import auth
 def register(request):
     if request.method == 'POST':
 
-        username = request.POST['username']
+        username = request.POST.get('username')
         password = request.POST.get('pwd')
         confirmpwd = request.POST.get('confirmpwd')
         first_name = request.POST.get('firstname')
@@ -28,7 +28,7 @@ def register(request):
             try:
                 user = User.objects.get(email=email)
                 messages.info(request, 'Email is already taken')
-                return redirect('user_accounts:register')
+                return redirect('authentication:register')
 
             except User.DoesNotExist:
                 user = User.objects.create_user(email, username=username, first_name=first_name,
@@ -36,15 +36,15 @@ def register(request):
                                                 avatar=avatar, occupation=occupation, company=company)
                 user.save()
                 auth.login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-                return redirect('user_accounts:signin')
+                return redirect('authentication:login')
         elif password == "":
             messages.error(request, 'Password field must be filled')
-            return redirect('user_accounts:register')
+            return redirect('authentication:register')
         else:
             messages.error(request, 'Password must match')
-            return redirect('user_accounts:register')
+            return redirect('authentication:register')
 
-    return render(request, "user_accounts/signup.html")
+    return render(request, "authentication/signup.html")
 
 
 def login(request):
@@ -63,6 +63,6 @@ def login(request):
                 return redirect('home')
         except ValidationError:
             messages.error(request, 'Unable to reach auth server')
-            return redirect("authentication:signin")
+            return redirect("authentication:login")
 
-    return render(request, "authentication/sign_in.html")
+    return render(request, "authentication/login.html")
