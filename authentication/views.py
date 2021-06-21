@@ -1,9 +1,16 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate
+from django.contrib.auth.forms import PasswordResetForm
+from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.views import logout_then_login
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.utils import http
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
+from django.db.models.query_utils import Q
 
 from .models import User
 from django.contrib.auth.models import auth
@@ -49,7 +56,7 @@ def register(request):
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect('')
+        return redirect('authentication:home')
     
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -60,9 +67,49 @@ def login(request):
 
             if user is not None:
                 auth.login(request, user)
-                return redirect('home')
+                return redirect('authentication:home')
         except ValidationError:
             messages.error(request, 'Unable to reach auth server')
             return redirect("authentication:login")
 
     return render(request, "authentication/login.html")
+
+
+def forgot_password(request):
+    if request.method == "POST":
+        password_reset_form = PasswordResetForm(request.POST)
+        if password_reset_form.is_valid():
+            data = password_reset_form.cleaned_data['email']
+            associated_users = User.objects.filter(Q(email=data))
+            if associated_users.exists():
+                for user in associated_users:
+                    subject = "Password Reset Requested"
+                    email_template_name = "authentication/password/password_reset_email.txt"
+                    c = {
+                        "email": user.email,
+                        'domain': '127.0.0.1:8000',
+                        'site_name': 'SMA App',
+                        "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+                        "user": user,
+                        'token': default_token_generator.make_token(user),
+                        'protocol': 'http',
+                    }
+                    email = render_to_string(email_template_name, c)
+                    try:
+                        send_mail(subject, email, 'admin@smaapp.com', [user.email], fail_silently=False)
+                    except BadHeaderError:
+                        return HttpResponse('Invalid header found.')
+                    messages.success(request, 'A message with reset password instructions has been sent to your inbox.')
+                    return redirect("authentication:login")
+            messages.error(request, 'An invalid email has been entered.')
+    password_reset_form = PasswordResetForm()
+    return render(request=request, template_name="authentication/password/password_reset.html",
+                  context={"password_reset_form": password_reset_form})
+
+
+def home(request):
+    return render(request, "authentication/home.html")
+
+
+def logout(request):
+    return logout_then_login(request)
