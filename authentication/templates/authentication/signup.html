@@ -1,13 +1,130 @@
 <!-- templates/registration/signup.html -->
-{% extends 'authentication/base.html' %}
+{% extends 'authentication/base.html' %}{% block content %} {% load static %}
+<body id="layout">
+  <!-- Main body goes here -->
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-lg-4"></div>
+      <div class="col-md-6 col-sm-12 col-lg-4 col-xs-4">
+        <h1 class="text-center"><strong>Sign Up</strong></h1>
+        <br />
 
-{% block title %}Sign Up{% endblock %}
+        <form action="{% url 'authentication:register' %}" method="POST" id="sign_form">
+          {% csrf_token %}
+          <div class="text-primary">
+            {% for message in messages %} {{ message }} {% endfor %}
+          </div>
 
-{% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-  </form>
+          <div class="form-group">
+            <label for="email">FIRST NAME</label>
+            <input
+              type="text"
+              name="firstname"
+              class="form-control"
+              placeholder="Enter your first name..."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">LAST NAME</label>
+            <input
+              type="text"
+              name="lastname"
+              class="form-control"
+              placeholder="Enter your Last name..."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">USERNAME</label>
+            <input
+              type="text"
+              name="username"
+              class="form-control"
+              placeholder="Enter your Username.."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">EMAIL</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control"
+              placeholder="Enter your email address..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">Bio</label>
+            <input
+              type="text"
+              name="bio"
+              class="form-control"
+              placeholder="Enter your bio"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              class="form-control"
+              placeholder="Enter your phone..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">Avatar</label>
+            <input type="file" id="img" name="avatar" accept="image/*">
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">Occupation</label>
+            <input
+              type="text"
+              name="occupation"
+              class="form-control"
+              placeholder="Enter your email address..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">Company</label>
+            <input
+              type="text"
+              name="company"
+              class="form-control"
+              placeholder="Enter your email address..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">PASSWORD</label>
+            <input type="password" name="pwd" class="form-control" id="pwd" required/>
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">CONFIRM PASSWORD</label>
+            <input type="password" name="confirmpwd" id="confirmpwd" class="form-control" required/>
+            <span id='message'></span>
+          </div>
+
+          <button type="submit" class="btn btn-block primary-btn">
+            Sign up
+          </button>
+        </form>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+</body>
 {% endblock %}

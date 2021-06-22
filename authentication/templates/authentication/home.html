@@ -4,11 +4,9 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
   Hi! {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Welcome to Social Media App's  Login page. Enter your username and password</a>
-{% endif %}
+<form action="{% url 'authentication:logout' %}" method="POST" id="sign_form">
+  {% csrf_token %}
+			  <button type="submit" class="btn-block primary-btn">Logout</button>
+</form>
 {% endblock %}
