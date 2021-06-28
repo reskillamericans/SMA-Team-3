@@ -108,7 +108,7 @@ def forgot_password(request):
 
 
 def home(request):
-    return render(request, "authentication/home.html")
+    return render(request, "posts/home.html")
 
 
 def logout(request):
