@@ -18,10 +18,11 @@
             </div>
           </form>
 
-          <form method="POST" href="{% url 'posts:post-delete' post.id %}">
+          <form method="POST" action="{% url 'posts:delete' post.id %}">
                         {% csrf_token %}
 
-                        <a href="" class="btn-block primary-btn">Delete Post</a>
+              <input type="submit" value="Submit" />
+
 
           </form>
 
