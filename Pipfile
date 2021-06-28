@@ -8,6 +8,7 @@ django = "*"
 gunicorn = "*"
 django-heroku = "*"
 pillow = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
