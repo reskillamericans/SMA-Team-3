@@ -56,7 +56,7 @@ def register(request):
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect('authentication:home')
+        return redirect('posts:home')
     
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -67,7 +67,7 @@ def login(request):
 
             if user is not None:
                 auth.login(request, user)
-                return redirect('authentication:home')
+                return redirect('posts:home')
         except ValidationError:
             messages.error(request, 'Unable to reach auth server')
             return redirect("authentication:login")

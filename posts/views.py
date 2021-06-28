@@ -61,12 +61,12 @@ def update_post(request, pk):
             'category': post.category,
         }
     )
-    return render(request, 'posts/edit_post.html', {'form': form})
+    return render(request, 'posts/edit_post.html', {'form': form, 'post': post})
 
 
 def post_delete(request, pk):
-    context = {}
     post = get_object_or_404(Posts, pk=pk)
+    context = {'post': post}
     if request.method == "POST":
         post.delete()
         return redirect('posts:home')
