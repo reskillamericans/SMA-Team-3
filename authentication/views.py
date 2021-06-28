@@ -12,7 +12,7 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.db.models.query_utils import Q
 
-from .models import User
+from .models import  User, Followers
 from django.contrib.auth.models import auth
 
 
@@ -84,7 +84,7 @@ def forgot_password(request):
             if associated_users.exists():
                 for user in associated_users:
                     subject = "Password Reset Requested"
-                    email_template_name = "authentication/password/password_reset_email.txt"
+                    email_template_name = "authentication/password_reset_email.txt"
                     c = {
                         "email": user.email,
                         'domain': '127.0.0.1:8000',
@@ -103,7 +103,7 @@ def forgot_password(request):
                     return redirect("authentication:login")
             messages.error(request, 'An invalid email has been entered.')
     password_reset_form = PasswordResetForm()
-    return render(request=request, template_name="authentication/password/password_reset.html",
+    return render(request=request, template_name="authentication/password_reset.html",
                   context={"password_reset_form": password_reset_form})
 
 
@@ -113,3 +113,24 @@ def home(request):
 
 def logout(request):
     return logout_then_login(request)
+
+def follow_user(request, username):
+    other_user = User.objects.get(name=username)
+    session_user = request.session['user']
+    get_user = User.objects.get(name=session_user)
+    check_follower = Followers.objects.get(user=get_user.id)
+    is_followed = False
+    if other_user.name != session_user:
+        if check_follower.another_user.filter(name=other_user).exists():
+            add_usr = Followers.objects.get(user=get_user)
+            add_usr.another_user.remove(other_user)
+            is_followed = False
+            return redirect(f'/profile/{session_user}')
+        else:
+            add_usr = Followers.objects.get(user=get_user)
+            add_usr.another_user.add(other_user)
+            is_followed = True
+            return redirect(f'/profile/{session_user}')
+    else:
+        return redirect(f'/profile/{session_user}')
+
