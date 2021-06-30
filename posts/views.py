@@ -80,14 +80,14 @@ class AddLike(login_required):
         for dislike in post.dislikes.all():
             if dislike == request.user:
                 is_dislike = True
-                break
+                return request.user
         if is_dislike:
             post.dislikes.remove(request.user)
         is_like = False
         for like in post.likes.all():
             if like == request.user:
                 is_like = True
-                break
+                return request.user
         if not is_like: 
             post.likes.add(request.user)
         
@@ -102,14 +102,14 @@ class AddDislike(login_required):
         for like in post.likes.all():
             if like == request.user:
                 is_like = True
-                break
+                return request.user
         if is_like:
             post.likes.remove(request.user)
         is_dislike = False
         for dislike in post.dislikes.all():
             if dislike == request.user:
                 is_dislike = True
-                break
+                return request.user
         if not is_dislike: 
             post.dislikes.add(request.user)
         
