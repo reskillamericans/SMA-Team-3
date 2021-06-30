@@ -50,3 +50,7 @@ class PostLikes(models.Model):
     liker_id = models.ForeignKey(a.User, on_delete=models.CASCADE)
     post_id = models.ForeignKey(Posts, on_delete=models.CASCADE)
     created_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
+
+    @property
+    def total_likes(self):
+        return self.liker_id.count()
