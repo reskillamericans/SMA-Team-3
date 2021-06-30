@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
 
 from .forms import NewPostForm, UpdatePostForm
-from .models import Posts, PostLikes
+from .models import Posts, PostLikes, 
 
 User = get_user_model()
 
@@ -71,3 +71,47 @@ def post_delete(request, pk):
         post.delete()
         return redirect('posts:home')
     return render(request, 'posts/delete_post.html', context)
+
+
+class AddLike(login_required):
+    def post(self, request, pk, *args, **kwargs):
+        post = Posts.objects.get(pk=pk)
+        is_dislike = False
+        for dislike in post.dislikes.all():
+            if dislike == request.user:
+                is_dislike = True
+                break
+        if is_dislike:
+            post.dislikes.remove(request.user)
+        is_like = False
+        for like in post.likes.all():
+            if like == request.user:
+                is_like = True
+                break
+        if not is_like: 
+            post.likes.add(request.user)
+        
+        if is_like:
+            post.likes.remove(request.user)
+
+
+class AddDislike(login_required):
+    def post(self, request, pk, *args, **kwargs):
+        post = Posts.objects.get(pk=pk)
+        is_like = False
+        for like in post.likes.all():
+            if like == request.user:
+                is_like = True
+                break
+        if is_like:
+            post.likes.remove(request.user)
+        is_dislike = False
+        for dislike in post.dislikes.all():
+            if dislike == request.user:
+                is_dislike = True
+                break
+        if not is_dislike: 
+            post.dislikes.add(request.user)
+        
+        if is_dislike:
+            post.dislikes.remove(request.user)
