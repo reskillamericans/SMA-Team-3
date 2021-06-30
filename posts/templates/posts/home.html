@@ -17,7 +17,7 @@
           <p class="card-text text-dark">{{ post.content }}</p>
         </div>
         <a href="{% url 'posts:update-post' post.id %}"
-          ><img class="card-img-top" src="{% static 'image1.jpg' %}" alt="" width="100" height="100"
+          ><img class="card-img-top" src="{{ post.image.url }}" alt="" width="100" height="100"
         /></a>
         {% if post.category %}
         <br />
