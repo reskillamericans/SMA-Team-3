@@ -1,5 +1,5 @@
 from django import forms
-from .models import Posts
+from .models import Posts, PostComments
 
 
 class NewPostForm(forms.ModelForm):
@@ -24,4 +24,9 @@ class UpdatePostForm(forms.ModelForm):
             post.save()
         return post
 
+
+class NewCommentForm(forms.ModelForm):
+    class Meta:
+        model = PostComments
+        fields = ['content', 'image']
 

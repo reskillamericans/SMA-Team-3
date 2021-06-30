@@ -38,8 +38,8 @@ class Posts(models.Model):
 
 
 class PostComments(models.Model):
-    user_id = models.ForeignKey(a.User, on_delete=models.CASCADE)
-    post_id = models.ForeignKey(Posts, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(a.User, related_name='details', on_delete=models.CASCADE)
+    post_id = models.ForeignKey(Posts, related_name='details', on_delete=models.CASCADE)
     content = models.TextField()
     image = models.ImageField(blank=True, null=True)
     updated_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)

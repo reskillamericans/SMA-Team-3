@@ -84,7 +84,7 @@ def forgot_password(request):
             if associated_users.exists():
                 for user in associated_users:
                     subject = "Password Reset Requested"
-                    email_template_name = "authentication/password_reset_email.txt"
+                    email_template_name = "authentication/password/password_reset_email.txt"
                     c = {
                         "email": user.email,
                         'domain': '127.0.0.1:8000',
@@ -103,7 +103,7 @@ def forgot_password(request):
                     return redirect("authentication:login")
             messages.error(request, 'An invalid email has been entered.')
     password_reset_form = PasswordResetForm()
-    return render(request=request, template_name="authentication/password_reset.html",
+    return render(request=request, template_name="authentication/password/password_reset.html",
                   context={"password_reset_form": password_reset_form})
 
 

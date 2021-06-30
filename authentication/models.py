@@ -5,7 +5,7 @@ from .managers import CustomUserManager
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(_("Username"), unique=True, max_length=255)
+    username = models.CharField(_("Username"), unique=True, max_length=255, null=True, blank=True)
     first_name = models.CharField(_('First Name'), max_length=255, default='user')
     last_name = models.CharField(_('Last Name'), max_length=255, default='user')
     phone = models.CharField(max_length=255, blank=True, null=True)
