@@ -1,0 +1,567 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Epilogue";
+   
+}
+
+
+.welcome-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    position: relative;
+}
+
+main{
+   background: linear-gradient( to bottom, #84b6dd 68%,#405294);
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 50vh 50vh;
+   
+}
+
+.welcome-cont h1{
+    z-index: 99;
+    /*padding: 200px 0 50px 0;*/
+    color: #f0f0f0;
+    font-size: 36px;
+    position: relative;
+    text-shadow: 0px 2px 2px black;
+}
+
+.welcome-cont .desktop-h1 h1{
+    display: none;
+}
+
+.welcome-cont h1::after{
+  content: "3";
+  font-size: 20px;
+  position: absolute;
+}
+
+.welcome-cont .mobile-h3{
+    z-index: 99;
+    margin-top: 20px;
+    color: #f0f0f0;
+    font-size: 20px;
+    text-shadow: 0px 1.4px 1.5px black;
+}
+
+
+.welcome-cont h1 .numb{
+  font-size: 20px;
+}
+
+/*BUTTONS*/
+
+.btn-cnt{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.log {
+    padding: 8px 0 14px;
+    width: 250px;
+    font-weight: 600;
+    margin: 10px 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 3px 3px 0px #494949; 
+    box-shadow: 0px 5px 3px 0px #494949;    
+    border: none;
+}
+
+.log button a{
+ text-decoration: none;
+}
+
+.log{
+    background-color: #EE9062;
+}
+
+/*FORM STYLES******/
+
+.form-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.form-group .input-cont{
+    width: 250px;
+    display: flex;
+    background-color:rgba(196,196,196,0.5);
+    border-radius: 5px;
+}
+
+.form-group .input-cont .img-cont{
+  width: 25px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(196,196,196);
+  border-radius: 5px;
+}
+
+.form-group .input-cont img{
+    width: 13px;
+    height: 13px;
+  
+  }
+
+
+.form-group input{
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+
+.form-group label{
+    color: #f1eeee;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#sign_form{
+z-index: 99;
+}
+
+
+#sign_form small{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    color: #f0f0f0; 
+    margin-top: 10px;
+}
+
+#sign_form small a{
+ color: #EE9062; 
+ text-decoration: none;
+ padding: 0 3px;
+}
+
+
+#PasswordResetForm{
+   margin-bottom: 20px;
+}
+
+
+.btn-block.primary-btn{
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    
+}
+
+
+
+
+
+
+/*DESKTOP CLASSES*/
+
+.desktop-polygons{
+    display: none;
+}
+
+
+.desktop-h1{
+    display: none;
+}
+
+
+/*BACKGROUND POLYGONS******/ 
+
+.poly-12-g2{
+    position:absolute;
+    left: 128px;
+    top: 230px;
+    z-index: 4;
+}
+
+.poly-11-g2{
+    position:absolute;
+    left: 123.09px;
+    top: 220px;
+    mix-blend-mode: color;
+    z-index:3;
+}
+
+.poly-9-g2{
+    position:absolute;
+    left: 15px;
+    top: 260px;
+    z-index: 2;
+    mix-blend-mode: color;
+}
+
+.poly-8-g2{
+    position:absolute;
+    left:0;
+    top: 199px;
+    z-index: 0;
+    
+}
+
+.poly-10-g2{
+    position:absolute;
+    right: 0;
+    top: 215px;
+}
+
+/*GROUP 2 POLYGONS*/
+
+.poly-12-g4{
+    position:absolute;
+    left: 104px;
+    top: 0;
+    z-index: 3;
+}
+
+.poly-11-g4{
+    position:absolute;
+    left: 109px;
+    top: -10px;
+    mix-blend-mode: color;
+    z-index:2;
+}
+
+.poly-9-g4{
+    position:absolute;
+    left:5px;
+    top: 0;
+    z-index: 0;
+    mix-blend-mode: color;
+}
+
+.poly-8-g4{
+    position:absolute;
+    left:0;
+    top: 0;
+    z-index: 0;
+    
+}
+
+.poly-10-g4{
+    position:absolute;
+    right: 0;
+    top: -5px;
+}
+
+/*MID POLYGONS*/
+
+.poly-12-mid{
+    position:absolute;
+    left: 130px;
+    top: 84px;
+    z-index: 3;
+}
+
+.poly-11-mid{
+    position:absolute;
+    left: 10px;
+    top: 80px;
+    z-index: 1;
+    mix-blend-mode: color;
+    
+}
+
+.poly-9-mid{
+    position:absolute;
+    right:20px;
+    top: 110px;
+    mix-blend-mode: color;
+}
+
+.poly-8-mid{
+    position:absolute;
+    right: 0;
+    top: 60px;
+    z-index: 0;
+    
+}
+
+.poly-10-mid{
+    position:absolute;
+    left: 0px;
+    top: 85px;
+    z-index: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DESKTOP VIEW*****/
+
+@media screen and (min-width:1100px){
+
+    main{
+        background: linear-gradient( to bottom, #84b6dd 68%,#405294);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100vh;
+     }
+
+     /*WELCOME STYLES*/
+    .welcome-cont {
+        overflow: hidden;
+    }
+    .welcome-cont h1{
+        z-index: 99;
+        /*padding: 200px 0 50px 0;*/
+        color: #f0f0f0;
+        font-size: 96px;
+        position: relative;
+        text-shadow: 0px 2px 2px black;
+        text-align: center;
+    }
+
+    .welcome-cont .mobile-h1{
+        display: none;
+    }
+
+    .welcome-cont h1::after{
+        content: "3";
+        font-size: 50px;
+        position: absolute;
+        
+    }
+
+     
+
+
+/*FORM STYLES*/
+        .form-group{
+            width: 100%;
+        }
+        .form-group .input-cont{
+        width: 100%;
+        display: flex;
+        background-color:rgba(196,196,196,0.5);
+        border-radius: 5px;
+        }
+
+
+
+     .form-cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: solid 1.5px #EE9062;
+    }
+
+    #sign_form{
+        width: 430px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-polygons{
+        display: none;
+    }
+
+    .mobile-h3{
+        display: none;
+    }
+
+    .desktop-h1{
+        color: #384989;
+        font-size: 36px;
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .form-group label{
+        color: #384989;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    #sign_form small{
+        color: #384989;
+    }
+
+  
+   
+ /*BACKGROUND POLYGONS******/ 
+
+.desktop-polygons{
+    display: block;
+   position: absolute;
+   width: 701px;
+   height: 1020px;
+  
+}
+
+.poly-desktop-12-g2{
+    position:absolute;
+    left: 270px;
+    top: 575px;
+    z-index: 4;
+}
+
+.poly-desktop-11-g2{
+    position:absolute;
+    left: 270px;
+    top: 580px;
+    mix-blend-mode: color;
+    z-index:3;
+}
+
+.poly-desktop-9-g2{
+    position:absolute;
+    left: 176px;
+    top: 170px;
+    z-index: 2;
+    mix-blend-mode: color;
+}
+
+.poly-desktop-8-g2{
+    position:absolute;
+    left:60px;
+    top: 540px;
+    z-index: 0;
+    
+}
+
+.poly-desktop-10-g2{
+    position:absolute;
+    right:50px;
+    top: 540px;
+}
+
+/*GROUP 2 POLYGONS*/
+
+.poly-desktop-12-g4{
+    position:absolute;
+    left: 222px;
+    top: 155px;
+    z-index: 3;
+}
+
+.poly-desktop-11-g4{
+    position:absolute;
+    right: 209px;
+    top: 160px;
+    mix-blend-mode: color;
+    z-index:2;
+}
+
+.poly-desktop-9-g4{
+    position:absolute;
+    left:210px;
+    top: 595px;
+    z-index: 2;
+    mix-blend-mode: color;
+}
+
+.poly-desktop-8-g4{
+    position:absolute;
+    left:25px;
+    top: 130px;
+    z-index: 0;
+    
+}
+
+.poly-desktop-10-g4{
+    position:absolute;
+   right: 100px;
+    top: 135px;
+}
+
+/*MID POLYGONS*/
+
+.poly-desktop-12-mid{
+    position:absolute;
+    left: 290px;
+    top: 360px;
+    z-index: 0;
+}
+
+.poly-desktop-11-mid{
+    position:absolute;
+    left: 180px;
+    top: 387px;
+    z-index: 1;
+    mix-blend-mode: color;
+    
+}
+
+.poly-desktop-9-mid{
+    position:absolute;
+    right:210px;
+    top: 390px;
+    mix-blend-mode: color;
+}
+
+.poly-desktop-8-mid{
+    position:absolute;
+    right: 65px;
+    top: 360px;
+    z-index: 0;
+    
+}
+
+.poly-desktop-10-mid{
+    position:absolute;
+    left: 58px;
+    top: 350px;
+    z-index: 0;
+}
+
+}
