@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
-from django.views.generic import ListView
+from django.views.generic import ListView, View
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import MessageForm, MessageThreadForm
@@ -44,7 +44,7 @@ class MessageThreadList(ListView):
     def message_list_details(request):
         message_threads = MessageThread.objects.filter(Q(user = request.user_id ) | Q(receiver = request.user_id))
         context = {
-            'message_threads': threads
+            'message_threads': message_threads
         }
         return render(request, 'message/inbox.html', context)
 
@@ -72,7 +72,7 @@ class MessageThreadView(View):
         thread_view = MessageThread.objects.get(pk = pk)
         message_list = Message.objects.filter(thread_view__pk__contains = pk)
         context = {
-            'thread_view' : thread,
+            'thread_view' : thread_view,
             'form' : form,
             'message_list' : message_list 
         }
