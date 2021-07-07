@@ -2,12 +2,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %}Social Media App{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+      {% load static %}
+    <title>Register</title>
+
 </head>
 <body>
   <main>
     {% block content %}
+            <section class="welcome-cont">
+            <div class="mobile-polygons">
+                <div class="poly-12-g2"><img src="{% static 'register-mobile-poly/poly-group4/polygon 12.svg' %}" alt="blue polygon"></div>
+                <div class="poly-11-g2"><img src="{% static 'register-mobile-poly/poly-group4/polygon 11.svg' %}" alt="yellow polygon"></div>
+                <div class="poly-9-g2"><img src="{% static 'register-mobile-poly/poly-group4/polygon 9.svg' %}" alt="orange polygon"></div>
+                <div class="poly-10-g2"><img src="{% static 'register-mobile-poly/poly-group4/polygon 10.svg' %}" alt="dark blue polygon"></div>
+                <div class="poly-8-g2"><img src="{% static 'register-mobile-poly/poly-group4/polygon 8.svg' %}" alt="purple polygon"></div>
+                <!--GROUP 2 POLYGONS-->
+                <div class="poly-12-g4"><img src="{% static 'register-mobile-poly/poly-group2/polygon 12.svg' %}" alt="blue polygon"></div>
+                <div class="poly-11-g4"><img src="{% static 'register-mobile-poly/poly-group2/polygon 11.svg' %}" alt="yellow polygon"></div>
+                <div class="poly-9-g4"><img src="{% static 'register-mobile-poly/poly-group2/polygon 9.svg' %}" alt="orange polygon"></div>
+                <div class="poly-10-g4"><img src="{% static 'register-mobile-poly/poly-group2/polygon 10.svg' %}" alt="dark blue polygon"></div>
+                <div class="poly-8-g4"><img src="{% static 'register-mobile-poly/poly-group2/polygon 8.svg' %}" alt="purple polygon"></div>
+                <!--MIDDLE POLYGONS-->
+                <div class="poly-12-mid"><img src="{% static 'register-mobile-poly/polygons/polygon 12.svg' %}" alt="blue polygon"></div>
+                <div class="poly-11-mid"><img src="{% static 'register-mobile-poly/polygons/polygon 11.svg' %}" alt="yellow polygon"></div>
+                <div class="poly-9-mid"><img src="{% static 'register-mobile-poly/polygons/Polygon 9.svg' %}" alt="orange polygon"></div>
+                <div class="poly-10-mid"><img src="{% static 'register-mobile-poly/polygons/polygon 10.svg' %}" alt="dark blue polygon"></div>
+                <div class="poly-8-mid"><img src="{% static 'register-mobile-poly/polygons/polygon 8.svg' %}" alt="purple polygon"></div>
+            </div>
+            <div class="desktop-polygons">
+                <div class="poly-desktop-12-g2"><img src="{% static 'desktop-polygons/poly-group4/polygon 12.svg' %}" alt="blue polygon"></div>
+                <div class="poly-desktop-11-g2"><img src="{% static 'desktop-polygons/poly-group4/polygon 11.svg' %}" alt="yellow polygon"></div>
+                <div class="poly-desktop-9-g2"><img src="{% static 'desktop-polygons/poly-group4/polygon 9.svg' %}" alt="orange polygon"></div>
+                <div class="poly-desktop-10-g2"><img src="{% static 'desktop-polygons/poly-group4/polygon 10.svg' %}" alt="dark blue polygon"></div>
+                <div class="poly-desktop-8-g2"><img src="{% static 'desktop-polygons/poly-group4/polygon 8.svg' %}" alt="purple polygon"></div>
+                <!--GROUP 2 POLYGONS-->
+                <div class="poly-desktop-12-g4"><img src="{% static 'desktop-polygons/poly-group2/polygon 12.svg' %}" alt="blue polygon"></div>
+                <div class="poly-desktop-11-g4"><img src="{% static 'desktop-polygons/poly-group2/polygon 11.svg' %}" alt="yellow polygon"></div>
+                <div class="poly-desktop-9-g4"><img src="{% static 'desktop-polygons/poly-group2/polygon 9.svg' %}" alt="orange polygon"></div>
+                <div class="poly-desktop-10-g4"><img src="{% static 'desktop-polygons/poly-group2/polygon 10.svg' %}" alt="dark blue polygon"></div>
+                <div class="poly-desktop-8-g4"><img src="{% static 'desktop-polygons/poly-group2/polygon 8.svg' %}" alt="purple polygon"></div>
+                <!--MIDDLE POLYGONS-->
+                <div class="poly-desktop-12-mid"><img src="{% static 'desktop-polygons/polygons/polygon 12.svg' %}" alt="blue polygon"></div>
+                <div class="poly-desktop-11-mid"><img src="{% static 'desktop-polygons/polygons/polygon 11.svg' %}" alt="yellow polygon"></div>
+                <div class="poly-desktop-9-mid"><img src="{% static 'desktop-polygons/polygons/Polygon 9.svg' %}" alt="orange polygon"></div>
+                <div class="poly-desktop-10-mid"><img src="{% static 'desktop-polygons/polygons/polygon 10.svg' %}" alt="dark blue polygon"></div>
+                <div class="poly-desktop-8-mid"><img src="{% static 'desktop-polygons/polygons/polygon 8.svg' %}' %}" alt="purple polygon"></div>
+            </div>
+
+        </section>
     {% endblock %}
   </main>
 </body>
