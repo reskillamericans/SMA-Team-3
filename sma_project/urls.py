@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('authentication.urls')),
     path('post/', include('posts.urls')),
     path('', include('home.urls')),
+    path('message/', include('message.urls')),
     path('password_reset/done/', views.PasswordResetDoneView.as_view(template_name='authentication/password'
                                                                                    '/password_reset_done.html'),
          name='password_reset_done'),
