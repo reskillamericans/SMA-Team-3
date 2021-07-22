@@ -51,7 +51,7 @@ def register(request):
             messages.error(request, 'Password must match')
             return redirect('authentication:register')
 
-    return render(request, "authentication/signup.html")
+    return render(request, "authentication/register.html")
 
 
 def login(request):
