@@ -7,7 +7,7 @@
             <!--FORM------------>
         <section class="form-cont">
             <h1 class="desktop-h1">REGISTER TO JOIN US!</h1>
-            <form action="{% url 'authentication:login' %}" method="POST" id="sign_form">
+            <form action="{% url 'authentication:register' %}" method="POST" id="sign_form">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="pwd">FIRST NAME</label>

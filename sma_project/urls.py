@@ -18,12 +18,14 @@ from django.contrib.auth import views
 from django.conf.urls.static import static
 from django.urls import path, include
 from django.conf import settings
-
+from authentication.views import login
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # homapage
+    path('', login, name="home"),
     path('accounts/', include('authentication.urls')),
     path('post/', include('posts.urls')),
-    path('', include('home.urls')),
+    # path('', include('home.urls')),
     path('password_reset/done/', views.PasswordResetDoneView.as_view(template_name='authentication/password'
                                                                                    '/password_reset_done.html'),
          name='password_reset_done'),
