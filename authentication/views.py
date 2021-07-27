@@ -12,7 +12,7 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.db.models.query_utils import Q
 
-from .models import  User, Followers
+from .models import User, Followers, UserSocials
 from django.contrib.auth.models import auth
 
 
@@ -34,6 +34,7 @@ def register(request):
         if password == confirmpwd:
             try:
                 user = User.objects.get(email=email)
+                print(user)
                 messages.info(request, 'Email is already taken')
                 return redirect('authentication:register')
 
@@ -42,6 +43,8 @@ def register(request):
                                                 last_name=last_name, password=password, bio=bio, phone=phone,
                                                 avatar=avatar, occupation=occupation, company=company)
                 user.save()
+                print(user)
+                user_profile = UserSocials.objects.create(user_id=user)
                 auth.login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect('authentication:login')
         elif password == "":

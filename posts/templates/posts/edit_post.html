@@ -11,7 +11,9 @@
 
               {{ form|crispy }}
             </fieldset>
+{% if post.user_id == user %}
             <div class="form-group">
+
               <button type="submit">Update</button>
 
 
@@ -23,7 +25,7 @@
 
               <input type="submit" value="Delete" />
 
-
+            {% endif %}
           </form>
 
              </div>

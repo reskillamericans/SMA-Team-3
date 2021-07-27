@@ -46,11 +46,12 @@ class UserSocials(models.Model):
     def __str__(self):
         return str(self.user_id)
 
+
 class Followers(models.Model):
     user_id = models.OneToOneField(User, on_delete=models.CASCADE)
     follower_id = models.ManyToManyField(User, related_name='follower_id')
-    updated_at =   models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
-    created_at =   models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
 
     def __str__(self):
         return str(self.user.username)
