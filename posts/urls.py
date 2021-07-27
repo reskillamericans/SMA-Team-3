@@ -7,6 +7,8 @@ from .views import PostListView
 app_name = 'posts'
 urlpatterns = [
     path('', PostListView.as_view(), name='home'),
+    path('user/', views.users_profile, name='my-profile'),
+    path('update-profile/', views.update_profile, name='update-profile'),
     path('new/', views.create_post, name='create-post'),
     path('<pk>/update', views.update_post, name='update-post'),
     path('update/<int:pk>', views.update_post, name='update-post'),

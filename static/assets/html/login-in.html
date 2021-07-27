@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/log-in.css">
+    <title>Log In</title>
+</head>
+<body id="layout">
+    <main>
+        <section class="welcome-cont">
+            <div class="mobile-polygons">
+                <div class="poly-12-g2"><img src="../mobile-polygons/poly-group4/polygon 12.svg" alt="blue polygon"></div>
+                <div class="poly-11-g2"><img src="../mobile-polygons/poly-group4/polygon 11.svg" alt="yellow polygon"></div>
+                <div class="poly-9-g2"><img src="../mobile-polygons/poly-group4/polygon 9.svg" alt="orange polygon"></div>
+                <div class="poly-10-g2"><img src="../mobile-polygons/poly-group4/polygon 10.svg" alt="dark blue polygon"></div>
+                <div class="poly-8-g2"><img src="../mobile-polygons/poly-group4/polygon 8.svg" alt="purple polygon"></div>
+                <!--GROUP 2 POLYGONS-->
+                <div class="poly-12-g4"><img src="../mobile-polygons/poly-group2/polygon 12.svg" alt="blue polygon"></div>
+                <div class="poly-11-g4"><img src="../mobile-polygons/poly-group2/polygon 11.svg" alt="yellow polygon"></div>
+                <div class="poly-9-g4"><img src="../mobile-polygons/poly-group2/polygon 9.svg" alt="orange polygon"></div>
+                <div class="poly-10-g4"><img src="../mobile-polygons/poly-group2/polygon 10.svg" alt="dark blue polygon"></div>
+                <div class="poly-8-g4"><img src="../mobile-polygons/poly-group2/polygon 8.svg" alt="purple polygon"></div>
+                <!--MIDDLE POLYGONS-->
+                <div class="poly-12-mid"><img src="../mobile-polygons/polygons/polygon 12.svg" alt="blue polygon"></div>
+                <div class="poly-11-mid"><img src="../mobile-polygons/polygons/polygon 11.svg" alt="yellow polygon"></div>
+                <div class="poly-9-mid"><img src="../mobile-polygons/polygons/Polygon 9.svg" alt="orange polygon"></div>
+                <div class="poly-10-mid"><img src="../mobile-polygons/polygons/polygon 10.svg" alt="dark blue polygon"></div>
+                <div class="poly-8-mid"><img src="../mobile-polygons/polygons/polygon 8.svg" alt="purple polygon"></div>
+            </div>
+            <div class="desktop-polygons">
+                <div class="poly-desktop-12-g2"><img src="../desktop-polygons/poly-group4/polygon 12.svg" alt="blue polygon"></div>
+                <div class="poly-desktop-11-g2"><img src="../desktop-polygons/poly-group4/polygon 11.svg" alt="yellow polygon"></div>
+                <div class="poly-desktop-9-g2"><img src="../desktop-polygons/poly-group4/polygon 9.svg" alt="orange polygon"></div>
+                <div class="poly-desktop-10-g2"><img src="../desktop-polygons/poly-group4/polygon 10.svg" alt="dark blue polygon"></div>
+                <div class="poly-desktop-8-g2"><img src="../desktop-polygons/poly-group4/polygon 8.svg" alt="purple polygon"></div>
+                <!--GROUP 2 POLYGONS-->
+                <div class="poly-desktop-12-g4"><img src="../desktop-polygons/poly-group2/polygon 12.svg" alt="blue polygon"></div>
+                <div class="poly-desktop-11-g4"><img src="../desktop-polygons/poly-group2/polygon 11.svg" alt="yellow polygon"></div>
+                <div class="poly-desktop-9-g4"><img src="../desktop-polygons/poly-group2/polygon 9.svg" alt="orange polygon"></div>
+                <div class="poly-desktop-10-g4"><img src="../desktop-polygons/poly-group2/polygon 10.svg" alt="dark blue polygon"></div>
+                <div class="poly-desktop-8-g4"><img src="../desktop-polygons/poly-group2/polygon 8.svg" alt="purple polygon"></div>
+                <!--MIDDLE POLYGONS-->
+                <div class="poly-desktop-12-mid"><img src="../desktop-polygons/polygons/polygon 12.svg" alt="blue polygon"></div>
+                <div class="poly-desktop-11-mid"><img src="../desktop-polygons/polygons/polygon 11.svg" alt="yellow polygon"></div>
+                <div class="poly-desktop-9-mid"><img src="../desktop-polygons/polygons/Polygon 9.svg" alt="orange polygon"></div>
+                <div class="poly-desktop-10-mid"><img src="../desktop-polygons/polygons/polygon 10.svg" alt="dark blue polygon"></div>
+                <div class="poly-desktop-8-mid"><img src="../desktop-polygons/polygons/polygon 8.svg" alt="purple polygon"></div>
+            </div>
+            <h1 class="desktop-h1">WELCOME</br> TO SMA </h1>
+            <h1 class="mobile-h1">WELCOME TO SMA</h1>
+            <h3 class="mobile-h3">PLEASE LOGIN BELOW</h3>
+        </section>
+            <!--FORM------------>
+        <section class="form-cont">
+            <h1 class="desktop-h1">LOGIN TO GET STARTED</h1>
+            
+            <form action="{% url 'authentication:login' %}" method="POST" id="sign_form">
+                <div class="form-group">
+                 <label for="pwd">E-MAIL ADDRESS</label>
+                    <div class="input-cont">
+                        <div class="img-cont">
+                            <img src="/authentication/logIn-Register/icons/Vector-user.svg" alt="email icon">
+                        </div> 
+                        <input type="text" name="email" class="form-control input" placeholder="">
+                    </div>
+                 </div>
+                <div class="form-group">
+                    <label for="pwd">PASSWORD</label>
+                    <div class="input-cont">
+                        <div class="img-cont">
+                            <img src="/authentication/logIn-Register/icons/Vector2.svg" alt="lock icon">
+                        </div> 
+                        <input type="password" name="password" class="form-control input"  value="">
+                    </div>
+                </div>
+                    <div class="btn-cont">
+                        <button type="submit" class="log">LOGIN</button>
+                    </div>
+                    <small>NEW USER?<a href="{% url 'authentication:register' %}" class="text-center">REGISTER</a>HERE</small>
+            </form>
+                <br><br>
+                <form action="{% url 'authentication:forgot_password' %}" method="POST" id="PasswordResetForm">
+                    <button type="submit" class="btn-block primary-btn">Forgot Password</button>
+                </form>
+         <section>
+    </main>
+</body>
+</html>
