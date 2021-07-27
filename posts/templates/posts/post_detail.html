@@ -1,6 +1,57 @@
 {% extends "posts/layout.html" %} {% load static %} {% load crispy_forms_tags %}
-{% block content %}
-<div class="container" xmlns="http://www.w3.org/1999/html">
+ {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <a href="{{ post.user_name.profile.get_absolute_url }}"
+            ><img
+              src="{{ post.user_name.profile.image.url }}"
+              class="rounded-circle"
+              width="30"
+              height="30"
+              alt=""
+          /></a>
+          <a
+            class="text-dark"
+            href="{{ post.user_name.profile.get_absolute_url }}"
+            ><b>{{ post.user_id }}</b></a
+          >
+          <br /><small class="text-muted"
+            >Posted on {{ post.created_at}}</small
+          >
+          <br /><br />
+          <p class="card-text text-dark">{{ post.content }}</p>
+        </div>
+        <a href="{{ post.pic.url }}"
+          ><img class="card-img-top" src="{{ post.pic.url }}" alt="post image"
+        /></a>
+        {% if post.category %}
+        <br />
+        <p class="text-danger ml-3">
+          <b>Category: <i>{{ post.category }}</i></b>
+        </p>
+        {% endif %}
+        <div class="card-footer">
+
+          {% if post.user_id == user %}
+          <a
+            class="btn btn-outline-info mr-3"
+            href="{% url 'posts:update-post' post.id %}"
+            >Update</a
+          >
+          <a
+            class="btn btn-outline-danger"
+            href="{% url 'posts:delete' post.id %}"
+            >Delete</a
+          >
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
   <h4>Comments</h4>
   <div class="row">
     <div class="col-md-8">
@@ -31,18 +82,22 @@
       <div class="card card-signin my-5">
         {% for detail in post.details.all %}
         <div class="card-body">
-
+          <a href="{{ detail.username.profile.get_absolute_url }}">
+            <img
+              src="{{ detail.username.profile.image.url }}"
+              class="rounded-circle"
+              width="30"
+              height="30"
+              alt=""
+            />
+          </a>
           <a
-            class="text-dark"><b>{{ detail.user_id }}</b></a>
-
+            class="text-dark"
+            href="{{ detail.username.profile.get_absolute_url }}"
+            ><b>{{ detail.user_id }}</b></a
+          >
+          <br /><small>{{ detail.created_at }}</small><br /><br />
           <p class="card-text text-dark">{{ detail.content }}</p>
-          <br /><small>{{ post.created_at }}</small><br /><br />
-          <form method="POST" action="{% url 'posts:delete-comment' detail.id %}">
-             {% csrf_token %}
-
-              <input type="submit" value="Delete Comment" />
-          </form>
-
         </div>
         <hr class="my-1" />
         {% endfor %}
