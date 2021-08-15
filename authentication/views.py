@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.views import logout_then_login
@@ -34,7 +35,6 @@ def register(request):
         if password == confirmpwd:
             try:
                 user = User.objects.get(email=email)
-                print(user)
                 messages.info(request, 'Email is already taken')
                 return redirect('authentication:register')
 
@@ -43,7 +43,6 @@ def register(request):
                                                 last_name=last_name, password=password, bio=bio, phone=phone,
                                                 avatar=avatar, occupation=occupation, company=company)
                 user.save()
-                print(user)
                 user_profile = UserSocials.objects.create(user_id=user)
                 auth.login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 return redirect('authentication:login')
@@ -55,6 +54,48 @@ def register(request):
             return redirect('authentication:register')
 
     return render(request, "authentication/register.html")
+
+
+@login_required
+def update_profile(request):
+    user_profile = UserSocials.objects.get(user_id=request.user.id)
+    avatar = request.FILES.get('avatar')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        bio = request.POST.get('bio')
+        linkedin = request.POST.get('linkedin')
+        twitter = request.POST.get('twitter')
+        github = request.POST.get('github')
+        stackoverflow = request.POST.get('stackoverflow')
+        instagram = request.POST.get('instagram')
+        facebook = request.POST.get('facebook')
+
+        try:
+            user_profile.user_id.username = username
+            user_profile.user_id.email = email
+            user_profile.user_id.bio = bio
+            user_profile.user_id.avatar = avatar
+            user_profile.linkedin = linkedin
+            user_profile.twitter = twitter
+            user_profile.github = github
+            user_profile.stackoverflow = stackoverflow
+            user_profile.instagram = instagram
+            user_profile.facebook = facebook
+            user_profile.user_id.save()
+            user_profile.save()
+            messages.success(request, f'Profile Updated!')
+            return redirect('posts:my-profile')
+
+        except UserSocials.DoesNotExist:
+            messages.error('User not found!')
+
+    context = {
+        'user_profile': user_profile,
+        'user_profile.user_id': user_profile.user_id
+    }
+
+    return render(request, 'authentication/edit_profile.html', context)
 
 
 def login(request):
@@ -116,6 +157,7 @@ def home(request):
 
 def logout(request):
     return logout_then_login(request)
+
 
 def follow_user(request, username):
     other_user = User.objects.get(name=username)

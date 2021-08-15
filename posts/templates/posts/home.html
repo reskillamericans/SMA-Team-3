@@ -1,24 +1,29 @@
 {% extends "posts/layout.html" %} {% load static %}  {% block content %}
-<div class="container">
-  <div class="row">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" >
+<div class="content">
+  <div class="content">
     <div class="col-md-8">
       {% for post in posts %}
       <div class="card card-signin my-5">
+
         <div class="card-body">
           <a
             class="text-dark"
-            href="{{ post.user_name.profile.get_absolute_url }}"
-            ><b>{{ post.user_id }}</b></a
+            href="{% url 'chat:create-message' %}?username={{ post.user_id.username }}" id="receiver" name="receiver"
+            ><b>{{ post.user_id.username }}</b></a
           >
           <br /><small class="text-muted"
             >Posted on {{ post.created_at }}</small
           >
-          <br /><br />
           <p class="card-text text-dark">{{ post.content }}</p>
         </div>
-        <a href="{% url 'posts:update-post' post.id %}"
-          ><img class="card-img-top" src="{{ post.image.url }}" alt="" width="100" height="100"
-        /></a>
+        {% if post.image %}
+        <img src="{{post.image.url}}" alt="" width=150px height=150px>
+        <br>
+        {% else %}
+        {% endif %}
+        <a href="{% url 'posts:view-post' post.id %}"> View</a>
+        
         {% if post.category %}
         <br />
         <p class="text-danger ml-3">
@@ -26,9 +31,21 @@
         </p>
         {% endif %}
         <div class="card-footer">
+
+            {% if post in liked_post %}
+             <a class="btn btn-white mr-3 like" id="{{ post.id }}" href="{% url 'posts:post-like' post.id %}">
+              Unlike
+                 </a>
+                  {% else %}
+
+           <a class="btn btn-white mr-3 like" id="{{ post.id }}" href="{% url 'posts:post-like' post.id %}">
+              Like
+                 </a>
+            {% endif %}
+           <span> &nbsp; | {{post.likes.count}} &nbsp;</span>
           <a class="btn btn-outline-info" href="{% url 'posts:comment' post.id %}"
-            >Comments  {{ post.details.count }}</a
-          >
+            >Comments  {{ post.details.count }}</a>
+            <br /><br />
         </div>
       </div>
       {% endfor %}
@@ -37,3 +54,25 @@
 </div>
 
 {% endblock content %}
+{% block jsfiles %}
+<script type="text/javascript">
+const likeButtons = document.querySelectorAll('.like')
+const base_url = `${document.location.href}like`
+
+likeButtons.forEach((likeButton) => {
+    likeButton.addEventListener('click', (e) => {
+        const id = e.target.id
+        e.preventDefault()
+        fetch(`${base_url}/${id}`)
+          .then(response => response.json())
+          .then(data => console.log(data));
+          if (e.target.innerText == 'Like') {
+            e.target.innerText = 'Unlike'
+          } else {
+            e.target.innerText = 'Like'
+          }
+        location.reload();
+    })
+})
+</script>
+{% endblock jsfiles %}

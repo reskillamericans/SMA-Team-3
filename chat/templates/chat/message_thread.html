@@ -1,0 +1,45 @@
+{% extends 'posts/layout.html' %} {% load crispy_forms_tags %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="card col-md-12 mt-5 p-3 shadow-sm">
+      <h5>@{{ message.sender.username }} 
+        <a class="btn btn-light" href="{% url 'chat:create-message' %}?username={{ message.sender.username }}">Send Message</a>
+      </h5>
+      
+    </div>
+  </div>
+  {% if message.all.count == 0 %}
+  <div class="row my-5">
+    <div class="col-md-12">
+      <p class="empty-text">No Messages</p>
+    </div>
+  </div>
+  {% else %}
+  <div class="row">
+    <div class="col-md-12 my-1">
+      <div class="sent-message my-3">
+        <p>{{ message.message }}</p>
+        {% if message.image %}
+        <img src="{{message.image.url}}" alt="" width=150px height=150px>
+        {% else %}
+        <img alt="" width=0px height=0px>
+        {% endif %}
+      </div>
+      <div class="received-message my-3">
+        <p>Sent: {{ message.created_at }}</p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <a href="{% url 'chat:delete-message' message.id %}"> Delete Message</a>
+  <button onclick="goBack()">Go Back</button>
+</div>
+{% endblock content %}
+
+{% block jsfiles %}
+<script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+  {% endblock jsfiles %}

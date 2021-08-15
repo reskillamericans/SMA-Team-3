@@ -3,12 +3,16 @@ from .models import Posts, PostComments
 
 
 class NewPostForm(forms.ModelForm):
+    image = forms.ImageField(required=False)
+
     class Meta:
         model = Posts
         fields = ['content', 'image', 'category']
 
 
 class UpdatePostForm(forms.ModelForm):
+    image = forms.ImageField(required=False)
+
     class Meta:
         model = Posts
         fields = ['content', 'image', 'category']
@@ -26,6 +30,8 @@ class UpdatePostForm(forms.ModelForm):
 
 
 class NewCommentForm(forms.ModelForm):
+    image = forms.ImageField(required=False)
+
     class Meta:
         model = PostComments
         fields = ['content', 'image']

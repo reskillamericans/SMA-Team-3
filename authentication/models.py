@@ -10,7 +10,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(_('Last Name'), max_length=255, default='user')
     phone = models.CharField(max_length=255, blank=True, null=True)
     email = models.EmailField(_('email address'), unique=True, default='e@email.com')
-    avatar = models.ImageField(blank=True, null=True)
+    avatar = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
     user_type = models.CharField(max_length=50, default='user')
     status = models.CharField(max_length=50, default='Active')
     verified = models.BooleanField(default=False, blank=True)

@@ -10,8 +10,8 @@ import authentication.models as a
 class PostCategory(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
     description = models.CharField(max_length=255, blank=True, null=True)
-    updated_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
-    created_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
 
     def __str__(self):
         if self.name is None:
@@ -23,12 +23,12 @@ class Posts(models.Model):
     user_id = models.ForeignKey(a.User, on_delete=models.CASCADE)
     category = models.ForeignKey(PostCategory, on_delete=models.CASCADE)
     content = models.TextField(blank=True, null=True)
-    image = models.ImageField(blank=True, null=True, upload_to='posts/static/')
+    image = models.ImageField(blank=True, null=True, upload_to='posts/')
     status = models.CharField(max_length=255, blank=True, null=True)
     like_count = models.IntegerField(default=0, editable=False)
     comment_count = models.IntegerField(default=0, editable=False)
-    updated_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
-    created_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
 
     def __str__(self):
         return str(self.user_id)
@@ -41,12 +41,12 @@ class PostComments(models.Model):
     user_id = models.ForeignKey(a.User, related_name='details', on_delete=models.CASCADE)
     post_id = models.ForeignKey(Posts, related_name='details', on_delete=models.CASCADE)
     content = models.TextField()
-    image = models.ImageField(blank=True, null=True)
-    updated_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
-    created_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
+    image = models.ImageField(blank=True, null=True, upload_to='posts/')
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
 
 
 class PostLikes(models.Model):
-    liker_id = models.ForeignKey(a.User, on_delete=models.CASCADE)
-    post_id = models.ForeignKey(Posts, on_delete=models.CASCADE)
-    created_at = models.TimeField(auto_now=True, null=True, blank=True, editable=False)
+    liker_id = models.ForeignKey(a.User, related_name='likes', on_delete=models.CASCADE)
+    post_id = models.ForeignKey(Posts, related_name='likes', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)

@@ -38,6 +38,7 @@
             </form>
                 <br><br>
                 <form action="{% url 'authentication:forgot_password' %}" method="POST" id="PasswordResetForm">
+                    {% csrf_token %}
                     <button type="submit" class="btn-block primary-btn">Forgot Password</button>
                 </form>
 		</section>

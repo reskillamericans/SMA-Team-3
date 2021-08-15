@@ -7,7 +7,7 @@
             <!--FORM------------>
         <section class="form-cont">
             <h1 class="desktop-h1">Update Profile!</h1>
-            <form action="{% url 'posts:update-profile' %}" method="POST" id="sign_form" enctype="multipart/form-data">
+            <form action="{% url 'authentication:update-profile' %}" method="POST" id="sign_form" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="pwd">USERNAME</label>
