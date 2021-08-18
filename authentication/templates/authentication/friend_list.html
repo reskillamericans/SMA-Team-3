@@ -1,0 +1,43 @@
+{% extends "authentication/header.html" %} {% load static %}  {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      {% if friends %}
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          {% for user_p in friends %}
+          <a href="{{ user_p.get_absolute_url }}"
+            ><img
+              src="{{ user_p.avatar.url }}"
+              class="rounded mr-2"
+              width="40"
+              height="40"
+              alt=""
+          /></a>
+          <a class="text-dark" href="{{ user_p.get_absolute_url }}"
+            ><b>{{ user_p.username }}</b></a
+          >
+          <small
+            ><a
+              class="btn btn-danger float-right"
+              href="{% url 'authentication:delete_friend' user_p.id %}"
+              >UnFriend</a
+            ></small
+          >
+          <br /><br />
+          {% endfor %}
+        </div>
+      </div>
+      {% else %}
+      <h5>
+        <i
+          >You have no friends now! Make some new
+          <a href="{% url 'authentication:users_list' %}">friends here!</a></i
+        >
+      </h5>
+      {% endif %}
+    </div>
+  
+  </div>
+  {% endblock content %}
+</div>

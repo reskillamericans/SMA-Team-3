@@ -1,4 +1,4 @@
-{% extends 'posts/layout.html' %}{% block content %} {% load static %}
+{% extends 'authentication/header.html' %}{% block content %} {% load static %}
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
 <body id="layout">
@@ -41,8 +41,9 @@
           </div>
 
                              <button type="submit" class="log">SEND</button>
+                    <small>GO BACK<a href="{% url 'posts:home' %}" class="text-center"> HOME </a></small>
+
                     </div>
-                    <small>GO BACK<a href="{% url 'posts:home' %}" class="text-center">HOME</a></small>
             </form>
         </section>
 </body>

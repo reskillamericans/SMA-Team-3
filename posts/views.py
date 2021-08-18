@@ -18,7 +18,11 @@ User = get_user_model()
 def posts_feed(request):
     posts = Posts.objects.order_by('-created_at').all()
     liked = [i for i in Posts.objects.all() if PostLikes.objects.filter(liker_id=request.user, post_id=i)]
+    form = NewPostForm()
+#    if request.method == 'POST':
+#       create_post(request)
     context = {
+        'form': form,
         'posts': posts,
         'liked_post': liked
     }

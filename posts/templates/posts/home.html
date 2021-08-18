@@ -1,5 +1,5 @@
-{% extends "posts/layout.html" %} {% load static %}  {% block content %}
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}" >
+{% extends 'authentication/header.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %} 
+    
 <div class="content">
   <div class="content">
     <div class="col-md-8">
@@ -9,8 +9,7 @@
         <div class="card-body">
           <a
             class="text-dark"
-            href="{% url 'chat:create-message' %}?username={{ post.user_id.username }}" id="receiver" name="receiver"
-            ><b>{{ post.user_id.username }}</b></a
+            href="{% url 'authentication:profile_view' post.user_id.username %}" ><b>{{ post.user_id.username }}</b></a
           >
           <br /><small class="text-muted"
             >Posted on {{ post.created_at }}</small

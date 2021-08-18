@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/a20c4e6c94.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Profile Page" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="author" content="Mimi Mahamah" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'profile/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" >
+  </head>
+  <title>Profile Page</title>
+
+  <body>
+    <header>
+      <img id="triangles" src="{% static 'profile/TRIANGLES.png' %}" alt="" />
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="{% url 'posts:home' %}"
+            ><i class="fas fa-home"></i><strong id="inbox">Home</strong></a
+          >
+        </li>
+
+        <li class="menu__item">
+          <a href="{% url 'posts:create-post' %}"
+            ><i class="fas fa-user-friends"></i
+            ><strong id="inbox"> Create Posts</strong></a
+          >
+        </li>
+        <li class="menu__item">
+          <a href="{% url 'chat:inbox' %}"
+            ><i class="fas fa-envelope"></i><strong id="inbox">Inbox</strong></a
+          >
+        </li>
+        <li class="menu__item">
+          <a href="{% url 'authentication:profile_view' user.username %}"
+            ><i class="fas fa-user"></i><strong id="foll">Followers</strong></a
+          >
+        </li>
+        <li class="menu__item">
+          <a href="{% url 'authentication:logout' %}"
+            ><i class="fas fa-sign-out-alt"></i><strong id="foll"></strong
+          ></a>
+        </li>
+      </ul>
+
+      <a href="{% url 'posts:my-profile' %}"
+        ><img
+          id="profile"
+          src="{{ user.avatar.url }}"
+          alt="profile picture"
+      /></a>
+    </header>
+    {% for message in messages %} {% if message.error %}
+    <div class="alert error">
+      <input type="checkbox" id="alert1" />
+      <label class="close" title="close" for="alert1">
+        <i class="icon-remove"></i>
+      </label>
+      <p class="inner">{{ message }}</p>
+    </div>
+    {% elif message.tags == 'success' %}
+    <div class="alert success">
+      <input type="checkbox" id="alert2" />
+      <label class="close" title="close" for="alert2">
+        <i class="icon-remove"></i>
+      </label>
+      <p class="inner">{{ message }}</p>
+    </div>
+    {% elif message.tags == 'info' %}
+    <div class="alert info">
+      <input type="checkbox" id="alert3" />
+      <label class="close" title="close" for="alert3">
+        <i class="icon-remove"></i>
+      </label>
+      <p class="inner">{{ message }}</p>
+    </div>
+    {% elif message.tags == 'warning' %}
+    <div class="alert warning">
+      <input type="checkbox" id="alert4" />
+      <label class="close" title="close" for="alert4">
+        <i class="icon-remove"></i>
+      </label>
+      <p class="inner">{{ message }}</p>
+    </div>
+
+    {% else %}
+    <div class="alert">
+      <input type="checkbox" id="alert5" />
+      <label class="close" title="close" for="alert5">
+        <i class="icon-remove"></i>
+      </label>
+      <p class="inner">{{ message }}</p>
+    </div>
+    {% endif %} {% endfor %}
+    <div class="container">{% block content %} {% endblock %}</div>
+    {% block jsfiles %}
+    {% endblock jsfiles %}
+  </body>
+</html>
