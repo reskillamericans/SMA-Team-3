@@ -1,4 +1,15 @@
-{% extends "authentication/header.html" %} {% load static %}  {% block content %}
+{% extends "authentication/header.html" %} {% load static %} {% block searchform %}
+<form
+  class="form-inline my-2 my-lg-0 ml-5"
+  action="{% url 'search_users' %}"
+  method="get"
+>
+  <input name="q" type="text" placeholder="Search users.." />
+  <button class="btn btn-success my-2 my-sm-0 ml-4" type="submit">
+    Search
+  </button>
+</form>
+{% endblock searchform %} {% block content %}
 <br /><br />
 <div class="main-content">
   <div class="container mt-7">
@@ -8,25 +19,14 @@
           <div class="row justify-content-center">
             <div class="col-lg-3 order-lg-2">
               <div class="card-profile-image">
-                {% if user.avatar%}
-                <a href="{{ user.avatar.url }}">
+                <a href="{{ u.profile.image.url }}">
                   <img
-                    src="{{ user.avatar.url }}"
+                    src="{{ u.profile.image.url }}"
                     class="rounded-circle"
                     width="160px"
                     height="160px"
                   />
                 </a>
-                {% else %}
-                <a href="{{ user.avatar.url }}">
-                  <img
-                    src="{% static 'profile/user-avatar.png'%}"
-                    class="rounded-circle"
-                    width="160px"
-                    height="160px"
-                  />
-                </a>
-                {% endif %}
               </div>
             </div>
           </div>
@@ -40,17 +40,17 @@
                   class="card-profile-stats d-flex justify-content-center mt-md-5"
                 >
                   <div>
-                    <span class="heading">{{ user.friends.count }}</span>
-                    {% if request.user.id == u %}
+                    <span class="heading">{{ u.profile.friends.count }}</span>
+                    {% if request.user == u %}
                     <span class="description"
-                      ><a href="{% url 'authentication:friend_list' %}">Friends</a></span
+                      ><a href="{% url 'friend_list' %}">Friends</a></span
                     >
                     {% else %}
                     <span class="description">Friends</span>
                     {% endif %}
                     <span class="heading">{{ post_count }}</span>
                     <span class="description"
-                      ><a href="{% url 'posts:my-profile' %}"
+                      ><a href="{% url 'user-posts' u.username %}"
                         >Posts</a
                       ></span
                     >
@@ -59,18 +59,18 @@
               </div>
             </div>
             <div class="text-center">
-              <h3>{{ u.username }}</h3>
-              <p>{{ u.bio }}</p>
+              <h3>{{ u }}</h3>
+              <p>{{ u.profile.bio }}</p>
               <hr class="my-2" />
-              {% if request.user.id == u %}
-              <a class="btn btn-info" href="{% url 'authentication:update-profile' %}"
-                >Update Profile</a
+              {% if request.user == u %}
+              <a class="btn btn-info" href="{% url 'edit_profile' %}"
+                >Edit Profile</a
               >
               {% else %} {% if button_status == 'not_friend' %}
               <small
                 ><a
                   class="btn btn-primary"
-                  href="{% url 'authentication:send_friend_request' u %}"
+                  href="/users/friend-request/send/{{ u.id }}"
                   >Add Friend</a
                 ></small
               >
@@ -78,7 +78,7 @@
               <small
                 ><a
                   class="btn btn-warning"
-                  href="{% url 'authentication:cancel_friend_request' u %}"
+                  href="/users/friend-request/cancel/{{ u.id }}"
                   >Cancel Request</a
                 ></small
               >
@@ -86,14 +86,14 @@
               <small
                 ><a
                   class="btn btn-success mr-2"
-                  href="{% url 'authentication:accept_friend_request' u %}"
+                  href="/users/friend-request/accept/{{ u.id }}"
                   >Accept Request</a
                 ></small
               >
               <small
                 ><a
                   class="btn btn-danger"
-                  href="{% url 'authentication:delete_friend_request' u %}"
+                  href="/users/friend-request/delete/{{ u.id }}"
                   >Reject Request</a
                 ></small
               >
@@ -101,7 +101,7 @@
               <small
                 ><a
                   class="btn btn-danger"
-                  href="{% url 'authentication:delete_friend' u %}"
+                  href="/users/friend/delete/{{ u.id }}"
                   >UnFriend</a
                 ></small
               >
@@ -112,7 +112,7 @@
       </div>
     </div>
     <br />
-    {% if request.user.id == u %}
+    {% if request.user == u %}
     <div class="row">
       <div class="col-md-6">
         <div class="card card-signin my-5">
@@ -124,20 +124,19 @@
             {% else %} {% for s_request in sent_friend_requests %}
             <a href="{{ s_request.to_user.profile.get_absolute_url }}"
               ><img
-                src="{{ s_request.follower_id.avatar.url }}"
+                src="{{ s_request.to_user.profile.image.url }}"
                 class="rounded mr-2"
                 width="40"
                 height="40"
                 alt=""
             /></a>
             <a href="{{ s_request.to_user.profile.get_absolute_url }}"
-              ><b>{{ s_request.follower_id.username }}</b></a
+              ><b>{{ s_request.to_user.username }}</b></a
             >
             <small class="float-right">
-                <br>
               <a
                 class="btn btn-warning mr-2"
-                href="{% url 'authentication:cancel_friend_request' s_request.follower_id.id %}"
+                href="{% url 'cancel_friend_request' s_request.to_user.id %}"
                 >Cancel</a
               >
             </small>
@@ -149,14 +148,14 @@
       <div class="col-md-6">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h2>Friend Requests Received ({{ rec_friend_requests.count }})</h2>
+            <h2>Friend Requests Recieved ({{ rec_friend_requests.count }})</h2>
             <hr class="my-2" />
             {% if not rec_friend_requests %}
-            <h5><i>No received requests!</i></h5>
+            <h5><i>No recieved requests!</i></h5>
             {% else %} {% for r_request in rec_friend_requests %}
-            <a href="{{ r_request.user_id.avatar.get_absolute_url }}"
+            <a href="{{ r_request.from_user.profile.get_absolute_url }}"
               ><img
-                src="{{ r_request.user_id.avatar.url }}"
+                src="{{ r_request.from_user.profile.image.url }}"
                 class="rounded mr-2"
                 width="40"
                 height="40"
@@ -165,13 +164,12 @@
             <a
               class="mr-2 align-middle"
               href="{{ r_request.from_user.profile.get_absolute_url }}"
-              ><b>{{ r_request.user_id.username }}</b>
+              ><b>{{ r_request.from_user.username }}</b>
             </a>
-            <br>
             <small class="float-right">
               <a
                 class="btn btn-success mr-2"
-                href="{% url 'authentication:accept_friend_request' r_request.user_id.id %}"
+                href="/users/friend-request/accept/{{ r_request.from_user.id }}"
                 >Accept</a
               >
               <a

@@ -60,7 +60,7 @@ class UserSocials(models.Model):
 
 class Followers(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follows_id')
-    follower_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follower_id')
+    follower_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follower_id', default=None)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
     created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
 

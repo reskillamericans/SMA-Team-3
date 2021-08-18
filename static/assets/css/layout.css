@@ -6,3 +6,45 @@
   align-items: center;
   width: 100%;
 }
+
+.card-signin {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.card-text {
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.category {
+  padding-bottom: 10px;
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.like {
+  color: red;
+}
+
+.unlike {
+  color: red;
+}
