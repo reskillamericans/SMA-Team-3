@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&display=swap');
+header {
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    margin: 2em;
+    background-image: linear-gradient(to right, white, #f8c164);
+    justify-content: space-evenly;
+    height: 3em;
+    color: #384989;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    margin: auto;
+    background-clip: content-box;
+}
+
+.search {
+    position: relative;
+    top: 1em;
+    width: 10em;
+    height: 2.5em;
+}
+
+#triangles {
+    height: 5em;
+    position: relative;
+    right: 2em;
+    bottom: 1em;
+    left: 2em;
+}
+
+.fa-search {
+    position: relative;
+    right: 10em;
+    top: 1.5em;
+}
+
+.fa-envelope,
+.fa-user {
+    width: 5em;
+    position: relative;
+    top: 1em;
+}
+
+#inbox,
+#foll {
+    position: relative;
+    left: 0.5em;
+}
+
+#arrow {
+    height: 0.8em;
+    position: relative;
+    left: 3em;
+    top: 1em;
+}
+
+#home,
+#feed {
+    height: 0.9em;
+    position: relative;
+    top: 1em;
+}
+
+#home2,
+#feed2 {
+    position: relative;
+    right: 1.5em;
+    top: 1em;
+    font-family: 'Epilogue', sans-serif
+}
+
+#profile {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    position: relative;
+    bottom: 1.5em;
+    left: 3em;
+}
+
+
+/* Left Side */
+
+.side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5em;
+    padding: 1em;
+    width: 13em;
+    border-radius: 0.5em;
+    height: 35em;
+    background-color: #384989;
+}
+
+.PYM {
+    position: relative;
+    bottom: 0.5em;
+    color: white;
+    font-weight: bold;
+    width: 9em;
+    text-align: center;
+}
+
+.PYMK {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 2em 3em;
+}
+
+.TTMI {
+    color: white;
+    font-weight: bold;
+    width: 9em;
+    text-align: center;
+    position: relative;
+    top: 2em;
+}
+
+.TTMIY {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto;
+    width: 13em;
+    position: relative;
+    top: 1em;
+}
+
+.b {
+    color: #ee9062;
+    width: 5em;
+}
+
+.f {
+    color: #ee9062;
+    width: 5em;
+    grid-row: 2/2;
+    grid-column: 2;
+    position: relative;
+    left: 2em;
+}
+
+.u {
+    color: #ee9062;
+    width: 5em;
+    grid-row: 3/3;
+}
+
+.m {
+    color: #ee9062;
+    width: 5em;
+    grid-row: 4/4;
+    grid-column: 2;
+    position: relative;
+    left: 2em;
+}
+
+
+/* Main Section */
+
+.post {
+    display: flex;
+    background-color: #E5E5E5;
+    width: 48em;
+    height: 5em;
+    position: relative;
+    left: 27em;
+    bottom: 37em;
+    border-radius: 0.5em;
+}
+
+#MAP {
+    position: relative;
+    left: 20em;
+    bottom: 0.5em;
+    color: #f8c164;
+}
+
+#WOYM {
+    position: relative;
+    right: 5em;
+    top: 1em;
+    color: #384a8994;
+}
+
+.icons {
+    position: relative;
+    left: 65em;
+    bottom: 39em;
+    display: flex;
+    justify-content: space-between;
+    width: 8em;
+}
+
+#button {
+    position: relative;
+    top: 0.1em;
+    color: #384989;
+    font-weight: bold;
+}
+
+
+/* Profiles */
+
+.anika {
+    display: flex;
+    background-color: #E5E5E5;
+    width: 48em;
+    height: 5em;
+    position: relative;
+    left: 27em;
+    bottom: 34em;
+    border-radius: 0.5em;
+}
+
+#anika {
+    position: relative;
+    right: 6em;
+    bottom: 2em;
+}
+
+.tracey {
+    display: flex;
+    background-color: #E5E5E5;
+    width: 48em;
+    height: 5em;
+    position: relative;
+    left: 30em;
+    bottom: 30em;
+    border-radius: 0.5em;
+}
+
+#tracey {
+    position: relative;
+    right: 6em;
+    bottom: 2em;
+}
+
+.jason {
+    background-color: #E5E5E5;
+    position: relative;
+    display: flex;
+    width: 48em;
+    right: 82em;
+    top: 10em;
+    border-radius: 0.5em;
+}
+
+#jason {
+    position: relative;
+    right: 6em;
+    bottom: 2em;
+}
+
+.armand {
+    display: flex;
+    background-color: #E5E5E5;
+    width: 48em;
+    height: 5em;
+    position: relative;
+    right: 114em;
+    top: 10em;
+    border-radius: 0.5em;
+}
+
+#armand {
+    position: relative;
+    right: 6em;
+    bottom: 2em;
+}
+
+#ocean {
+    position: relative;
+    top: 3em;
+    right: 45em;
+}
+
+.anik,
+.trace,
+.jase,
+.arman {
+    display: flex;
+    position: relative;
+    right: 4em;
+    bottom: 2.5em;
+    white-space: nowrap;
+    color: #384989;
+    display: flex;
+    width: 40em;
+    height: 2em;
+    font-weight: bold;
+}
+
+#anik,
+#trace,
+#damon,
+#arman {
+    font-weight: normal;
+    position: relative;
+    left: 2em;
+}
+
+#content1 {
+    color: #384989;
+    white-space: nowrap;
+    position: relative;
+    right: 22em;
+}
+
+#content2 {
+    color: #384989;
+    position: relative;
+    right: 20em;
+    white-space: nowrap;
+}
+
+#content3 {
+    color: #384989;
+    position: relative;
+    right: 19em;
+    height: min-content;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 50em;
+}
+
+#content31 {
+    color: #384989;
+    position: relative;
+    right: 58em;
+    top: 1.5em;
+    height: min-content;
+    white-space: nowrap;
+    width: 50em;
+}
+
+#content4 {
+    color: #384989;
+    position: relative;
+    right: 16em;
+    width: 80em;
+    white-space: nowrap;
+}
+
+
+/* like, comment, share */
+
+.lcs {
+    display: flex;
+    flex-direction: row;
+    color: #9D6385;
+    justify-content: space-evenly;
+    width: 40em;
+    height: 2em;
+    position: relative;
+    top: 3em;
+    right: 50em;
+}
+
+.lcs2 {
+    display: flex;
+    flex-direction: row;
+    color: #9D6385;
+    justify-content: space-evenly;
+    width: 40em;
+    height: 2em;
+    position: relative;
+    top: 3em;
+    right: 80em;
+}
+
+#like,
+#comment,
+#share {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: 1em;
+}
+
+.like {
+    position: relative;
+    right: 5em;
+    display: flex;
+    width: 3.5em;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.comment {
+    position: relative;
+    left: 2em;
+    display: flex;
+    width: 6.5em;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.share {
+    position: relative;
+    left: 9.5em;
+    display: flex;
+    width: 5em;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
