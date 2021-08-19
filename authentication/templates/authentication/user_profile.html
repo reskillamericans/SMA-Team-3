@@ -8,17 +8,17 @@
           <div class="row justify-content-center">
             <div class="col-lg-3 order-lg-2">
               <div class="card-profile-image">
-                {% if user.avatar%}
-                <a href="{{ user.avatar.url }}">
+                {% if u.avatar%}
+                <a href="{{ u.avatar.url }}">
                   <img
-                    src="{{ user.avatar.url }}"
+                    src="{{ u.avatar.url }}"
                     class="rounded-circle"
                     width="160px"
                     height="160px"
                   />
                 </a>
                 {% else %}
-                <a href="{{ user.avatar.url }}">
+                <a href="{{ u.avatar.url }}">
                   <img
                     src="{% static 'profile/user-avatar.png'%}"
                     class="rounded-circle"
@@ -52,6 +52,11 @@
                     <span class="description"
                       ><a href="{% url 'posts:my-profile' %}"
                         >Posts</a
+                      ></span
+                    >
+                    <span class="description"
+                      ><a href="{% url 'chat:create-message' u %}"
+                        >Chat</a
                       ></span
                     >
                   </div>
@@ -122,6 +127,7 @@
             {% if not sent_friend_requests %}
             <h5><i>No sent requests!</i></h5>
             {% else %} {% for s_request in sent_friend_requests %}
+            {% if s_request.follower_id.avatar %}
             <a href="{{ s_request.to_user.profile.get_absolute_url }}"
               ><img
                 src="{{ s_request.follower_id.avatar.url }}"
@@ -130,6 +136,16 @@
                 height="40"
                 alt=""
             /></a>
+            {% else %}
+            <a href="{{ s_request.to_user.profile.get_absolute_url }}"
+              ><img
+                src="{% static 'profile/user-avatar.png'%}"
+                class="rounded mr-2"
+                width="40"
+                height="40"
+                alt=""
+            /></a>
+            {% endif %}
             <a href="{{ s_request.to_user.profile.get_absolute_url }}"
               ><b>{{ s_request.follower_id.username }}</b></a
             >
@@ -154,6 +170,7 @@
             {% if not rec_friend_requests %}
             <h5><i>No received requests!</i></h5>
             {% else %} {% for r_request in rec_friend_requests %}
+            {% if r_request.user_id.avatar %}
             <a href="{{ r_request.user_id.avatar.get_absolute_url }}"
               ><img
                 src="{{ r_request.user_id.avatar.url }}"
@@ -162,6 +179,16 @@
                 height="40"
                 alt=""
             /></a>
+            {% else %}
+            <a href="{{ r_request.user_id.avatar.get_absolute_url }}"
+              ><img
+                src="{% static 'profile/user-avatar.png'%}"
+                class="rounded mr-2"
+                width="40"
+                height="40"
+                alt=""
+            /></a>
+            {% endif %}
             <a
               class="mr-2 align-middle"
               href="{{ r_request.from_user.profile.get_absolute_url }}"

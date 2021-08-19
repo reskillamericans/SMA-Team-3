@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 p-5">
-        <form method="GET" action="{% url 'chat:create-message' %}">
+        <form method="GET" action="">
           <br>
           <button class="btn btn-light p-3" type="submit">Start New Message</button>
         </form>
@@ -17,7 +17,7 @@
     <br>
     <div class="row mb-3">
       <div class="card col-md-12 p-5 shadow-sm">
-        <h4>Sender: {{ chat.receiver.username }} </h4>
+        <h4>Sender: {{ chat.sender.username }} </h4>
         <br>
 
         {% if chat.read_at %}

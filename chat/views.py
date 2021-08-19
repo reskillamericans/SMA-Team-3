@@ -17,12 +17,11 @@ def message_list_details(request):
     return render(request, 'chat/inbox.html', context)
 
 @login_required(login_url='/accounts/login/')
-def create_message(request):
+def create_message(request, id):
     sender = User.objects.get(id=request.user.id)
     if request.method == 'GET':
-        username = request.GET.get('username')
-        #        receiver = User.objects.get(username=username)
-
+        user = User.objects.get(id=id)
+        username = user.username
         if username is None or username == '':
             return redirect('posts:home')
         context = {
