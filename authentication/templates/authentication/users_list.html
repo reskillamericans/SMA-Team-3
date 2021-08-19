@@ -1,0 +1,61 @@
+{% extends "authentication/header.html" %} {% load static %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      {% if users %}
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          {% for user_p in users %}
+            {% if user_p != request.user %}
+              {% if user_p.avatar %}
+              <a href="{{ user_p.get_absolute_url }}"
+                ><img
+                  src="{{ user_p.avatar.url }}"
+                  class="rounded mr-2"
+                  width="40"
+                  height="40"
+                  alt=""
+              /></a>
+              {% else %}
+              <a href="{{ user_p.get_absolute_url }}"
+                ><img
+                  src="{% static 'profile/user-avatar.png'%}"
+                  class="rounded mr-2"
+                  width="40"
+                  height="40"
+                  alt=""
+              /></a>
+              {% endif %}
+              <a class="text-dark" href="{{ user_p.get_absolute_url }}"
+                ><b>{{ user_p.username }}</b></a
+              >
+              {% if not user_p.user in sent %}
+              <small class="float-right">
+                <a
+                  class="btn btn-primary mr-2"
+                  href="{% url 'authentication:send_friend_request' user_p.id %}"
+                  >Add Friend</a
+                >
+              </small>
+              {% else %}
+              <small class="float-right">
+                <a
+                  class="btn btn-warning mr-2"
+                  href="{% url 'authentication:cancel_friend_request' user_p.id %}"
+                  >Cancel Request</a
+                >
+              </small>
+              {% endif %}
+            {% endif %}
+              <br /><br />
+              {% endfor %}
+            </div>
+          </div>
+      {% else %}
+      <h5><i>No new people to add now! Please come back later!</i></h5>
+      {% endif %}
+    </div>
+   
+  </div>
+  {% endblock content %}
+</div>

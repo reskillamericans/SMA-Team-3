@@ -1,39 +1,81 @@
-{% extends "posts/layout.html" %} {% load static %}  {% block content %}
-<div class="container">
-  <div class="row">
+{% extends 'authentication/header.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<div class="content">
+  <div class="content">
     <div class="col-md-8">
       {% for post in posts %}
       <div class="card card-signin my-5">
         <div class="card-body">
-          <a
-            class="text-dark"
-            href="{{ post.user_name.profile.get_absolute_url }}"
-            ><b>{{ post.user_id }}</b></a
-          >
-          <br /><small class="text-muted"
-            >Posted on {{ post.created_at }}</small
-          >
-          <br /><br />
+          <a class="text-dark" href="{% url 'authentication:profile_view' post.user_id.username %}">
+            {{ post.user_id.username }}</a>
+          <br /><small class="text-muted">Posted on {{ post.created_at }}</small>
           <p class="card-text text-dark">{{ post.content }}</p>
         </div>
-        <a href="{% url 'posts:update-post' post.id %}"
-          ><img class="card-img-top" src="{{ post.image.url }}" alt="" width="100" height="100"
-        /></a>
-        {% if post.category %}
+        {% if post.image %}
+        <img src="{{post.image.url}}" alt="" width="150px" height="150px" />
         <br />
-        <p class="text-danger ml-3">
-          <b>Category: <i>{{ post.category }}</i></b>
+        {% else %} {% endif %}
+
+        {% if post.category %}
+        <p class="category text-danger ml-3">
+          <small>Category: <i>{{ post.category }}</i></small>
         </p>
         {% endif %}
         <div class="card-footer">
-          <a class="btn btn-outline-info" href="{% url 'posts:comment' post.id %}"
-            >Comments  {{ post.details.count }}</a
-          >
-        </div>
+          <div class="likes">
+            {% if post in liked_post %}
+              <a class="btn btn-white mr-3 unlike liker" onclick="liker(event)" href="javascript:void(0);">
+                <i class="las la-heart" id="{{ post.id }}"></i>
+              </a>
+            {% else %}
+
+              <a class="btn btn-white mr-3 like liker" onclick="liker(event)" href="javascript:void(0);">
+                <i class="lar la-heart" id="{{ post.id }}"></i>
+              </a>
+            {% endif %}
+            <span class="likes_count" id="post_{{ post.id }}">{{post.likes.count}}</span>
+          </div>
+
+        <a class="btn btn-outline-info" href="{% url 'posts:comment' post.id %}">Comments {{ post.details.count }}</a>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
 </div>
+</div>
 
-{% endblock content %}
+{% endblock content %} {% block jsfiles %}
+<script type="text/javascript">
+  const likeButtons = document.querySelectorAll(".liker");
+  const base_url = `${document.location.href}like`;
+
+  function liker(e){
+    e = e || window.event; 
+    var target = e.target || e.srcElement; 
+   // this.preventDefault();
+    const id = e.target.id
+    fetch(`${base_url}/${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data.liked)
+          const likes_count_element = document.querySelector(`#post_${id}`)
+          const liker_element = document.getElementById(`${id}`)
+          let likes_count = parseInt(likes_count_element.innerText)
+          if (data.liked) {
+            likes_count_element.innerText = likes_count + 1
+            liker_element.classList.remove('lar')
+            liker_element.classList.add('las')
+          } else {
+            likes_count_element.innerText = likes_count - 1
+            liker_element.classList.remove('las')
+            liker_element.classList.add('lar')
+          }
+        });
+
+    //console.log(data.liked);
+//    location.reload();
+  }
+
+  
+</script>
+{% endblock jsfiles %}

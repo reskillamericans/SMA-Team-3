@@ -21,11 +21,10 @@ from django.conf import settings
 from authentication.views import login
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # homapage
     path('', login, name="home"),
     path('accounts/', include('authentication.urls')),
     path('post/', include('posts.urls')),
-    # path('', include('home.urls')),
+    path('chat/', include('chat.urls')),
     path('password_reset/done/', views.PasswordResetDoneView.as_view(template_name='authentication/password'
                                                                                    '/password_reset_done.html'),
          name='password_reset_done'),
@@ -36,3 +35,6 @@ urlpatterns = [
                                                                               '/password_reset_complete.html'),
          name='password_reset_complete'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG: # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

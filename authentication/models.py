@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from .managers import CustomUserManager
+from django.db.models.signals import post_save
+from django.conf import settings
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -10,9 +12,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(_('Last Name'), max_length=255, default='user')
     phone = models.CharField(max_length=255, blank=True, null=True)
     email = models.EmailField(_('email address'), unique=True, default='e@email.com')
-    avatar = models.ImageField(blank=True, null=True)
+    avatar = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
     user_type = models.CharField(max_length=50, default='user')
     status = models.CharField(max_length=50, default='Active')
+    friends = models.ManyToManyField("user", blank=True)
     verified = models.BooleanField(default=False, blank=True)
     occupation = models.CharField(max_length=255, blank=True, null=True)
     company = models.CharField(max_length=255, blank=True, null=True)
@@ -31,6 +34,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+def post_save_user_model_receiver(sender, instance, created, *args, **kwargs):
+    if created:
+        try:
+            User.objects.create(user=instance)
+        except:
+            pass
+
+post_save.connect(post_save_user_model_receiver, sender=settings.AUTH_USER_MODEL)
 
 class UserSocials(models.Model):
     user_id = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -48,10 +59,10 @@ class UserSocials(models.Model):
 
 
 class Followers(models.Model):
-    user_id = models.OneToOneField(User, on_delete=models.CASCADE)
-    follower_id = models.ManyToManyField(User, related_name='follower_id')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follows_id')
+    follower_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follower_id', default=None)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
     created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
 
     def __str__(self):
-        return str(self.user.username)
+        return "From {}, to {}".format(self.user_id, self.follower_id)
