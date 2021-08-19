@@ -24,7 +24,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     follows_count = models.IntegerField(default=0, editable=False)
     time_zone = models.CharField(max_length=5, default='EST')
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
-    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True, editable=False)
+    created_at = models.DateTimeField(auto_now=True, null=True, blank=True, editable=False)
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
