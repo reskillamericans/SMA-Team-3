@@ -1,9 +1,12 @@
+import json
+
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import ListView
+
 from authentication.models import UserSocials
 
 from .forms import NewPostForm, UpdatePostForm, NewCommentForm
@@ -11,22 +14,22 @@ from .models import Posts, PostLikes, PostComments
 
 User = get_user_model()
 
+@login_required(login_url='/accounts/login/')
+def posts_feed(request):
+    posts = Posts.objects.order_by('-created_at').all()
+    liked = [i for i in Posts.objects.all() if PostLikes.objects.filter(liker_id=request.user, post_id=i)]
+    form = NewPostForm()
+#    if request.method == 'POST':
+#       create_post(request)
+    context = {
+        'form': form,
+        'posts': posts,
+        'liked_post': liked
+    }
+    return render(request, 'posts/home.html', context)
 
-class PostListView(ListView):
-    model = Posts
-    template_name = 'posts/home.html'
-    context_object_name = 'posts'
-    ordering = ['-created_at']
 
-    def get_context_data(self, **kwargs):
-        context = super(PostListView, self).get_context_data(**kwargs)
-        if self.request.user.is_authenticated:
-            liked = [i for i in Posts.objects.all() if PostLikes.objects.filter(liker_id=self.request.user, post_id=i)]
-            context['liked_post'] = liked
-        return context
-
-
-@login_required
+@login_required(login_url='/accounts/login/')
 def users_profile(request):
     user = User.objects.get(id=request.user.id)
     post = Posts.objects.filter(user_id=user)
@@ -36,49 +39,7 @@ def users_profile(request):
     return render(request, 'posts/user_post.html', context)
 
 
-@login_required
-def update_profile(request):
-    user_profile = UserSocials.objects.get(user_id=request.user.id)
-    avatar = request.FILES.get('avatar')
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        bio = request.POST.get('bio')
-        linkedin = request.POST.get('linkedin')
-        twitter = request.POST.get('twitter')
-        github = request.POST.get('github')
-        stackoverflow = request.POST.get('stackoverflow')
-        instagram = request.POST.get('instagram')
-        facebook = request.POST.get('facebook')
-
-        try:
-            user_profile.user_id.username = username
-            user_profile.user_id.email = email
-            user_profile.user_id.bio = bio
-            user_profile.user_id.avatar = avatar
-            user_profile.linkedin = linkedin
-            user_profile.twitter = twitter
-            user_profile.github = github
-            user_profile.stackoverflow = stackoverflow
-            user_profile.instagram = instagram
-            user_profile.facebook = facebook
-            user_profile.user_id.save()
-            user_profile.save()
-            messages.success(request, f'Profile Updated!')
-            return redirect('posts:my-profile')
-
-        except UserSocials.DoesNotExist:
-            messages.error('User not found!')
-
-    context = {
-        'user_profile': user_profile,
-        'user_profile.user_id': user_profile.user_id
-    }
-
-    return render(request, 'posts/edit_profile.html', context)
-
-
-@login_required
+@login_required(login_url='/accounts/login/')
 def create_post(request):
     user = User.objects.get(id=request.user.id)
     if request.method == "POST":
@@ -95,12 +56,12 @@ def create_post(request):
     return render(request, 'posts/create_post.html', {'form': form})
 
 
-@login_required
+@login_required(login_url='/accounts/login/')
 def post_detail(request, pk):
     post = get_object_or_404(Posts, pk=pk)
+    print(post.image)
     user = User.objects.get(id=request.user.id)
     comment = PostComments.id
-    print(comment)
     if request.method == 'POST':
         form = NewCommentForm(request.POST)
         if form.is_valid():
@@ -109,13 +70,16 @@ def post_detail(request, pk):
             data.username = user
             data.user_id = user
             data.save()
-            return redirect('posts:home')
+            if post.id == user.id:
+                return redirect('posts:my-profile')
+            else:
+                return redirect('posts:home')
     else:
         form = NewCommentForm()
     return render(request, 'posts/post_detail.html', {'post': post, 'form': form, 'comment': comment})
 
 
-@login_required
+@login_required(login_url='/accounts/login/')
 def update_post(request, pk):
     post = get_object_or_404(Posts, pk=pk)
     if request.method == "POST":
@@ -136,7 +100,7 @@ def update_post(request, pk):
     return render(request, 'posts/edit_post.html', {'form': form, 'post': post})
 
 
-@login_required
+@login_required(login_url='/accounts/login/')
 def post_delete(request, pk):
     post = get_object_or_404(Posts, pk=pk)
     context = {'post': post}
@@ -146,7 +110,7 @@ def post_delete(request, pk):
     return render(request, 'posts/delete_post.html', context)
 
 
-@login_required
+@login_required(login_url='/accounts/login/')
 def delete_comment(request, pk):
     comment = get_object_or_404(PostComments, pk=pk)
     context = {}
@@ -154,3 +118,21 @@ def delete_comment(request, pk):
         comment.delete()
         return redirect('posts:home')
     return render(request, 'posts/delete_post.html', context)
+
+
+@login_required(login_url='/accounts/login/')
+def like(request, pk):
+    user = User.objects.get(id=request.user.id)
+    post = get_object_or_404(Posts, pk=pk)
+    liked = False
+    like = PostLikes.objects.filter(liker_id=user, post_id=post)
+    if like:
+        like.delete()
+    else:
+        liked = True
+        PostLikes.objects.create(liker_id=user, post_id=post)
+    resp = {
+        'liked': liked
+    }
+    response = json.dumps(resp)
+    return HttpResponse(response, content_type="application/json")
