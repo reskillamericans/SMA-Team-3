@@ -53,19 +53,17 @@
         </li>
       </ul>
       {% if user.avatar%}
-      <a href="#"
-        ><img
+     <img
           id="profile"
           src="{{ user.avatar.url }}"
           alt="profile picture"
-      /></a>
+      />
       {% else %}
-      <a href="#"
-        ><img
+     ><img
           id="profile"
           src="{% static 'profile/user-avatar.png' %}"
           alt="profile picture"
-      /></a>
+      />
       {% endif %}
     </header>
     {% for message in messages %} {% if message.error %}

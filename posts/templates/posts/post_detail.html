@@ -75,6 +75,9 @@
               {{ detail.user_id.username}}</b></a>
           <br /><small>{{ detail.created_at }}</small><br /><br />
           <p class="card-text text-dark">{{ detail.content }}</p>
+          {% if post.user_id == user %}
+          <a class="btn btn-outline-danger" href="{% url 'posts:delete-comment' detail.id %}">Delete</a>
+          {% endif %}
         </div>
         <hr class="my-1" />
         {% endfor %}
