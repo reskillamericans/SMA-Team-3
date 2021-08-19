@@ -42,6 +42,10 @@
 
           <a class="btn btn-outline-info" href="{% url 'posts:comment' post.id %}">Comments {{ post.details.count }}</a>
         </div>
+        {% if post.user_id == user %}
+        <span><a class="btn btn-outline-info mr-3" href="{% url 'posts:update-post' post.id %}">Update</a>
+       <a class="btn btn-outline-danger" href="{% url 'posts:delete' post.id %}">Delete</a></span>  
+          {% endif %}
       </div>
       {% endfor %}
     </div>
