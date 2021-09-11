@@ -9,37 +9,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="lg-header.css" />
     <link rel="stylesheet" href="landing.css" />
     
     <title>Landing Page</title>
 </head>
 <body>
-    <header id="lp-header">
+    <header id="lp-header" class="landing-header">
         <div class="lp-left-header">
-            <img id="lp-header-logo" class="header-logo" src="images/sma3-header.svg" alt="sma 3 header logo"/>
-        </div>
-        <div class="lp-header-right">
-            <a class="links" href="#About">About</a>
-            <a class="links" href="#Company">Company</a>
-            <a class="links" href="#Blog">Blog</a>
-            <button id="btn-header" class="links header-login">Login</button>
+            <div class="logo-holder">
+                <img id="lp-header-logo" class="header-logo" src="images/sma3-header.svg" alt="sma 3 header logo"/>
+            </div>
+            </div>
+        <div class="lp-right-header">
+            <div class="link-holder">
+                <a class="links" href="#About">About</a>
+                <a class="links" href="#Company">Company</a>
+                <a class="links" href="#Blog">Blog</a>
+                <button id="btn-header" class="links header-login">Login</button>
+            </div>
         </div>
     </header>
     <section id="lp-main" class="lp-section-one">
         <article class="content-left">
-            <h1 class="content-left-header">Get the lastes tech info.</h1>
-            <p class="content-left-info">
-                We are social networking that caters to 
-                software developers and creatives 
-                within the tech community.
-            </p>
-            <div>
-                <button id="btn-get-started" class="content-left-button">Get Started</button>
+            <div class="content-left-holder">
+                <h1 class="content-left-header">Get the lastest tech info.</h1>
+                <p class="content-left-info">
+                    We are social networking that caters to 
+                    software developers and creatives 
+                    within the tech community.
+                </p>
+                <div class="left-button-holder">
+                    <button id="btn-get-started" class="content-left-button">Get Started</button>
+                </div>
             </div>
         </article>
         <article class="content-right">
-            <img id="rafiki-img" class="rafiki" src="images/rafiki.svg" alt="male image">
+            <div class="content-right-holder">
+                <img id="rafiki-img" class="rafiki" src="images/rafiki.svg" alt="male image">
+            </div>
         </article>
     </section>
 
@@ -76,6 +84,9 @@
         <article class="features-right">
             <img id="amico-img" class="amico" src="images/amico.svg" alt="female-image">
         </article>
+    </section>
+
+    <section class="lp-footer">
         <article id="footer-list" class="features-footer">
             <div class="footer-content">
                 <div class="footer-content-one">

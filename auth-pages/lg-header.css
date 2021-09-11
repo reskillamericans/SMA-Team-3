@@ -1,0 +1,110 @@
+/* LANDING PAGE HEADER */
+:root {
+    /* font */
+    --epilogue: 'Epilogue', sans-serif;
+
+    /* font-sizes */
+    --fs-12: 12px;
+    --fs-14: 14px;
+    --fs-15: 15px;
+    --fs-16: 16px;
+    --fs-18: 18px;
+    --fs-24: 24px;
+    --fs-36: 36px;
+
+    /* font-weight */
+    --fw-lt: 300;
+    --fw-norm: 400;
+    --fw-med: 500; 
+    --fw-bold: 700;
+
+    /* colors */
+    --blue: #384989;
+    --lt-blue: #639CC8;
+    --yellow: #F8C164;
+    --orange: #EE9062;
+    --pk-violet: #914C75;
+}
+
+* {
+    margin: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--epilogue);
+    overflow: hidden;
+}
+.landing-header{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0; 
+    background: white;
+    z-index: 1; 
+}
+/* LEFT SIDE */
+.lp-left-header {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+.logo-holder {
+    width: 100%;
+}
+.logo-holder{
+    margin: auto 1rem;
+    align-items: center;
+}
+/* RIGHT SIDE */
+.lp-right-header {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.link-holder {
+    width: auto;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+/* links */
+.links {
+    width: 100px;
+    font-weight: var(--fw-med);
+    font-size: var(--fs-16);
+    color:black;
+    text-align: center;
+    text-decoration: none;
+}
+a.links:hover,
+a.links:focus {
+    color: var(--lt-blue);
+    font-weight: var(--fw-bold);
+}
+/* login-button */
+.header-login {
+    width: 86px;
+    height: 38px;
+    font-weight: var(--fw-med);
+    border-radius: 10px;
+    background-color: var(--orange);
+    border: 2px solid var(--orange);
+    box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
+}
+.header-login:hover,
+.header-login:focus {
+    opacity: 80%;
+    color: var(--lt-blue);
+    font-weight: var(--fw-bold);
+}
+.header-login:visited{
+    background-color: var(--yellow);
+}
+
