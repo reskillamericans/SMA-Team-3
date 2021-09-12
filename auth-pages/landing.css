@@ -101,20 +101,54 @@ body {
     width: 56%;
     height: 80%;
     display: flex;
+    flex-direction: column;
 }
 .content-right-holder{
     width: 100%;
+    display: flex;
+    flex-direction: column;
     margin: 5rem 0;
     margin-right: 2.84rem;
 }
-.rafiki-img {
-    min-width: 50%;
+.rafiki{
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
     margin-top: 205.6;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+}
+.rafiki-lg {
+    display: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
+    .lp-section-one {
+        width: 100%;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-content: center;
+    }
+    .content-right {
+        width: 95%;
 
+    }
+    .content-right-holder {
+        width: 100%;
+        margin: auto;
+    }
+    .rafiki {
+        max-width: 60%;
+        min-width: 344px;
+        min-height: 282px;
+    }
+    .content-left-header {
+        font-size: 2.5em;
+        line-height: auto;
+    }
+    .content-left-info {
+        font-size: 1.8em;
+    }
+    
     
 }
 
