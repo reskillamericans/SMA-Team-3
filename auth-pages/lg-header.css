@@ -108,3 +108,10 @@ a.links:focus {
     background-color: var(--yellow);
 }
 
+@media screen and (max-width: 500px) {
+    .lp-right-header {
+        display: none;
+    }
+    
+}
+
