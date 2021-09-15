@@ -79,7 +79,7 @@ body {
     width: 100px;
     font-weight: var(--fw-med);
     font-size: var(--fs-16);
-    color:black;
+    color:var(--blue);
     text-align: center;
     text-decoration: none;
 }

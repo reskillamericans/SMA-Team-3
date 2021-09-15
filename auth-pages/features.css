@@ -60,6 +60,7 @@ body {
 }
 .features-left{
     width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     
@@ -71,6 +72,7 @@ body {
     background-image: url(images/lp-feature-triangles.svg);
     background-repeat: no-repeat;
     background-position: -30px 145px; 
+    
 }
 .features-left-content{
     margin-left: 2rem;
@@ -148,23 +150,23 @@ sup {
 }
 .features-right {
     width: 50%;
-    /* height: auto; */
-    /* margin: 5rem 0; */
-    /* height: 720px; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .features-right-holder {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     margin: 5rem 0;
-    /* margin-top: 5rem; 
-    margin-bottom: 5rem;  */
-    margin-right: 0; 
-    margin-bottom: 0; 
-    height: 635px;
-    text-align: center;
+    margin-right: 2.84rem;
 }
 .amico {
-    width: auto;
-    margin: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 205.6;
+    min-width: 344.33px;
+    min-height: 260.2px;
 }
 
 /* Footer */
@@ -234,4 +236,98 @@ sup {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1400px) {
+    /* .features-left{
+        background-size: auto;
+        background-size: 100%; 
+    } */
+    .features-left-holder{
+        background-position: auto;
+        background-size: 90%; 
+    }
+    .features-left-content{
+        margin-left: 2rem;
+    }
+    .features-left-info {
+        font-size: 1.8em;
+        font-weight: var(--fw-sbold);    
+    }
+    sup {
+        height: 12px;
+        font-size: 13px;
+    }
+    .features-header {
+        margin-bottom: 1em;
+        font-size: 2.7em;
+    }
+    
+    
+    .features-list {
+        margin-left: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .features-list-content {
+        height: 56px;
+        /* display: flex;
+        flex-direction: row; */
+        margin-bottom: 1em;
+    }
+    /* .check {
+        margin: auto 0;
+    }
+    .check-mark {
+        width: 33.33px;
+        height: 33.33px;
+    } */
+    
+    .details {
+        font-size: 1.21em;
+    }
+    .features-button-holder {
+        width: 90%;
+        text-align: center;
+    }
+    .features-button {
+        width: 40%;
+        min-width: 243px;
+        height: 53px;
+        min-height: 38px;
+        margin: 0 auto;
+        font-size: 1.15em;
+    }
+    .amico {
+        min-width: 344.33px;
+        min-height: 260.2px;
+    }
+    
+}
+@media  screen and (max-width: 1250px) {
+    .features-left-holder{
+        background-position: 100px auto;
+    }
+    /* .features-left-content{
+        margin-left: 2rem;
+    } */
+    .features-left-info {
+        font-size: 1.6em;
+        font-weight: var(--fw-sbold);    
+    }
+    sup {
+        height: 12px;
+        font-size: 13px;
+    }
+    .features-header {
+        margin-bottom: 1em;
+        font-size: 2.5em;
+    }
+    .features-button {
+        width: 40%;
+        height: 50px;
+        margin: 0 auto;
+        font-size: 1.15em;   
+    }
+    
 }
