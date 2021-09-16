@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lg-header.css" />
     <link rel="stylesheet" href="landing.css" />
+    <link rel="stylesheet" href="features.css" />
+    
     
     <title>Landing Page</title>
 </head>
@@ -34,7 +36,6 @@
 
     <section id="lp-main" class="lp-section-one">
         <article class="content-left">
-            <div id="bg"></div>
             <div class="content-left-holder">
                 <h1 class="content-left-header">Get the lastest tech info.</h1>
                 <p class="content-left-info">
@@ -43,20 +44,67 @@
                     within the tech community.
                 </p>
                 <div class="left-button-holder">
-                    <button id="btn-next" class="content-left-button">Next</button>
+                    <button id="btn-next" type="button" class="content-left-button">Next</button>
                 </div>
             </div>
         </article>
         <article class="content-right">
             <div class="content-right-holder">
                 <img id="rafiki-img" class="rafiki" src="images/rafiki.svg"  alt="male image">
-                <!-- <img id="rafiki-img" class="rafiki-lg" src="images/rafiki.svg" width= 721 height= 512 alt="male image"> -->
-                <!-- <img id="rafiki-img" class="rafiki" src="images/rafiki.svg" width= 500 height= 412 alt="male image">
-                <img id="rafiki-img" class="rafiki" src="images/rafiki.svg" width= 500 height= 412 alt="male image"> -->
             </div>
         </article>
     </section>
 
-    
+    <section id="lp-features-window" class="features">
+        <article class="features-left">
+            <div class="features-left-holder">
+                <div class="features-left-content">
+                    <p class="features-left-info">
+                        <span>At SMA<sup class="super">3</sup>, we offer a place for designers and 
+                        developers to interact with each other socially 
+                        as well as ask questions about different fields.</span>
+                    </p>
+                    <h3 class="features-header">Features</h3>
+                
+                    <div class="features-list">
+                        <div class="features-list-content">
+                            <div class="check">
+                                <img class="check-mark" src="images/check-circle.svg" />
+                            </div>
+                            <div class="details">
+                                <p>Connect with other developers</p>
+                            </div>
+                        </div>
+                        <div class="features-list-content">
+                            <div class="check">
+                                <img class="check-mark" src="images/check-circle.svg" />
+                            </div>
+                            <div class="details">
+                                <p>Ask software questions with others in your field</p>
+                            </div>
+                        </div>
+                        <div class="features-list-content">
+                            <div class="check">
+                                <img class="check-mark" src="images/check-circle.svg" />
+                            </div>
+                            <div class="details">
+                                <p>Find the latest trends in software and design</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="features-button-holder">
+                        <button id="btn-gs" class="features-button">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article class="features-right">
+            <div class="features-right-holder">
+                <img id="amico-img" class="amico" src="images/amico-plain.svg" alt="female-image">
+            </div>
+        </article>
+    </section>
+
+    <script src="landing.js"></script>
 </body>
 </html>
