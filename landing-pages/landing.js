@@ -1,19 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     // DOM ELEMENTS
-
-    const landing = document.getElementById("lp-main");
-    const features = document.getElementById("lp-features-window");
     const btnNext = document.getElementById("btn-next");
 
-    features.style.display = "none";
-
-
-    
+    // function to open about/features page 
     function showFeatures() {
-        window.location = "about.html"
-        
+        window.location = "about.html"  
     }
 
+    // Button opens about/features page 
     btnNext.addEventListener('click', function(e) {
         e.preventDefault();           
     }); 
