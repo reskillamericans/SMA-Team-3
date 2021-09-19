@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* KEEP LOGGED IN*/
+
+/* Selecting type checkbox by using parent*/
+
+.container > [type="checkbox"]{
+    opacity: 0; 
+}
+  
+/* Styling the label  */
+
+.container > [type="checkbox"] + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    color: black;
+    line-height: 25px; 
+}
+
+ /* Styling the box around the label before it is checked */
+.container > [type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    background: rgba( 196, 196, 196, 0.49);
+}
+.container > [type="checkbox"] + label::before {
+    width: 21px;
+    height: 21px;
+}
+ 
+/* Outline in checked position */
+.container >[type="checkbox"]:checked + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 21px;
+    height: 21px;
+    background: rgba( 196, 196, 196, 0.49);
+    border: none;
+}
+.container >[type="checkbox"]:checked + label::before {
+    border: 2px solid #CCCCCC;
+}
+
+/* Adding Bg-image "X" design once label is checked */
+.container > [type="checkbox"]:checked + label::after{
+    content: "";
+    position: absolute;
+    margin: 2.5px 3px;
+    width: 21px;
+    height: 21px;
+    background-image: url(images/check.svg);
+    background-size: 17px;
+    background-repeat: no-repeat, no-repeat;
+    transform: scale(1);
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+/* Hiding the bg-image "X"  when box is not checked*/
+    .container > [type="checkbox"]:not(checked) + label::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 21px;
+    height: 21px;
+    background-image: url(images/check.svg);
+    background-size: 17px;
+    background-repeat: no-repeat, no-repeat;
+    transform:scale(0);
+    opacity:(0);
+}
+
+
+
+
+

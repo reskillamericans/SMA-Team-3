@@ -25,6 +25,7 @@
     --yellow: #F8C164;
     --orange: #EE9062;
     --pk-violet: #914C75;
+    --auth-bg: #E5E5E5;
 }
 *,
 *::before,
@@ -37,7 +38,9 @@ body {
     width: 100%;
     height: 100%;
     font-family: var(--epilogue);  
+    overflow-y: hidden;
 }
+
 .login-window {
     width: 100%;
     height: 100%;
@@ -50,21 +53,28 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: url(images/lg-triangles.svg) no-repeat, 
-        linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, #384989 100%);
-    background-position: center left; 
+    background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, #384989 100%);
+   
+}
+.triangles-holder {
+    width: 100%;
+    min-width: auto;
+    height: 100%;
+    background: url(images/lg-triangles.svg) no-repeat;
+    background-position: 20px; 
+    background-size: 100%;
 }
 .login-left-holder {
-    width: 100%;
+    width: 80%;
     height: 100%;
-    margin: 10rem auto;
+    margin: auto;
     text-align: center; 
 }
 .login-left-header {
-    width: 509px;
-    height: 188px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
-    margin-top: 18.5rem;
+    margin-top: 27rem;
     color: white;
     opacity: 90%;
     font-size: 96px;
@@ -76,62 +86,65 @@ body {
     font-size: 50px;
 }
 /* Right Side */
-.right-side {
+.login-right-side {
     width: 50%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background: var(--auth-bg);
 }
 /* home button */
-.icon-holder {
-    width: 100%;
-    height: auto;
-}
-.icon-btn {
-    float: right;
-    margin: .8rem auto;
-    margin-right: .8rem;
-    border: none;
-    background: transparent;
-}
-/* Left Side */
+
 .login-right-holder {
-    width: auto;
-    height: auto;
-    margin: auto;
-    margin-top: 19rem;
-    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
     color: var(--blue);
+}
+.login-form-holder {
+    width: 100%;
+    margin: 2rem auto;
+}
+.lg-form {
+    width: 450px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 0 auto;
 }
 .login-form-title {
     width: 100%;
     text-align: center;
 }
+
 .lg-title {
     font-size: 36px;
     color: var(--blue);
     font-weight: var(--fw-sbold);
-    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 3.3rem;
 }
 .login-form-container {
     display: flex;
+    width: 100%;
+    max-width: 450px;
     height: auto;
-    margin-top: 0;
+    margin: 0 auto;
     padding: 1rem auto;
-    flex-direction: column;
     align-items: center;  
     font-size: 18px;
     line-height: 21px;
     text-align: center;
 }
-.login-form-container:nth-child(1) {
-    margin-bottom: 1.5rem;
-}
-.login-form-container:nth-child(2) {
-    margin-bottom: 1rem;
-}
 .login-label {
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
+    min-width: 241px;
     text-align: left;
     margin: .75rem auto;
     margin-bottom: 0;
@@ -140,28 +153,55 @@ body {
     font-weight: var(--fw-med);
     line-height: 12.3px;
 }
-.login-input{
-    width: 450px;
+.input-icon {
+    padding: 8px;
+    background: rgba( 196, 196, 196, 0.49);
+    width: 50px;
     height: 33px;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px 0 0 5px  ;
+}
+.lock {
+    margin-bottom: .8rem;
+}
+.login-input{
+    width: 100%;
+    max-width: 400px;
+    min-width: 213px;
+    height: 33px;
+    margin-bottom: 2rem;
     outline: none;
     border: 1px solid var(--very-lt-gray);
-    border-radius: 5px; 
+    border-radius: 0  5px 5px 0; 
     padding-left: 10px;
     background: rgba( 196, 196, 196, 0.49);
+}
+.password {
+    margin-bottom: .8rem;
 }
 /* keep login */
 .mark {
     width: 100%;
+    max-width: 450px;
+    min-width: 241px;
     height: auto;
+    margin: .2rem auto;
+    text-align: left;
+}
+
+.container label {
+    margin-left: 8px;
 }
 .keep-login{
-    font-size: var(--fs-12);
-    
+    font-size: var(--fs-12);  
 }
 .login-submit {
-    width: 243px;
+    width: 54%;
+    max-width: 243px;
     height: 38px;
-    margin-top: 2.5rem;
+    margin: 2.5rem auto;
     margin-bottom: .3rem;
     font-size: 15px;
     font-weight: var(--fw-sbold);
@@ -189,6 +229,90 @@ body {
 .login-forgot {
     width: 100%;
     text-align: center;
+}
+.icon-holder {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+.icon-btn {
+    border: none;
+    background: transparent;
+}
+
+/*  max-width 1240px*/
+@media screen and (max-width: 1240px) {
+    .login-left-header {
+        font-size: 5em;
+    }
+    .lg-title {
+        font-size: 1.9em;
+    }
+    .input-icon {
+        width: 40px;
+    }
+    .lg-form {
+        width:100%;
+    }
+    .login-submit {
+        min-width: 243px;
+    }
+}
+
+/* max-width 1200px */
+@media screen and (max-width: 1200px) {
+    .login-left{
+        display: none;
+    }
+    .login-right-side {
+        width: 100%;
+        min-width: 100%;
+        background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, #384989 100%);
+    }
+    .right-triangles-holder{
+        z-index: 3;
+        min-width: 60%;
+        height: 100%;
+        margin: 1rem .8rem;
+        background: url(images/lg-triangles.svg) no-repeat;
+        background-position: center top; 
+        background-size: 65%;
+    }
+    .login-right-holder {
+        margin: 200px auto;
+    }
+    .lg-title {
+        color: white;
+    }
+    .login-form-container,
+    .login-label,
+    .mark {
+        width: 90%;
+    }
+}
+/* max-width 941px  */
+@media screen and (max-width: 941px) {
+    .right-triangles-holder{
+        background-position: center top; 
+        background-size: 575px;
+    }
+    .lg-title {
+        font-size: 1.5em;
+    }
+    .input-icon {
+        width: 30px;
+    }  
+}
+/* max-width 500px */
+@media screen and (max-width: 500px) {
+    .right-triangles-holder{
+        background-position: 20px top; 
+        background-size: 100%;
+    }
+    .login-right-holder {
+        margin: 50px auto;
+    }
 }
 
 
