@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Pia Torain" />
+    <meta name="description" content="Social Media App Team 3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="registration.css" />
+    
+    <title>Registration Page</title>
+    
+</head>
+<body>
+    <header class="auth-header">
+        
+    </header>
+
+    <!-- Login Page -->
+    <section id="registration_page" class="registration-window">
+        <!-- Left Side -->
+        <article class="registration-left">
+            <div id="reg-left-triangles" class="reg-triangles-holder">
+            
+                <!-- <div id="registration-left-header" class="reg-left-holder">
+                    <p class="reg-left-header">WELCOME TO SMA<sup class="sup-login">3</sup></p>
+                </div> -->
+            </div>
+        </article>
+         <!-- /Left Side -->
+
+         <!-- Right Side -->
+        <article id="reg-right" class="reg-right-side">
+            
+
+            <div id="reg-triangles" class="reg-triangles-holder">
+                <div id="reg-holder" class="reg-right-holder">
+                    <div class="reg-form-holder">
+                        
+
+                        <!-- Registration Form -->
+                        <form action="/registration" method="POST" id="registration-form" class="reg-form">
+                            <div class="reg-form-title">
+                                <p class="reg-title">REGISTER TO JOIN US</p>
+                            </div>
+
+                            <!-- Full Name -->
+                            <label class="reg-label" for="full_name">FULL NAME</label>
+                            <div class="reg-form-container">
+                                <img class="input-icon" src="images/user.svg"alt="user icon"/>
+                                <input class="reg-input" name="full_name" type="email" id="full_name" autocomplete="on" required/>
+                            </div>
+                            <!-- /Full Name -->
+
+                            <!-- User Name-->
+                            <label class="reg-label" for="user_name">USER NAME</label>
+                            <div class="reg-form-container">
+                                <img class="input-icon" src="images/user.svg"alt="user icon"/>
+                                <input class="reg-input" name="user_name" type="email" id="user_name" autocomplete="on" required/>
+                            </div>
+                            <!-- /User Name -->
+
+                            <!-- Email -->
+                            <label class="reg-label" for="new_email">E-MAIL ADDRESS</label>
+                            <div class="reg-form-container">
+                                <img class="input-icon" src="images/mail.svg"alt="email icon"/>
+                                <input class="reg-input" name="new-email" type="email" id="new_email" autocomplete="on" required/>
+                            </div>
+                            <!-- /Email -->
+
+                            <!--  -->
+                            <label class="reg-label" for="user-email">E-MAIL ADDRESS</label>
+                            <div class="reg-form-container">
+                                <img class="input-icon" src="images/mail.svg"alt="email icon"/>
+                                <input class="reg-input" name="user-email" type="email" id="user-email" autocomplete="on" required/>
+                            </div>
+                            <!--  -->
+                            <!-- Registration Password-->
+                            <label class="reg-label" for="new_password">PASSWORD</label>
+                            <div class="reg-form-container">
+                                <img class="input-icon lock" src="images/lock.svg" alt="password-icon"/>
+                                <input class="reg-input password" name="new_password" type="password" id="new_password"  autocomplete="off" required/>
+                            </div>
+                            <!-- /Registration Password -->
+
+                            <!-- Confirm Password -->
+                            <label class="reg-label" for="conf_password">COMFIRM PASSWORD</label>
+                            <div class="reg-form-container">
+                                <img class="input-icon lock" src="images/lock.svg" alt="password-icon"/>
+                                <input class="reg-input password" name="conf_password" type="password" id="conf_password"  autocomplete="off" required/>
+                            </div>
+                            <!-- /Confirm Password -->
+                            
+                            <!-- Stay signed in -->
+                            <div class="mark">
+                                <div class="container">
+                                <!-- <form> -->
+                                    <input type="checkbox" id="keep" name="sign"  hidden>
+                                    <label class="keep-reg" for="keep" >KEEP ME LOGGED IN</label>
+                                <!-- </form> -->
+                                </div>
+                            </div>   
+                            <!-- /Stay signed in  -->
+                            
+                            <!-- Register and Go to Login -->
+                            <div class="reg-form-container">
+                                <input class="reg-submit" id="reg-btn" type="submit" value="REGISTER" /> 
+                            </div>
+                            <!-- /Register and Go to Login -->
+            
+                            <!-- New user-->
+                            <p class="acct-already">
+                                ALREADY HAVE AN ACCOUNT? 
+                            </p>
+                            <p class="signin-link">
+                                <input class="reg-signin-link" id="reg_signin" type="submit" value="SIGN IN"> OR 
+                                <input class="login-forgot" id="log-forgot" type="submit" value="FORGOT YOUR PASSWORD?">
+                            </p>
+                                <!-- /New user-->
+                            
+        
+                            
+                        </form>
+                        <!-- /Login Form -->
+                    </div>
+                    <div class="icon-holder">
+                        <button id="sma-btn" class="icon-btn">
+                            <img src="images/sma-logo.svg" alt="home button">
+                        </button>
+                    </div>
+                </div>
+
+                
+            </div>
+            
+        </article>
+        <!-- /Right Side -->
+    </section>
+    <!-- /Login Page -->
+</body>
