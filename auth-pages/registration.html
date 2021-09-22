@@ -21,15 +21,12 @@
         
     </header>
 
-    <!-- Login Page -->
+    <!-- Registration Page -->
     <section id="registration_page" class="registration-window">
         <!-- Left Side -->
         <article class="registration-left">
             <div id="reg-left-triangles" class="reg-triangles-holder">
-            
-                <!-- <div id="registration-left-header" class="reg-left-holder">
-                    <p class="reg-left-header">WELCOME TO SMA<sup class="sup-login">3</sup></p>
-                </div> -->
+        
             </div>
         </article>
          <!-- /Left Side -->
@@ -41,14 +38,14 @@
             <div id="reg-triangles" class="reg-triangles-holder">
                 <div id="reg-holder" class="reg-right-holder">
                     <div class="reg-form-holder">
-                        
-
                         <!-- Registration Form -->
                         <form action="/registration" method="POST" id="registration-form" class="reg-form">
                             <div class="reg-form-title">
                                 <p class="reg-title">REGISTER TO JOIN US</p>
                             </div>
 
+                           
+                            <!-- <i id="cell-phone-icon" class="fas fa-mobile-alt" style= "color:blue; font-weight: bold;"></i> -->
                             <!-- Full Name -->
                             <label class="reg-label" for="full_name">FULL NAME</label>
                             <div class="reg-form-container">
@@ -69,17 +66,17 @@
                             <label class="reg-label" for="new_email">E-MAIL ADDRESS</label>
                             <div class="reg-form-container">
                                 <img class="input-icon" src="images/mail.svg"alt="email icon"/>
-                                <input class="reg-input" name="new-email" type="email" id="new_email" autocomplete="on" required/>
+                                <input class="reg-input" name="new_email" type="email" id="new_email" autocomplete="on" required/>
                             </div>
                             <!-- /Email -->
 
-                            <!--  -->
-                            <label class="reg-label" for="user-email">E-MAIL ADDRESS</label>
+                            <!-- Phone Number  -->
+                            <label class="reg-label" for="phone">PHONE NUMBER</label>
                             <div class="reg-form-container">
-                                <img class="input-icon" src="images/mail.svg"alt="email icon"/>
-                                <input class="reg-input" name="user-email" type="email" id="user-email" autocomplete="on" required/>
+                                <i class="input-icon fas fa-phone" style= "color:blue;"></i>
+                                <input class="reg-input" name="phone" type="tel" id="phone" autocomplete="off" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
                             </div>
-                            <!--  -->
+                            <!-- /Phone Number  -->
                             <!-- Registration Password-->
                             <label class="reg-label" for="new_password">PASSWORD</label>
                             <div class="reg-form-container">
@@ -119,17 +116,17 @@
                             </p>
                             <p class="signin-link">
                                 <input class="reg-signin-link" id="reg_signin" type="submit" value="SIGN IN"> OR 
-                                <input class="login-forgot" id="log-forgot" type="submit" value="FORGOT YOUR PASSWORD?">
+                                <input class="reg-forgot" id="reg-forgot" type="submit" value="FORGOT YOUR PASSWORD?">
                             </p>
                                 <!-- /New user-->
                             
         
                             
                         </form>
-                        <!-- /Login Form -->
+                        <!-- /Registration Form -->
                     </div>
-                    <div class="icon-holder">
-                        <button id="sma-btn" class="icon-btn">
+                    <div class="reg-icon-holder">
+                        <button id="sma-btn" class="reg-icon-btn">
                             <img src="images/sma-logo.svg" alt="home button">
                         </button>
                     </div>
@@ -141,5 +138,5 @@
         </article>
         <!-- /Right Side -->
     </section>
-    <!-- /Login Page -->
+    <!-- /Registration -->
 </body>

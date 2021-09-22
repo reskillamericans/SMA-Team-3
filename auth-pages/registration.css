@@ -1,0 +1,217 @@
+/* REGISTRATION STYLES */
+
+:root {
+    --epilogue: 'Epilogue', sans-serif;
+
+    /* font-sizes */
+    --fs-12: 12px;
+    --fs-14: 14px;
+    --fs-15: 15px;
+    --fs-18: 18px;
+    --fs-24: 24px;
+    --fs-36: 36px;
+
+    /* font-weight */
+    --fw-lt: 300;
+    --fw-norm: 400;
+    --fw-med: 500; 
+    --fw-sbold: 600;
+    --fw-bold: 700;
+    --fw-super-bold: 900;
+
+    /* colors */
+    --blue: #384989;
+    --lt-blue: #639CC8;
+    --yellow: #F8C164;
+    --orange: #EE9062;
+    --pk-violet: #914C75;
+    --auth-bg: #E5E5E5;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--epilogue);  
+    overflow-y: hidden;
+}
+.registration-window {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+.reg-triangles-holder {
+    width: 100%;
+    min-width: auto;
+    height: 100%;
+    background: url(images/reg-triangles.svg) no-repeat;
+    background-position: 20px; 
+    background-size: 100%;
+}
+
+/* superscript */
+.sup-login {
+    font-size: 50px;
+}
+/* Right Side */
+.reg-right-side {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background: var(--auth-bg);
+}
+/* home button */
+
+.reg-right-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--blue);
+}
+.reg-form-holder {
+    width: 100%;
+    margin: 2rem auto;
+}
+.reg-form {
+    width: 450px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.reg-form-title {
+    width: 100%;
+    text-align: center;
+}
+
+.lg-title {
+    font-size: 36px;
+    color: var(--blue);
+    font-weight: var(--fw-sbold);
+    margin-top: 1rem;
+    margin-bottom: 3.3rem;
+}
+.login-form-container {
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem auto;
+    align-items: center;  
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+}
+.login-label {
+    width: 100%;
+    max-width: 450px;
+    min-width: 241px;
+    text-align: left;
+    margin: .75rem auto;
+    margin-bottom: 0;
+    padding-left: 2px;
+    font-size: 12px;
+    font-weight: var(--fw-med);
+    line-height: 12.3px;
+}
+.input-icon {
+    padding: 8px;
+    background: rgba( 196, 196, 196, 0.49);
+    width: 50px;
+    height: 33px;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px 0 0 5px  ;
+}
+.lock {
+    margin-bottom: .8rem;
+}
+.reg-input{
+    width: 100%;
+    max-width: 400px;
+    min-width: 213px;
+    height: 33px;
+    margin-bottom: 2rem;
+    outline: none;
+    border: 1px solid var(--very-lt-gray);
+    border-radius: 0  5px 5px 0; 
+    padding-left: 10px;
+    background: rgba( 196, 196, 196, 0.49);
+}
+/* .password {
+    margin-bottom: .8rem;
+} */
+/* keep login */
+.mark {
+    width: 100%;
+    max-width: 450px;
+    min-width: 241px;
+    height: auto;
+    margin: .2rem auto;
+    text-align: left;
+}
+
+.container label {
+    margin-left: 8px;
+}
+.keep-login{
+    font-size: var(--fs-12);  
+}
+.reg-submit {
+    width: 54%;
+    max-width: 243px;
+    height: 38px;
+    margin: 2.5rem auto;
+    margin-bottom: .3rem;
+    font-size: 15px;
+    font-weight: var(--fw-sbold);
+    background: var(--orange);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
+}
+.acct-already{
+    margin-bottom:.8rem;
+    text-align: center;
+    font-size: var(--fs-12);
+    font-weight: var(--fw-med);
+}
+.login-new-user,
+.reg-forgot {
+    padding: 0;
+    color: var(--orange);
+    font-size: var(--fs-12);
+    font-weight: var(--fw-med);
+    color: var(--orange);
+    border: none;
+    background: none;
+}
+.reg-forgot {
+    width: 100%;
+    text-align: center;
+}
+.reg-icon-holder {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+.reg-icon-btn {
+    border: none;
+    background: transparent;
+}

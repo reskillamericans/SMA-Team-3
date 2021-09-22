@@ -44,6 +44,7 @@ body {
 .login-window {
     width: 100%;
     height: 100%;
+    min-width: 375px;
     display: flex;
     flex-direction: row;
     justify-content: stretch;
@@ -60,9 +61,13 @@ body {
     width: 100%;
     min-width: auto;
     height: 100%;
+    margin: 0;
     background: url(images/lg-triangles.svg) no-repeat;
     background-position: 20px; 
-    background-size: 100%;
+    background-size: contain;
+}
+.mb-lg-triangles {
+    display: none;
 }
 .login-left-holder {
     width: 80%;
@@ -74,7 +79,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    margin-top: 27rem;
+    margin-top: 24.3rem;
     color: white;
     opacity: 90%;
     font-size: 96px;
@@ -108,14 +113,18 @@ body {
 }
 .login-form-holder {
     width: 100%;
-    margin: 2rem auto;
+    height: 400px;
+    margin: 4rem auto;
+    margin-bottom: 0;
+    justify-content: space-around;
 }
 .lg-form {
     width: 450px;
+    height: 550px;
+    margin: auto;
     display: flex;
-    text-align: center;
     flex-direction: column;
-    margin: 0 auto;
+    margin-bottom: 0;
 }
 .login-form-title {
     width: 100%;
@@ -158,28 +167,29 @@ body {
     background: rgba( 196, 196, 196, 0.49);
     width: 50px;
     height: 33px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
-    border: none;
+    border: 1px solid #CCCCCC;
+    border-right: none;
     border-radius: 5px 0 0 5px  ;
 }
-.lock {
-    margin-bottom: .8rem;
-}
+
 .login-input{
     width: 100%;
     max-width: 400px;
     min-width: 213px;
     height: 33px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     outline: none;
-    border: 1px solid var(--very-lt-gray);
+    border: none;
+    border-left: none;
     border-radius: 0  5px 5px 0; 
     padding-left: 10px;
     background: rgba( 196, 196, 196, 0.49);
 }
-.password {
-    margin-bottom: .8rem;
+.password,
+.lock {
+    margin-top: 0rem;
 }
 /* keep login */
 .mark {
@@ -189,13 +199,15 @@ body {
     height: auto;
     margin: .2rem auto;
     text-align: left;
+    color: var(--blue);
 }
 
 .container label {
     margin-left: 8px;
 }
-.keep-login{
+#kp-login {
     font-size: var(--fs-12);  
+    color: var(--blue);
 }
 .login-submit {
     width: 54%;
@@ -205,6 +217,7 @@ body {
     margin-bottom: .3rem;
     font-size: 15px;
     font-weight: var(--fw-sbold);
+    color: var(--blue);
     background: var(--orange);
     border: none;
     border-radius: 10px;
@@ -233,6 +246,7 @@ body {
 .icon-holder {
     width: 100%;
     height: auto;
+    margin-top: 4rem;
     margin-bottom: 0;
     text-align: center;
 }
@@ -243,17 +257,24 @@ body {
 
 /*  max-width 1240px*/
 @media screen and (max-width: 1240px) {
+    .login-window {
+        width: 100%;
+    }
     .login-left-header {
         font-size: 5em;
     }
-    .lg-title {
-        font-size: 1.9em;
+    .login-right-holder {
+        margin: 150px auto;
+        height: 100%;
     }
+   
     .input-icon {
         width: 40px;
     }
+    
     .lg-form {
         width:100%;
+        margin: auto;
     }
     .login-submit {
         min-width: 243px;
@@ -268,52 +289,121 @@ body {
     .login-right-side {
         width: 100%;
         min-width: 100%;
-        background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, #384989 100%);
+        background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 69.79%, #384989 100%);
     }
     .right-triangles-holder{
-        z-index: 3;
-        min-width: 60%;
+        min-width: 100%;
         height: 100%;
-        margin: 1rem .8rem;
+        margin: 0 .8rem;
         background: url(images/lg-triangles.svg) no-repeat;
-        background-position: center top; 
-        background-size: 65%;
+        background-position: center -75px; 
+        background-size: 750px;
+        
     }
-    .login-right-holder {
-        margin: 200px auto;
+    .login-form-holder{
+        margin-bottom: 3rem;
+
     }
+    .lg-form {
+        height: auto;
+    }
+    .login-form-container {
+        justify-content: stretch;
+        height: 60px;
+    }
+    
+    .login-input {
+       margin-bottom: 1.5
+    }
+   
+    
     .lg-title {
         color: white;
+        margin: 0;
+        margin-bottom: 60px;
+        text-shadow: 0px 4px 4px var(--blue);
     }
+    .login-input,
+    .login-label,
+    #kp-login {
+        color: white;
+        text-shadow: 0px 4px 4px var(--blue);
+    }
+    .login-input,
+    .input-holder {
+        border: 1px solid #CCCCCC;
+        
+    }
+    .login-input{
+        border-left: none;
+    }
+    .lg-form,
     .login-form-container,
     .login-label,
     .mark {
-        width: 90%;
+        width: 88.7%;
+    }
+    .login-submit{
+        margin-top: 0;
+    }
+    /* .icon-btn {
+        margin-top: 1rem;
+    } */
+    .icon-holder {
+        margin-top: 1rem;
+        height: 55px;
     }
 }
 /* max-width 941px  */
-@media screen and (max-width: 941px) {
+@media screen and (max-width: 950px) {
+    .login-window {
+        width: 100%;
+        margin: auto;
+    }
     .right-triangles-holder{
-        background-position: center top; 
-        background-size: 575px;
+        background-position: center -75px; 
+        /* background-size: 63%; */
     }
-    .lg-title {
-        font-size: 1.5em;
-    }
+   
     .input-icon {
         width: 30px;
     }  
 }
-/* max-width 500px */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
     .right-triangles-holder{
-        background-position: 20px top; 
-        background-size: 100%;
+        overflow: hidden;
+        background-position: center -75px; 
+        /* background-size: 100%; */
     }
-    .login-right-holder {
-        margin: 50px auto;
+    .lg-title {
+        font-size: 2em;
+    }
+    .lg-form {
+        margin: auto;
     }
 }
+/* max-width 600px */
+@media screen and (max-width: 600px) {
+    html,
+    body {
+        overflow-y: hidden;
+        width: 100%;
+    }
+    .login-window {
+        margin: auto;
+    }
+    
+    .right-triangles-holder{
+        margin: 0;
+        position: fixed;
+       
+    }
+    .lg-title {
+        font-size: 1.5em;
+    }
+    
+}
+
 
 
 
