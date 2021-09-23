@@ -26,6 +26,7 @@
     --orange: #EE9062;
     --pk-violet: #914C75;
     --auth-bg: #E5E5E5;
+    --input-bg: #C4C4C4;
 }
 *,
 *::before,
@@ -66,9 +67,6 @@ body {
     background-position: 20px; 
     background-size: contain;
 }
-.mb-lg-triangles {
-    display: none;
-}
 .login-left-holder {
     width: 80%;
     height: 100%;
@@ -100,7 +98,7 @@ body {
     align-content: center;
     background: var(--auth-bg);
 }
-/* home button */
+
 
 .login-right-holder {
     display: flex;
@@ -164,32 +162,34 @@ body {
 }
 .input-icon {
     padding: 8px;
-    background: rgba( 196, 196, 196, 0.49);
-    width: 50px;
-    height: 33px;
+    background: var(--input-bg);
+    width: 37px;
+    height: 34px;
     margin-bottom: 1.5rem;
     text-align: center;
+    color: var(--blue);
     border: 1px solid #CCCCCC;
     border-right: none;
-    border-radius: 5px 0 0 5px  ;
+    border-radius: 5px 0 0 5px;
 }
 
 .login-input{
     width: 100%;
-    max-width: 400px;
+    max-width: 413px;
     min-width: 213px;
-    height: 33px;
+    height: 34px;
     margin-bottom: 1.5rem;
     outline: none;
     border: none;
     border-left: none;
     border-radius: 0  5px 5px 0; 
     padding-left: 10px;
-    background: rgba( 196, 196, 196, 0.49);
+    background:var(--input-bg);
 }
 .password,
 .lock {
     margin-top: 0rem;
+    padding: 6px 8px;
 }
 /* keep login */
 .mark {
@@ -205,16 +205,18 @@ body {
 .container label {
     margin-left: 8px;
 }
-#kp-login {
+.kp {
     font-size: var(--fs-12);  
     color: var(--blue);
 }
 .login-submit {
     width: 54%;
     max-width: 243px;
-    height: 38px;
+    height: 39px;
     margin: 2.5rem auto;
     margin-bottom: .3rem;
+    text-align: center;
+    vertical-align: middle;
     font-size: 15px;
     font-weight: var(--fw-sbold);
     color: var(--blue);
@@ -264,7 +266,7 @@ body {
         font-size: 5em;
     }
     .login-right-holder {
-        margin: 150px auto;
+        
         height: 100%;
     }
    
@@ -300,7 +302,11 @@ body {
         background-size: 750px;
         
     }
+    .login-right-holder {
+        margin: 150px auto;
+    }
     .login-form-holder{
+        
         margin-bottom: 3rem;
 
     }
@@ -346,9 +352,6 @@ body {
     .login-submit{
         margin-top: 0;
     }
-    /* .icon-btn {
-        margin-top: 1rem;
-    } */
     .icon-holder {
         margin-top: 1rem;
         height: 55px;
@@ -362,7 +365,6 @@ body {
     }
     .right-triangles-holder{
         background-position: center -75px; 
-        /* background-size: 63%; */
     }
    
     .input-icon {
@@ -373,7 +375,6 @@ body {
     .right-triangles-holder{
         overflow: hidden;
         background-position: center -75px; 
-        /* background-size: 100%; */
     }
     .lg-title {
         font-size: 2em;

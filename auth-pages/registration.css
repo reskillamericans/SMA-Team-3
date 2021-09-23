@@ -26,6 +26,7 @@
     --orange: #EE9062;
     --pk-violet: #914C75;
     --auth-bg: #E5E5E5;
+    --input-bg: #C4C4C4;
 }
 *,
 *::before,
@@ -47,21 +48,10 @@ body {
     flex-direction: row;
     justify-content: stretch;
 }
-.reg-triangles-holder {
-    width: 100%;
-    min-width: auto;
-    height: 100%;
-    background: url(images/reg-triangles.svg) no-repeat;
-    background-position: 20px; 
-    background-size: 100%;
-}
 
-/* superscript */
-.sup-login {
-    font-size: 50px;
-}
-/* Right Side */
-.reg-right-side {
+
+/* Left Side */
+.registration-left {
     width: 50%;
     height: 100vh;
     display: flex;
@@ -70,9 +60,9 @@ body {
     align-content: center;
     background: var(--auth-bg);
 }
-/* home button */
 
-.reg-right-holder {
+
+.reg-left-holder {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,14 +87,14 @@ body {
     text-align: center;
 }
 
-.lg-title {
+.reg-title {
     font-size: 36px;
     color: var(--blue);
     font-weight: var(--fw-sbold);
     margin-top: 1rem;
     margin-bottom: 3.3rem;
 }
-.login-form-container {
+.reg-form-container {
     display: flex;
     width: 100%;
     max-width: 450px;
@@ -116,7 +106,7 @@ body {
     line-height: 21px;
     text-align: center;
 }
-.login-label {
+.reg-label {
     width: 100%;
     max-width: 450px;
     min-width: 241px;
@@ -128,22 +118,22 @@ body {
     font-weight: var(--fw-med);
     line-height: 12.3px;
 }
-.input-icon {
-    padding: 8px;
-    background: rgba( 196, 196, 196, 0.49);
-    width: 50px;
+.reg-input-icon {
+    width: 37px;
     height: 33px;
     margin-bottom: 2rem;
+    padding: 8px;
     text-align: center;
+    background: var(--input-bg);
     border: none;
     border-radius: 5px 0 0 5px  ;
 }
-.lock {
+/* .lock {
     margin-bottom: .8rem;
-}
+} */
 .reg-input{
     width: 100%;
-    max-width: 400px;
+    max-width: 413px;
     min-width: 213px;
     height: 33px;
     margin-bottom: 2rem;
@@ -151,26 +141,27 @@ body {
     border: 1px solid var(--very-lt-gray);
     border-radius: 0  5px 5px 0; 
     padding-left: 10px;
-    background: rgba( 196, 196, 196, 0.49);
+    background: var(--input-bg);
 }
 /* .password {
     margin-bottom: .8rem;
 } */
 /* keep login */
-.mark {
+.reg-mark {
     width: 100%;
     max-width: 450px;
     min-width: 241px;
     height: auto;
     margin: .2rem auto;
-    text-align: left;
+    text-align: left;  
 }
 
 .container label {
     margin-left: 8px;
 }
-.keep-login{
-    font-size: var(--fs-12);  
+.keep-reg {
+    font-size: var(--fs-12); 
+    color: var(--blue); 
 }
 .reg-submit {
     width: 54%;
@@ -180,20 +171,27 @@ body {
     margin-bottom: .3rem;
     font-size: 15px;
     font-weight: var(--fw-sbold);
+    color: var(--blue);
     background: var(--orange);
     border: none;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
 }
-.acct-already{
-    margin-bottom:.8rem;
+.reg-acct-already{
+    margin-bottom:.1rem;
     text-align: center;
     font-size: var(--fs-12);
     font-weight: var(--fw-med);
 }
-.login-new-user,
+.reg-signin-link {
+    border: none;
+    background: none;
+    text-align: center;
+    color: var(--orange);
+}
+.reg-signin-link,
 .reg-forgot {
-    padding: 0;
+    margin-bottom:.4rem;
     color: var(--orange);
     font-size: var(--fs-12);
     font-weight: var(--fw-med);
@@ -201,6 +199,7 @@ body {
     border: none;
     background: none;
 }
+
 .reg-forgot {
     width: 100%;
     text-align: center;
@@ -215,3 +214,80 @@ body {
     border: none;
     background: transparent;
 }
+
+/* Right Side */
+.registration-right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, #384989 100%);
+
+}
+.reg-triangles-holder {
+    width: 100%;
+    min-width: auto;
+    height: 100%;
+    background: url(images/lg-triangles.svg) no-repeat;
+    background-position: 20px center ; 
+    background-size: contain;
+    /* transform: rotate(50deg); */
+}
+
+@media screen and (max-width: 1360px) {
+    .registration-right {
+        display: none;
+    }
+    .registration-left {
+        width: 100%;
+        min-width: 100%;
+        background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 69.79%, var(--blue) 100%);
+    }
+    .reg-left-triangles-holder{
+
+        min-width: 100%;
+        height: 100%;
+        margin: 0 .8rem;
+        background: url(images/lg-triangles.svg) no-repeat;
+        background-position: center -75px; 
+        background-size: 750px;
+        position: fixed; 
+        /* transform: rotate(45deg); */
+    }
+    .reg-left-holder{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .reg-title,
+    .reg-label,
+    #kp-reg {
+        color: white;
+        text-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
+    }
+}
+
+/*  max-width 1240px*/
+/* @media screen and (max-width: 1240px) {
+    .registration-window {
+        width: 100%;
+    }
+
+    .reg-left-holder {
+        
+        height: 100%;
+    }
+   
+    .eg-input-icon {
+        width: 40px;
+    }
+    
+    .reg-form {
+        width:100%;
+        margin: auto;
+    }
+    .reg-submit {
+        min-width: 243px;
+    }
+
+} 
+ */

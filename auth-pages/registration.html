@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="checkbox.css" />
     <link rel="stylesheet" href="registration.css" />
     
     <title>Registration Page</title>
@@ -25,18 +25,8 @@
     <section id="registration_page" class="registration-window">
         <!-- Left Side -->
         <article class="registration-left">
-            <div id="reg-left-triangles" class="reg-triangles-holder">
-        
-            </div>
-        </article>
-         <!-- /Left Side -->
-
-         <!-- Right Side -->
-        <article id="reg-right" class="reg-right-side">
-            
-
-            <div id="reg-triangles" class="reg-triangles-holder">
-                <div id="reg-holder" class="reg-right-holder">
+            <div id="reg-left-triangles" class="reg-left-triangles-holder">
+                <div id="reg-holder" class="reg-left-holder">
                     <div class="reg-form-holder">
                         <!-- Registration Form -->
                         <form action="/registration" method="POST" id="registration-form" class="reg-form">
@@ -44,12 +34,12 @@
                                 <p class="reg-title">REGISTER TO JOIN US</p>
                             </div>
 
-                           
+                        
                             <!-- <i id="cell-phone-icon" class="fas fa-mobile-alt" style= "color:blue; font-weight: bold;"></i> -->
                             <!-- Full Name -->
                             <label class="reg-label" for="full_name">FULL NAME</label>
                             <div class="reg-form-container">
-                                <img class="input-icon" src="images/user.svg"alt="user icon"/>
+                                <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
                                 <input class="reg-input" name="full_name" type="email" id="full_name" autocomplete="on" required/>
                             </div>
                             <!-- /Full Name -->
@@ -57,15 +47,15 @@
                             <!-- User Name-->
                             <label class="reg-label" for="user_name">USER NAME</label>
                             <div class="reg-form-container">
-                                <img class="input-icon" src="images/user.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_name" type="email" id="user_name" autocomplete="on" required/>
+                                <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
+                                <input class="reg-input" name="user_name" type="email" id="reg_user_name" autocomplete="on" required/>
                             </div>
                             <!-- /User Name -->
 
                             <!-- Email -->
                             <label class="reg-label" for="new_email">E-MAIL ADDRESS</label>
                             <div class="reg-form-container">
-                                <img class="input-icon" src="images/mail.svg"alt="email icon"/>
+                                <img class="reg-input-icon" src="images/mail.svg"alt="email icon"/>
                                 <input class="reg-input" name="new_email" type="email" id="new_email" autocomplete="on" required/>
                             </div>
                             <!-- /Email -->
@@ -73,14 +63,14 @@
                             <!-- Phone Number  -->
                             <label class="reg-label" for="phone">PHONE NUMBER</label>
                             <div class="reg-form-container">
-                                <i class="input-icon fas fa-phone" style= "color:blue;"></i>
+                                <i class="reg-input-icon fas fa-phone" style= "color:blue;"></i>
                                 <input class="reg-input" name="phone" type="tel" id="phone" autocomplete="off" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
                             </div>
                             <!-- /Phone Number  -->
                             <!-- Registration Password-->
                             <label class="reg-label" for="new_password">PASSWORD</label>
                             <div class="reg-form-container">
-                                <img class="input-icon lock" src="images/lock.svg" alt="password-icon"/>
+                                <img class="reg-input-icon lock" src="images/lock.svg" alt="password-icon"/>
                                 <input class="reg-input password" name="new_password" type="password" id="new_password"  autocomplete="off" required/>
                             </div>
                             <!-- /Registration Password -->
@@ -88,17 +78,17 @@
                             <!-- Confirm Password -->
                             <label class="reg-label" for="conf_password">COMFIRM PASSWORD</label>
                             <div class="reg-form-container">
-                                <img class="input-icon lock" src="images/lock.svg" alt="password-icon"/>
+                                <img class="reg-input-icon lock" src="images/lock.svg" alt="password-icon"/>
                                 <input class="reg-input password" name="conf_password" type="password" id="conf_password"  autocomplete="off" required/>
                             </div>
                             <!-- /Confirm Password -->
                             
                             <!-- Stay signed in -->
-                            <div class="mark">
+                            <div class="reg-mark">
                                 <div class="container">
                                 <!-- <form> -->
                                     <input type="checkbox" id="keep" name="sign"  hidden>
-                                    <label class="keep-reg" for="keep" >KEEP ME LOGGED IN</label>
+                                    <label id="kp-reg" class="keep-reg" for="keep" >KEEP ME LOGGED IN</label>
                                 <!-- </form> -->
                                 </div>
                             </div>   
@@ -111,30 +101,37 @@
                             <!-- /Register and Go to Login -->
             
                             <!-- New user-->
-                            <p class="acct-already">
+                            <p class="reg-acct-already">
                                 ALREADY HAVE AN ACCOUNT? 
                             </p>
-                            <p class="signin-link">
-                                <input class="reg-signin-link" id="reg_signin" type="submit" value="SIGN IN"> OR 
+                            <p class="reg-signin-link">
+                                <input class="reg-signin-link" id="reg_signin" type="submit" value="SIGN IN">
                                 <input class="reg-forgot" id="reg-forgot" type="submit" value="FORGOT YOUR PASSWORD?">
                             </p>
-                                <!-- /New user-->
-                            
-        
+                            <!-- /New user-->
+
+                            <!--  Registration Submit-->
+                            <div class="reg-icon-holder">
+                                <button id="reg-sma-btn" class="reg-icon-btn">
+                                    <img src="images/sma-logo.svg" alt="home button">
+                                </button>
+                            </div>
+                            <!-- /Registration Submit -->
                             
                         </form>
                         <!-- /Registration Form -->
-                    </div>
-                    <div class="reg-icon-holder">
-                        <button id="sma-btn" class="reg-icon-btn">
-                            <img src="images/sma-logo.svg" alt="home button">
-                        </button>
-                    </div>
+                    </div> 
                 </div>
+        </div>
+        </article>
+         <!-- /Left Side -->
 
-                
-            </div>
+
+
+         <!-- Right Side -->
+        <article id="reg-right" class="registration-right">
             
+            <div id="reg-triangles" class="reg-triangles-holder"></div>                
         </article>
         <!-- /Right Side -->
     </section>
