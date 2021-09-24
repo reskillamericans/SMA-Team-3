@@ -55,7 +55,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, #384989 100%);
+    background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, var(--blue) 100%);
    
 }
 .triangles-holder {
@@ -275,8 +275,11 @@ body {
     }
     
     .lg-form {
-        width:100%;
+        width: 90%;
         margin: auto;
+    }
+    .login-label {
+        width: 90%;
     }
     .login-submit {
         min-width: 243px;
@@ -306,7 +309,7 @@ body {
         margin: 150px auto;
     }
     .login-form-holder{
-        
+        width: 90%;
         margin-bottom: 3rem;
 
     }
@@ -379,7 +382,12 @@ body {
     .lg-title {
         font-size: 2em;
     }
+    .login-form-holder {
+        width: 90%;
+    }
     .lg-form {
+        width: 90%;
+        min-width: 241px;
         margin: auto;
     }
 }
@@ -401,6 +409,11 @@ body {
     }
     .lg-title {
         font-size: 1.5em;
+    }
+    .lg-form {
+        width: 70%;
+        min-width: 241px;
+        margin: auto;
     }
     
 }
