@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Pia Torain" />
+    <meta name="description" content="Social Media App Team 3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="verify.css" />
+    <link rel="stylesheet" href="forgot.css" />
+    
+    <title>Forgot Password Page</title>
+    
+</head>
+<body>
+    <div id="fg-rs-bg"></div>
+   
+    
+
+    <!-- Forgot Password Page -->
+    <section id="forgot_page" class="forgot-window">
+        <!-- <div class="forgot-center">
+                <div id="forgot-holder" class="forgot">
+                    <div class="forgot-form-holder"> -->
+                        <!-- Forgot  Form -->
+                        <form action="/forgot" method="POST" id="forgot-form" class="fg-form">
+                            <div class="forgot-form-title">
+                                <p class="fg-title">FORGOT PASSWORD?</p>
+                            </div>
+                            <div class="forgot-form-text">
+                                <p class="fg-text">
+                                    PLEASE ENTER YOUR EMAIL ADDRESS 
+                                    BELOW TO BE SENT A RESET LINK
+                                </p>
+                            </div>
+
+                            <!-- Verify Email -->
+                            <label class="fg-label" for="old_email">E-MAIL ADDRESS</label>
+                            <div class="fg-form-container">
+                                <img class="fg-input-icon" src="images/mail.svg"alt="email icon"/>
+                                <input class="fg-input" name="old_email" type="email" id="old_email" autocomplete="on" required/>
+                            </div>
+                            <!-- /Verify Email -->
+
+                            <!-- Verify Email Button-->
+                            <div class="fg-form-container">
+                                <input class="fg-submit" id="fg-btn" type="submit" value="VERIFY EMAIL" /> 
+                            </div>
+                            <!-- /Verify Email Button-->
+
+                            <!--  Home Button, SMA Logo-->
+                            <div class="fg-icon-holder">
+                                <button id="fg-sma-btn" class="fg-icon-btn">
+                                    <img src="images/sma-logo.svg" alt="home button">
+                                </button>
+                            </div>
+                            <!-- /Home Button, SMA Logo -->
+                            
+                        </form>
+                        <!-- /Forgot Form -->
+                    <!-- </div> 
+                </div>
+            
+        </div> -->
+    </section>
+
+    <!-- Verify Email Sent Pop-up-->
+    <div id="verifyEmail" class="email-window">
+        <div class="email-content">
+            <div class="email-header">
+                <h2>Link Sent</h2>
+            </div>
+            <div class="verify-p">
+                <p class="verify-reply"> Your email has been verified. 
+                    An email has been sent to <strong>geewiz@gmail.com.</strong>
+                    Click on the link in the email to reset your password.
+                </p>
+                <p class="verify-reply-one"> 
+                    An email has been successfully sent to the email <strong>lboehringer10@gmail.com.</strong>
+                    </p>
+                <p class="verify-reply-two">
+                    If you don't see the email from us, make sure to check your spam folder. Click <a href="#">resend email</a> if it has been over 5 minutes since the 
+                    was sent.
+                </p>
+                <!-- Button will close email sent pop-up. Link to Reset Password page? -->
+                <div class="btn-verify-ok">
+                    <input  type="button"  id="verify-btn" class="verify-ok" value="VERIFIED"/>
+                </div>
+                <!-- /Button will close email sent pop-up. Link to Reset Password page? -->
+            </div>
+        </div>
+    </div>
+    <!--/ Verify Email Sent PopUp-->
+    <!-- /FORGOT PASSWORD -->
+</body>

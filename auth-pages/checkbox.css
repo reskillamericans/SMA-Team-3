@@ -33,7 +33,7 @@
     height: 21px;
     border: 1px solid #CCCCCC;
     border-radius: 5px;
-    background: rgba( 196, 196, 196, 0.50);
+    background: #C4C4C3;
 }
 .container > [type="checkbox"] + label::before {
     width: 21px;
@@ -48,7 +48,7 @@
     top: 0;
     width: 21px;
     height: 21px;
-    background: rgba( 196, 196, 196, 0.50);
+    background: #C4C4C3;
     border: none;
 }
 .container >[type="checkbox"]:checked + label::before {

@@ -26,7 +26,9 @@
     --orange: #EE9062;
     --pk-violet: #914C75;
     --auth-bg: #E5E5E5;
-    --input-bg: #C4C4C4;
+    --input-bg: rgba(196, 196, 195, 50%);
+    --input-mid: rgba(196, 196, 195, 80%);
+    --input-mob: rgba(196, 196, 195, 100%);
 }
 *,
 *::before,
@@ -56,6 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, var(--blue) 100%);
+    background-repeat: no-repeat;
    
 }
 .triangles-holder {
@@ -64,8 +67,8 @@ body {
     height: 100%;
     margin: 0;
     background: url(images/lg-triangles.svg) no-repeat;
-    background-position: 20px; 
-    background-size: contain;
+    background-position: -20px; 
+    background-size: auto;
 }
 .login-left-holder {
     width: 80%;
@@ -111,18 +114,19 @@ body {
 }
 .login-form-holder {
     width: 100%;
-    height: 400px;
-    margin: 4rem auto;
+    height: 100%;
+    margin: 2rem auto;
     margin-bottom: 0;
-    justify-content: space-around;
+    padding-top: 2rem;
+    
 }
 .lg-form {
     width: 450px;
-    height: 550px;
-    margin: auto;
+    height: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-bottom: 0;
+    margin-top: 13.5rem;
 }
 .login-form-title {
     width: 100%;
@@ -140,7 +144,7 @@ body {
     display: flex;
     width: 100%;
     max-width: 450px;
-    height: auto;
+    /* height: 55px; */
     margin: 0 auto;
     padding: 1rem auto;
     align-items: center;  
@@ -153,7 +157,7 @@ body {
     max-width: 450px;
     min-width: 241px;
     text-align: left;
-    margin: .75rem auto;
+    margin: 0 auto;
     margin-bottom: 0;
     padding-left: 2px;
     font-size: 12px;
@@ -223,10 +227,10 @@ body {
     background: var(--orange);
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
+    box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
 }
 .new-user {
-    margin-bottom:.8rem;
+    margin-bottom: 1rem;
     text-align: center;
     font-size: var(--fs-12);
     font-weight: var(--fw-med);
@@ -257,167 +261,105 @@ body {
     background: transparent;
 }
 
-/*  max-width 1240px*/
-@media screen and (max-width: 1240px) {
-    .login-window {
-        width: 100%;
+/*  max-width 1360px*/
+@media screen and (max-width: 1360px) {
+    body {
+        background-image: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, 
+            var(--blue) 100%);
     }
-    .login-left-header {
-        font-size: 5em;
+    .login-window {
+        position: fixed;
+        width: 900px;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        flex-direction: column;
+    }
+    .login-left-holder{
+        display:none;
+    }
+    .login-left {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        width: 900px;
+        transform: translate(-50%, -50%);
+        background-image: none;
+       
+    }
+    .triangles-holder {
+        margin: auto 0;
+        position: relative;
+        background-position: 50px -50%; 
+        background-size: 800px;
+    }
+    .login-right-side {
+        top: 0;
+        left: 50%;
+        width: 100%;
+        min-width: 100%;
+        margin: 0 auto;
+        background-color: transparent;
+        z-index: 50;
+        justify-content: flex-end;
     }
     .login-right-holder {
-        
+        width: 100%;
         height: 100%;
+        margin: 4rem auto;
     }
-   
+    .login-form-holder {
+        margin: auto;
+        padding-top: 0;
+    }
+    .lg-form {
+        margin-top: 21rem;
+    }
+    .lg-title, 
+    .login-label,
+    #kp-login {
+        color: white;
+        text-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
+    }
+    .lg-title {
+        margin-top: 0;
+        margin-bottom: 8rem;
+    }
     .input-icon {
         width: 40px;
     }
-    
-    .lg-form {
-        width: 90%;
-        margin: auto;
-    }
-    .login-label {
-        width: 90%;
+    .login-input,
+    .input-icon {
+        background: var(--input-mid);
     }
     .login-submit {
         min-width: 243px;
     }
 }
 
-/* max-width 1200px */
-@media screen and (max-width: 1200px) {
-    .login-left{
-        display: none;
-    }
-    .login-right-side {
-        width: 100%;
-        min-width: 100%;
-        background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 69.79%, #384989 100%);
-    }
-    .right-triangles-holder{
-        min-width: 100%;
-        height: 100%;
-        margin: 0 .8rem;
-        background: url(images/lg-triangles.svg) no-repeat;
-        background-position: center -75px; 
-        background-size: 750px;
-        
-    }
-    .login-right-holder {
-        margin: 150px auto;
-    }
-    .login-form-holder{
-        width: 90%;
-        margin-bottom: 3rem;
-
-    }
-    .lg-form {
-        height: auto;
-    }
-    .login-form-container {
-        justify-content: stretch;
-        height: 60px;
-    }
-    
-    .login-input {
-       margin-bottom: 1.5
-    }
-   
-    
-    .lg-title {
-        color: white;
-        margin: 0;
-        margin-bottom: 60px;
-        text-shadow: 0px 4px 4px var(--blue);
-    }
-    .login-input,
-    .login-label,
-    #kp-login {
-        color: white;
-        text-shadow: 0px 4px 4px var(--blue);
-    }
-    .login-input,
-    .input-holder {
-        border: 1px solid #CCCCCC;
-        
-    }
-    .login-input{
-        border-left: none;
-    }
-    .lg-form,
-    .login-form-container,
-    .login-label,
-    .mark {
-        width: 88.7%;
-    }
-    .login-submit{
-        margin-top: 0;
-    }
-    .icon-holder {
-        margin-top: 1rem;
-        height: 55px;
-    }
-}
-/* max-width 941px  */
-@media screen and (max-width: 950px) {
+/*  max-width 490px*/
+@media screen and (max-width: 490px) {
     .login-window {
         width: 100%;
-        margin: auto;
-    }
-    .right-triangles-holder{
-        background-position: center -75px; 
-    }
-   
-    .input-icon {
-        width: 30px;
-    }  
-}
-@media screen and (max-width: 750px) {
-    .right-triangles-holder{
-        overflow: hidden;
-        background-position: center -75px; 
-    }
-    .lg-title {
-        font-size: 2em;
-    }
-    .login-form-holder {
-        width: 90%;
-    }
-    .lg-form {
-        width: 90%;
-        min-width: 241px;
-        margin: auto;
-    }
-}
-/* max-width 600px */
-@media screen and (max-width: 600px) {
-    html,
-    body {
-        overflow-y: hidden;
-        width: 100%;
-    }
-    .login-window {
-        margin: auto;
-    }
-    
-    .right-triangles-holder{
-        margin: 0;
-        position: fixed;
-       
-    }
-    .lg-title {
-        font-size: 1.5em;
     }
     .lg-form {
         width: 70%;
         min-width: 241px;
-        margin: auto;
+
     }
-    
-}
+    .lg-title {
+        font-size: 24px;
+    }
 
+    .login-label,
+    #kp-login {
+        font-weight: var(--fw-sbold);
+    }
+    .login-input,
+    .input-icon {
+        background: var(--input-mid);
 
-
-
+    }
+} 

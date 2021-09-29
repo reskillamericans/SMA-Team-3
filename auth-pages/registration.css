@@ -26,7 +26,10 @@
     --orange: #EE9062;
     --pk-violet: #914C75;
     --auth-bg: #E5E5E5;
-    --input-bg: #C4C4C4;
+    --input-bg: rgba(196, 196, 195, 50%);
+    --input-mid: rgba(196, 196, 195, 80%);
+    --input-mob: rgba(196, 196, 195, 100%);
+
 }
 *,
 *::before,
@@ -100,7 +103,7 @@ body {
     display: flex;
     width: 100%;
     max-width: 450px;
-    height: auto;
+    height: 55px;
     margin: 0 auto;
     padding: 1rem auto;
     align-items: center;  
@@ -108,12 +111,14 @@ body {
     line-height: 21px;
     text-align: center;
 }
+
 .reg-label {
     width: 100%;
+    height: 14px;
     max-width: 450px;
     min-width: 241px;
     text-align: left;
-    margin: .75rem auto;
+    margin: 0rem auto;
     margin-bottom: 0;
     padding-left: 2px;
     font-size: 12px;
@@ -123,12 +128,16 @@ body {
 .reg-input-icon {
     width: 37px;
     height: 34px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 8px;
     text-align: center;
     background: var(--input-bg);
     border: none;
-    border-radius: 5px 0 0 5px  ;
+    border-radius: 5px 0 0 5px;
+}
+.briefcase {
+    padding: 6px;
+    color: var(--blue);
 }
 
 .reg-input{
@@ -136,12 +145,13 @@ body {
     max-width: 413px;
     min-width: 213px;
     height: 34px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     outline: none;
     border: 2px solid var(--very-lt-gray);
     border-radius: 0  5px 5px 0; 
     padding-left: 10px;
     background: var(--input-bg);
+    /*   */
 }
 
 /* keep login */
@@ -165,7 +175,7 @@ body {
     width: 54%;
     max-width: 243px;
     height: 38px;
-    margin: 2.5rem auto;
+    margin: .5rem auto;
     margin-bottom: .3rem;
     font-size: 15px;
     font-weight: var(--fw-sbold);
@@ -173,9 +183,9 @@ body {
     background: var(--orange);
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
+    box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
 }
-.reg-acct-already{
+.reg-acct-already {
     margin-bottom:.1rem;
     text-align: center;
     font-size: var(--fs-12);
@@ -227,40 +237,52 @@ body {
     min-width: auto;
     height: 100%;
     background: url(images/lg-triangles.svg) no-repeat;
-    background-position:  20px center ; 
+    background-position:  0px 95px ; 
     background-size: auto;
-    transform: rotate(45deg);
-    
-    
+    transform: rotate(45deg);  
 }
 
 @media screen and (max-width: 1360px) {
     body {
         background-image: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, 
             var(--blue) 100%);
-    }
+    }   
     .registration-window {
         position: fixed;
         width: 900px;
         height: auto;
-        top:50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
         display: flex;
         flex-direction: column;
-        background: url(images/lg-triangles.svg), no-repeat;
-        background-repeat: no-repeat;
-        background-position: center -50px;
     }
 
     .registration-right {
-        display: none;
-    }
+        position: absolute;
+        top: 50%;
+        left:50%;
+        width: 900px;
+        transform: translate(-50%, -50%);
+        background-image: none;
+    } 
+    .reg-triangles-holder {
+        margin: auto 0;
+        
+        position: relative;
+        background-position:  100px 150px ; 
+        background-size: 800px;
+        transform: rotate(180deg);
+    }   
+     
     .registration-left {
+        top: 0;
+        left: 50%;
         width: 100%;
         min-width: 100%;
         margin: 0 auto;
         background-color: transparent;
+        z-index: 50;
     }
     
     .reg-left-holder{
@@ -272,6 +294,11 @@ body {
     #kp-reg {
         color: white;
         text-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
+    }
+    .reg-input,
+    .reg-input-icon {
+        background: var(--input-mid);
+
     }
 }
 
@@ -295,6 +322,7 @@ body {
         width: 90%;
         margin: 0 auto;
     }
+    
     .reg-submit {
         min-width: 243px;
     }
@@ -306,6 +334,7 @@ body {
     }
 } 
 @media screen and (max-width: 457px) {
+
     .reg-title {
         font-size: 24px;
 
@@ -313,11 +342,16 @@ body {
     .reg-form {
         width: 70%;
         min-width: 241px;
-        margin: 0 auto;
+        margin: 0 auto;   
     }
-    .reg-input-icon,
-    .reg-input {
-        height: 33px;
-        margin-bottom: .5rem;
+    .reg-label,
+    #kp-reg {
+        font-weight: var(--fw-sbold);
     }
+    .reg-input,
+    .reg-input-icon {
+        background: var(--input-mid);
+
+    }
+    
 }
