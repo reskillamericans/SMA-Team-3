@@ -17,83 +17,80 @@
     
 </head>
 <body>
-    <div id="fg-rs-bg"></div>
+    <div class="bg-holder">
+        <div class="bg-img"></div>
+    </div>
    
     
 
     <!-- Forgot Password Page -->
     <section id="forgot_page" class="forgot-window">
-        <!-- <div class="forgot-center">
-                <div id="forgot-holder" class="forgot">
-                    <div class="forgot-form-holder"> -->
-                        <!-- Forgot  Form -->
-                        <form action="/forgot" method="POST" id="forgot-form" class="fg-form">
-                            <div class="forgot-form-title">
-                                <p class="fg-title">FORGOT PASSWORD?</p>
-                            </div>
-                            <div class="forgot-form-text">
-                                <p class="fg-text">
-                                    PLEASE ENTER YOUR EMAIL ADDRESS 
-                                    BELOW TO BE SENT A RESET LINK
-                                </p>
-                            </div>
+       
+        <form action="/forgot" method="POST" id="forgot-form" class="fg-form">
+            <div class="forgot-form-title">
+                <p class="fg-title">FORGOT PASSWORD?</p>
+            </div>
+            <div class="forgot-form-text">
+                <p class="fg-text">
+                    PLEASE ENTER YOUR EMAIL ADDRESS 
+                    BELOW TO BE SENT A RESET LINK
+                </p>
+            </div>
 
-                            <!-- Verify Email -->
-                            <label class="fg-label" for="old_email">E-MAIL ADDRESS</label>
-                            <div class="fg-form-container">
-                                <img class="fg-input-icon" src="images/mail.svg"alt="email icon"/>
-                                <input class="fg-input" name="old_email" type="email" id="old_email" autocomplete="on" required/>
-                            </div>
-                            <!-- /Verify Email -->
+            <!-- Verify Email -->
+            <label class="fg-label" for="old_email">E-MAIL ADDRESS</label>
+            <div class="fg-form-container">
+                <img class="fg-input-icon" src="images/mail.svg"alt="email icon"/>
+                <input class="fg-input" name="old_email" type="email" id="old_email" autocomplete="on" required/>
+            </div>
+            <!-- /Verify Email -->
 
-                            <!-- Verify Email Button-->
-                            <div class="fg-form-container">
-                                <input class="fg-submit" id="fg-btn" type="submit" value="VERIFY EMAIL" /> 
-                            </div>
-                            <!-- /Verify Email Button-->
+            <!-- Verify Email Button-->
+            <div class="fg-form-container">
+                <input class="fg-submit" id="fg-btn" type="submit" value="VERIFY EMAIL" /> 
+            </div>
+            <!-- /Verify Email Button-->
 
-                            <!--  Home Button, SMA Logo-->
-                            <div class="fg-icon-holder">
-                                <button id="fg-sma-btn" class="fg-icon-btn">
-                                    <img src="images/sma-logo.svg" alt="home button">
-                                </button>
-                            </div>
-                            <!-- /Home Button, SMA Logo -->
-                            
-                        </form>
-                        <!-- /Forgot Form -->
-                    <!-- </div> 
-                </div>
+            <!--  Home Button, SMA Logo-->
+            <div class="fg-icon-holder">
+                <button id="fg-sma-btn" class="fg-icon-btn">
+                    <img src="images/sma-logo.svg" alt="home button">
+                </button>
+            </div>
+            <!-- /Home Button, SMA Logo -->
             
-        </div> -->
+        </form>
+        <!-- /Forgot Form -->
+
     </section>
 
     <!-- Verify Email Sent Pop-up-->
-    <div id="verifyEmail" class="email-window">
-        <div class="email-content">
-            <div class="email-header">
-                <h2>Link Sent</h2>
+    <section id="verifyEmail" class="email-window">
+        <div class="verify-content">
+            <div class="verify-title">
+                <p class="ver-title">EMAIL VERIFIED</p>
             </div>
-            <div class="verify-p">
-                <p class="verify-reply"> Your email has been verified. 
-                    An email has been sent to <strong>geewiz@gmail.com.</strong>
+            <div class="verify-text">
+                <p class="verify-one">
+                    Your email has been verified.
+                </p>
+                <p class="verify-two"> 
+                    An email has been sent to <strong>youremail@gmail.com.</strong>
                     Click on the link in the email to reset your password.
                 </p>
-                <p class="verify-reply-one"> 
-                    An email has been successfully sent to the email <strong>lboehringer10@gmail.com.</strong>
-                    </p>
-                <p class="verify-reply-two">
-                    If you don't see the email from us, make sure to check your spam folder. Click <a href="#">resend email</a> if it has been over 5 minutes since the 
-                    was sent.
-                </p>
-                <!-- Button will close email sent pop-up. Link to Reset Password page? -->
-                <div class="btn-verify-ok">
-                    <input  type="button"  id="verify-btn" class="verify-ok" value="VERIFIED"/>
-                </div>
-                <!-- /Button will close email sent pop-up. Link to Reset Password page? -->
             </div>
+            <!-- Button will close email sent pop-up. Link to Reset Password page? -->
+            <div class="btn-verify-ok">
+                <input  type="button"  id="verify-btn" class="verify-ok" value="OK"/>
+            </div>
+            <!-- /Button will close email sent pop-up. Link to Reset Password page? -->
+            <div class="email-header">
+                <h2></h2>
+            </div>
+            
         </div>
-    </div>
+    </section>
     <!--/ Verify Email Sent PopUp-->
     <!-- /FORGOT PASSWORD -->
+    <!-- </div> -->
 </body>

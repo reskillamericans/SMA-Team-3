@@ -41,27 +41,41 @@ body {
     font-family: var(--epilogue);  
     overflow-y: hidden;
 }
-html {
-    background: url(images/fg-triangles.svg) no-repeat center center fixed, linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
-    -webkit-background-size: cover;
+body {
+    background:  linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover; */
 }
-/* #fg-rs-bg {
-    position: fixed;
-    display: flex;
-    width: 100%;
-    min-width: 100%;
-    height: 100vh;
-    background-image:  url("images/fg-triangles.svg"), linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%);
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-attachment: fixed;
+.bg-holder {
+    margin: 0 auto;
+    width: 1400px;
+    height: 1400px;
+    /* top: 0;
+    left: 0%;
+    transform: translate(-10%, -20%); */
 
-} */
+}
+.bg-img{
+    /* display: none; */
+    
+    /* position: fixed; */
+    /* display: flex;
+    width: auto; */
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/fg-triangles.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /* transform: rotate(45deg) */
+
+}
+
 .forgot-window{
+    
     position: fixed;
     max-width:550px;
     height: auto;
@@ -74,6 +88,9 @@ html {
     text-align: center;
     color: white;
 }
+/* .forgot-window {
+    display: none;
+} */
 .fg-form{
     max-width: 450px;
     height: 90%; 
@@ -176,4 +193,51 @@ html {
     border: none;
     background: transparent;
     margin: 2rem auto;
+}
+@media screen and (max-width: 850px) {
+    .bg-holder {
+        margin: 0 auto;
+        width:700x;
+        height: auto;
+        /* top: 0;
+        left: 0%;
+        transform: translate(-10%, -20%); */
+    
+    }
+    .bg-img{
+        /* display: none; */
+        /* width: 1279px;
+        position: fixed; */
+        /* display: flex;
+        width: auto; */
+        /* width: 100%;
+        height: 100vh; */
+        background-image: url("images/lg-triangles.svg");
+        background-size: 800px;
+        background-repeat: no-repeat;
+        background-position: 20px -70px;
+        background-attachment: fixed;
+        /* transform: rotate(-35deg) */
+    
+    }
+    
+    .fg-title {
+        font-size: 30px;
+    }
+    .fg-text {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 600px) {
+    /* .bg-img {
+        width: 100%;
+        display: flex;
+        background-size: cover;
+    } */
+    .fg-title {
+        font-size: 24px;
+    }
+    .fg-text {
+        font-size: 14px;
+    }
 }

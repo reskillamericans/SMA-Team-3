@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="auth-header.css" />
     <link rel="stylesheet" href="checkbox.css" />
     <link rel="stylesheet" href="login.css" />
     
@@ -17,11 +18,28 @@
     
 </head>
 <body>
+    <!-- MB HOME BUTTON -->
+    <div class="mb-logo-holder">
+        <button id="auth-sma-btn" class="auth-icon-btn">
+            <img id="auth-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+        </button>
+    </div>  
+    <!-- /MB HOME BUTTON --> 
 
     <!-- Login Page -->
+    
     <section id="login-page" class="login-window">
+        
         <!-- Left Side -->
         <article class="login-left">
+            <!-- DK HOME BUTTON -->
+            <div class="auth-logo-holder">
+                <button id="auth-sma-btn" class="auth-icon-btn">
+                    <img id="auth-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+                </button>
+            </div>  
+            <!-- /DK HOME BUTTON --> 
+            
             <div id="lg-left-triangles" class="triangles-holder">
             
                 <div id="lg-left-header" class="login-left-holder">
@@ -34,70 +52,65 @@
 
          <!-- Right Side -->
         <article id="log-reg-right" class="login-right-side">
-            
+        
 
-            
-                <div id="login-holder" class="login-right-holder">
-                    <div class="login-form-holder">
+        
+            <div id="login-holder" class="login-right-holder">
+                <div class="login-form-holder">
+                    
+
+                    <!-- Login Form -->
+                    <form action="/login" method="POST" id="login-form" class="lg-form">
+                        <div class="login-form-title">
+                            <p class="lg-title">LOGIN TO GET STARTED</p>
+                        </div>
+
+                        <!-- Email and Password -->
+                        <label class="login-label" for="user-email">E-MAIL ADDRESS</label>
+                        <div class="login-form-container">
+                            <img class="input-icon" src="images/mail.svg"alt="email icon"/>
+                            <input class="login-input" name="user-email" type="email" id="user-email" autocomplete="on" required/>
+                        </div>
+                        <label class="login-label" for="current-password">PASSWORD</label>
+                        <div class="login-form-container">
+                            <img class="input-icon lock" src="images/lock.svg" alt="password-icon"/>
+                            <input class="login-input password" name="current-password" type="password" id="current-password"  autocomplete="on" required/>
+                        </div>
+                        <!-- /Email and Password -->
                         
-
-                        <!-- Login Form -->
-                        <form action="/login" method="POST" id="login-form" class="lg-form">
-                            <div class="login-form-title">
-                                <p class="lg-title">LOGIN TO GET STARTED</p>
-                            </div>
-
-                            <!-- Email and Password -->
-                            <label class="login-label" for="user-email">E-MAIL ADDRESS</label>
-                            <div class="login-form-container">
-                                <img class="input-icon" src="images/mail.svg"alt="email icon"/>
-                                <input class="login-input" name="user-email" type="email" id="user-email" autocomplete="on" required/>
-                            </div>
-                            <label class="login-label" for="current-password">PASSWORD</label>
-                            <div class="login-form-container">
-                                <img class="input-icon lock" src="images/lock.svg" alt="password-icon"/>
-                                <input class="login-input password" name="current-password" type="password" id="current-password"  autocomplete="on" required/>
-                            </div>
-                            <!-- /Email and Password -->
+                        <!-- Stay signed in -->
+                        <div class="mark">
+                            <div class="container">
                             
-                            <!-- Stay signed in -->
-                            <div class="mark">
-                                <div class="container">
-                                
-                                    <input type="checkbox" id="keep" name="sign"  hidden>
-                                    <label id="kp-login" class="keep-login kp" for="keep" >KEEP ME LOGGED IN</label>
-                                
-                                </div>
-                            </div>   
-                            <!-- /Stay signed in  -->
+                                <input type="checkbox" id="keep" name="sign"  hidden>
+                                <label id="kp-login" class="keep-login kp" for="keep" >KEEP ME LOGGED IN</label>
                             
-                            <!-- Login and Go to Profile -->
-                            <div class="login-form-container">
-                                <input class="login-submit" id="login-btn" type="submit" value="LOGIN"/> 
                             </div>
-                            <!-- /Login and Go to Profile -->
-            
-                            <!-- New user-->
-                            <p class="new-user">
-                                NEW USER? <input class="login-new-user" id="log-reg" type="submit" value="REGISTER"> HERE.
-                            </p>
-                                <!-- /New user-->
-                            
-                            <div class="login-forgot">
-                                <input class="login-forgot" id="log-forgot" type="submit" value="FORGOT YOUR PASSWORD?">
-                            </div>
-                            <div class="icon-holder">
-                                <button id="lg-sma-btn" class="icon-btn">
-                                    <img src="images/sma-logo.svg" alt="home button">
-                                </button>
-                            </div>
-                            
-                        </form>
-                        <!-- /Login Form -->
-                    </div>
+                        </div>   
+                        <!-- /Stay signed in  -->
+                        
+                        <!-- Login and Go to Profile -->
+                        <div class="login-form-container">
+                            <input class="login-submit" id="login-btn" type="submit" value="LOGIN"/> 
+                        </div>
+                        <!-- /Login and Go to Profile -->
+        
+                        <!-- New user-->
+                        <p class="new-user">
+                            NEW USER? <input class="login-new-user" id="log-reg" type="submit" value="REGISTER"> HERE.
+                        </p>
+                        <!-- /New user-->
+                        
+                        <div class="login-forgot">
+                            <input class="login-forgot" id="log-forgot" type="submit" value="FORGOT YOUR PASSWORD?">
+                        </div>
+                        
+                    </form>
+                    <!-- /Login Form -->
                 </div>
+            </div>
 
-                
+            
            
         </article>
         <!-- /Right Side -->

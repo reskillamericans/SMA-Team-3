@@ -11,18 +11,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="checkbox.css" />
+    <link rel="stylesheet" href="auth-header.css" />
     <link rel="stylesheet" href="registration.css" />
     
     <title>Registration Page</title>
     
 </head>
 <body>
+    <!-- MB HOME BUTTON -->
+    <div class="mb-logo-holder">
+        <button id="auth-sma-btn" class="auth-icon-btn">
+            <img id="auth-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+        </button>
+    </div>  
+    <!-- / MB HOME BUTTON --> 
+    
 
     <!-- Registration Page -->
     <section id="registration_page" class="registration-window">
-        <!--  -->
+        
         <!-- Left Side -->
         <article class="registration-left">
+            <!-- DK HOME BUTTON -->
+            <div class="auth-logo-holder">
+                <button id="auth-sma-btn" class="auth-icon-btn">
+                    <img id="auth-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+                </button>
+            </div>   
+            <!--/ DK HOME BUTTON -->
             <div id="reg-left-triangles" class="reg-left-triangles-holder">
                 <div id="reg-holder" class="reg-left-holder">
                     <div class="reg-form-holder">
@@ -98,7 +114,7 @@
                             </div>
                             <!-- /OCCUPATION -->
 
-                            <!-- COMPANY-->
+                            <!-- COMPANY Note: commented out for spacing reasons-->
                             <!-- <label class="reg-label" for="user_comp">COMPANY</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
@@ -148,14 +164,7 @@
                                 <input class="reg-forgot" id="reg-forgot" type="submit" value="FORGOT YOUR PASSWORD?">
                             </p>
                             <!-- /New user-->
-
-                            <!--  Registration Submit-->
-                            <div class="reg-icon-holder">
-                                <button id="reg-sma-btn" class="reg-icon-btn">
-                                    <img src="images/sma-logo.svg" alt="home button">
-                                </button>
-                            </div>
-                            <!-- /Registration Submit -->
+ 
                             
                         </form>
                         <!-- /Registration Form -->

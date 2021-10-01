@@ -167,7 +167,7 @@ body {
 .container label {
     margin-left: 8px;
 }
-.keep-reg {
+#kp-reg {
     font-size: var(--fs-12); 
     color: var(--blue); 
 }

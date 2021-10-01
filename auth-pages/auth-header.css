@@ -1,0 +1,71 @@
+/* LANDING PAGE HEADER */
+:root {
+    /* font */
+    --epilogue: 'Epilogue', sans-serif;
+
+    /* font-sizes */
+    --fs-12: 12px;
+    --fs-14: 14px;
+    --fs-15: 15px;
+    --fs-16: 16px;
+    --fs-18: 18px;
+    --fs-24: 24px;
+    --fs-36: 36px;
+
+    /* font-weight */
+    --fw-lt: 300;
+    --fw-norm: 400;
+    --fw-med: 500; 
+    --fw-bold: 700;
+
+    /* colors */
+    --blue: #384989;
+    --lt-blue: #639CC8;
+    --yellow: #F8C164;
+    --orange: #EE9062;
+    --pk-violet: #914C75;
+}
+
+* {
+    margin: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--epilogue);
+    overflow: hidden;
+}
+
+/* LEFT SIDE */
+.mb-logo-holder {
+    display: none;
+}
+.auth-logo-holder {
+    width: 100%;
+    display: flex;
+    margin: 1rem auto;
+    padding-left: 1rem;
+    align-items: center;
+}
+.auth-icon-btn {
+    border: none;
+    background: transparent;
+}
+@media screen and (max-width: 1360px) {
+    .auth-logo-holder {
+        display: none;
+    }
+    .mb-logo-holder{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 1rem ;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 0; 
+        background: clear;
+        z-index: -1; 
+    }
+}

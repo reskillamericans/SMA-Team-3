@@ -292,7 +292,7 @@ body {
     .triangles-holder {
         margin: auto 0;
         position: relative;
-        background-position: 50px -50%; 
+        background-position: 50px -35%; 
         background-size: 800px;
     }
     .login-right-side {
