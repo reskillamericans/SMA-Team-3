@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="verify.css" />
-    <link rel="stylesheet" href="forgot.css" />
+    <link rel="stylesheet" href="css/auth-header.css" />
+    <link rel="stylesheet" href="css/forgot.css" />
     
     <title>Forgot Password Page</title>
     
@@ -20,6 +20,13 @@
     <div class="bg-holder">
         <div class="bg-img"></div>
     </div>
+    <!-- HOME BUTTON -->
+    <div class="fg-logo-holder">
+        <button id="auth-sma-btn" class="auth-icon-btn">
+            <img id="auth-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+        </button>
+    </div>  
+    <!-- /HOME BUTTON --> 
    
     
 
@@ -37,6 +44,7 @@
                 </p>
             </div>
 
+            
             <!-- Verify Email -->
             <label class="fg-label" for="old_email">E-MAIL ADDRESS</label>
             <div class="fg-form-container">
@@ -50,47 +58,18 @@
                 <input class="fg-submit" id="fg-btn" type="submit" value="VERIFY EMAIL" /> 
             </div>
             <!-- /Verify Email Button-->
+            
 
-            <!--  Home Button, SMA Logo-->
-            <div class="fg-icon-holder">
-                <button id="fg-sma-btn" class="fg-icon-btn">
-                    <img src="images/sma-logo.svg" alt="home button">
-                </button>
-            </div>
-            <!-- /Home Button, SMA Logo -->
+
             
         </form>
         <!-- /Forgot Form -->
 
     </section>
 
-    <!-- Verify Email Sent Pop-up-->
-    <section id="verifyEmail" class="email-window">
-        <div class="verify-content">
-            <div class="verify-title">
-                <p class="ver-title">EMAIL VERIFIED</p>
-            </div>
-            <div class="verify-text">
-                <p class="verify-one">
-                    Your email has been verified.
-                </p>
-                <p class="verify-two"> 
-                    An email has been sent to <strong>youremail@gmail.com.</strong>
-                    Click on the link in the email to reset your password.
-                </p>
-            </div>
-            <!-- Button will close email sent pop-up. Link to Reset Password page? -->
-            <div class="btn-verify-ok">
-                <input  type="button"  id="verify-btn" class="verify-ok" value="OK"/>
-            </div>
-            <!-- /Button will close email sent pop-up. Link to Reset Password page? -->
-            <div class="email-header">
-                <h2></h2>
-            </div>
-            
-        </div>
-    </section>
-    <!--/ Verify Email Sent PopUp-->
+   
     <!-- /FORGOT PASSWORD -->
-    <!-- </div> -->
+
+    <script src="auth.js"></script>
+    
 </body>

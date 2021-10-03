@@ -1,4 +1,4 @@
-/* LOGIN STYLES */
+/* REGISTRATION STYLES */
 
 :root {
     --epilogue: 'Epilogue', sans-serif;
@@ -27,8 +27,9 @@
     --pk-violet: #914C75;
     --auth-bg: #E5E5E5;
     --input-bg: rgba(196, 196, 195, 50%);
-    --input-mid: rgba(196, 196, 195, 80%);
-    --input-mob: rgba(196, 196, 195, 100%);
+    --input-mid: rgba(196, 196, 195, 70%);
+   
+
 }
 *,
 *::before,
@@ -43,56 +44,17 @@ body {
     font-family: var(--epilogue);  
     overflow-y: hidden;
 }
-
-.login-window {
+.registration-window {
     width: 100%;
     height: 100%;
-    min-width: 375px;
     display: flex;
     flex-direction: row;
     justify-content: stretch;
 }
-.login-left {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, var(--blue) 100%);
-    background-repeat: no-repeat;
-   
-}
-.triangles-holder {
-    width: 100%;
-    min-width: auto;
-    height: 100%;
-    margin: 0;
-    background: url(images/lg-triangles.svg) no-repeat;
-    background-position: -20px; 
-    background-size: auto;
-}
-.login-left-holder {
-    width: 80%;
-    height: 100%;
-    margin: auto;
-    text-align: center; 
-}
-.login-left-header {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    margin-top: 24.3rem;
-    color: white;
-    opacity: 90%;
-    font-size: 96px;
-    font-weight: var(--fw-sbold);
-    text-shadow: 0px 4px 4px var(--blue);
-}
-/* superscript */
-.sup-login {
-    font-size: 50px;
-}
-/* Right Side */
-.login-right-side {
+
+
+/* Left Side */
+.registration-left {
     width: 50%;
     height: 100vh;
     display: flex;
@@ -101,50 +63,47 @@ body {
     align-content: center;
     background: var(--auth-bg);
 }
+.reg-left-triangles-holder {
+    height: 100%;
+}
 
-
-.login-right-holder {
+.reg-left-holder {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-content: center;
     width: 100%;
     height: 100%;
     color: var(--blue);
 }
-.login-form-holder {
+.reg-form-holder {
     width: 100%;
-    height: 100%;
     margin: 2rem auto;
-    margin-bottom: 0;
-    padding-top: 2rem;
-    
 }
-.lg-form {
+.reg-form {
     width: 450px;
-    height: 100%;
-    margin: 0 auto;
     display: flex;
+    text-align: center;
     flex-direction: column;
-    margin-top: 13.5rem;
+    margin: 0 auto;
 }
-.login-form-title {
+.reg-form-title {
     width: 100%;
     text-align: center;
 }
 
-.lg-title {
+.reg-title {
     font-size: 36px;
     color: var(--blue);
     font-weight: var(--fw-sbold);
     margin-top: 1rem;
-    margin-bottom: 3.3rem;
+    margin-bottom: 1.25rem;
 }
-.login-form-container {
+.reg-form-container {
     display: flex;
     width: 100%;
     max-width: 450px;
-    /* height: 55px; */
+    height: 55px;
     margin: 0 auto;
     padding: 1rem auto;
     align-items: center;  
@@ -152,75 +111,72 @@ body {
     line-height: 21px;
     text-align: center;
 }
-.login-label {
+
+.reg-label {
     width: 100%;
+    height: 14px;
     max-width: 450px;
     min-width: 241px;
     text-align: left;
-    margin: 0 auto;
+    margin: 0rem auto;
     margin-bottom: 0;
     padding-left: 2px;
     font-size: 12px;
     font-weight: var(--fw-med);
     line-height: 12.3px;
 }
-.input-icon {
-    padding: 8px;
-    background: var(--input-bg);
+.reg-input-icon {
     width: 37px;
     height: 34px;
     margin-bottom: 1.5rem;
+    padding: 8px;
     text-align: center;
-    color: var(--blue);
-    border: 1px solid #CCCCCC;
-    border-right: none;
+    background: var(--input-bg);
+    border: none;
     border-radius: 5px 0 0 5px;
 }
+.briefcase {
+    padding: 6px;
+    color: var(--blue);
+}
 
-.login-input{
+.reg-input{
     width: 100%;
     max-width: 413px;
     min-width: 213px;
     height: 34px;
     margin-bottom: 1.5rem;
     outline: none;
-    border: none;
-    border-left: none;
+    border: 2px solid var(--very-lt-gray);
     border-radius: 0  5px 5px 0; 
     padding-left: 10px;
-    background:var(--input-bg);
+    background: var(--input-bg);
+    /*   */
 }
-.password,
-.lock {
-    margin-top: 0rem;
-    padding: 6px 8px;
-}
+
 /* keep login */
-.mark {
+.reg-mark {
     width: 100%;
     max-width: 450px;
     min-width: 241px;
     height: auto;
     margin: .2rem auto;
-    text-align: left;
-    color: var(--blue);
+    text-align: left;  
 }
 
 .container label {
     margin-left: 8px;
 }
-.kp {
-    font-size: var(--fs-12);  
-    color: var(--blue);
+#kp-reg {
+    font-size: var(--fs-12); 
+    color: var(--blue); 
 }
-.login-submit {
+.reg-submit {
     width: 54%;
     max-width: 243px;
-    height: 39px;
-    margin: 2.5rem auto;
+    height: 38px;
+    margin: .5rem auto;
     margin-bottom: .3rem;
-    text-align: center;
-    vertical-align: middle;
     font-size: 15px;
     font-weight: var(--fw-sbold);
     color: var(--blue);
@@ -229,73 +185,90 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
 }
-.new-user {
-    margin-bottom: 1rem;
+.reg-acct-already {
+    margin-bottom:.1rem;
     text-align: center;
     font-size: var(--fs-12);
     font-weight: var(--fw-med);
+    color: var(--blue);
 }
-.login-new-user,
-.login-forgot {
-    padding: 0;
-    color: var(--orange);
+
+#rg-signin {
+    margin-bottom:.4rem;
     font-size: var(--fs-12);
     font-weight: var(--fw-med);
-    color: var(--orange);
+    color: var(--pk-violet);
     border: none;
     background: none;
 }
-.login-forgot {
-    width: 100%;
-    text-align: center;
-}
-.icon-holder {
+/* #rg-signin {
+    color: var(--pink);
+} */
+
+.reg-icon-holder {
     width: 100%;
     height: auto;
-    margin-top: 4rem;
     margin-bottom: 0;
     text-align: center;
 }
-.icon-btn {
+.reg-icon-btn {
     border: none;
     background: transparent;
 }
 
-/*  max-width 1360px*/
+/* Right Side */
+.registration-right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, 
+        var(--blue) 100%);
+    background-repeat: no-repeat;
+}
+.reg-triangles-holder {
+    width: 100%;
+    min-width: auto;
+    height: 100%;
+    background: url(/SMA-Team-3/auth-pages/images/lg-triangles.svg) no-repeat;
+    background-position:  0px 95px ; 
+    background-size: auto;
+    transform: rotate(45deg);  
+}
+
 @media screen and (max-width: 1360px) {
     body {
-        background-image: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, 
-            var(--blue) 100%);
-    }
-    .login-window {
+        background-image: linear-gradient(180deg, rgba(145, 76, 117, 0.85) 0%, 
+            var(--orange) 100%);
+    }   
+    .registration-window {
         position: fixed;
         width: 900px;
         height: auto;
         top: 50%;
-        left: 50%;
+        left:50%;
         transform: translate(-50%,-50%);
         display: flex;
         flex-direction: column;
     }
-    .login-left-holder{
-        display:none;
-    }
-    .login-left {
+
+    .registration-right {
         position: absolute;
         top: 50%;
         left:50%;
         width: 900px;
         transform: translate(-50%, -50%);
         background-image: none;
-       
-    }
-    .triangles-holder {
+    } 
+    .reg-triangles-holder {
         margin: auto 0;
         position: relative;
-        background-position: 50px -35%; 
+        background-position:  100px 150px ; 
         background-size: 800px;
-    }
-    .login-right-side {
+        transform: rotate(180deg);
+    }   
+     
+    .registration-left {
         top: 0;
         left: 50%;
         width: 100%;
@@ -303,63 +276,87 @@ body {
         margin: 0 auto;
         background-color: transparent;
         z-index: 50;
-        justify-content: flex-end;
     }
-    .login-right-holder {
+    
+    .reg-left-holder{
         width: 100%;
-        height: 100%;
-        margin: 4rem auto;
+        margin: 0 auto;
     }
-    .login-form-holder {
-        margin: auto;
-        padding-top: 0;
-    }
-    .lg-form {
-        margin-top: 21rem;
-    }
-    .lg-title, 
-    .login-label,
-    #kp-login {
+    .reg-title,
+    .reg-label,
+    #kp-reg {
         color: white;
         text-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
     }
-    .lg-title {
-        margin-top: 0;
-        margin-bottom: 8rem;
+    .reg-input,
+    .reg-input-icon {
+        background: var(--input-bg);
+        /* opacity: 50%; */
+
     }
-    .input-icon {
-        width: 40px;
-    }
-    .login-input,
-    .input-icon {
+    .reg-input-icon {
         background: var(--input-mid);
-    }
-    .login-submit {
-        min-width: 243px;
     }
 }
 
-/*  max-width 490px*/
-@media screen and (max-width: 490px) {
-    .login-window {
+/*  max-width 725px*/
+@media screen and (max-width: 725px) {
+    .registration-window {
         width: 100%;
     }
-    .lg-form {
-        width: 70%;
-        min-width: 241px;
-
+    .reg-left-triangles-holder{
+        background-position: center -75px; 
+        background-size: 100%;
     }
-    .lg-title {
-        font-size: 24px;
+    .reg-left-holder {
+        height: 100%;
     }
-
-    .login-label,
-    #kp-login {
-        font-weight: var(--fw-sbold);
+    
+    .reg-form-holder {
+        width: 90%;
     }
-    .login-input,
-    .input-icon {
-        background: var(--input-mid);
-
+    .reg-form {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .reg-submit {
+        min-width: 243px;
+    }
+    .reg-title {
+        margin-top: 0;
+    }
+    .reg-input-icon {
+        width: 40px;
     }
 } 
+@media screen and (max-width: 457px) {
+    html,
+    body {
+        overflow-y: hidden;
+        width: 100%;
+    }
+    body {
+        position: relative;
+    }
+    .reg-triangles-holder {
+        background-position: 60% 90% ; 
+        background-size: 700px;
+        
+    }   
+    .reg-title {
+        font-size: 24px;
+
+    }
+    .reg-form {
+        width: 70%;
+        min-width: 241px;
+        margin: 0 auto;   
+    }
+    .reg-label,
+    #kp-reg {
+        font-weight: var(--fw-sbold);
+    }
+    
+    
+}

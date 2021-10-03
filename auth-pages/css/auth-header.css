@@ -41,6 +41,19 @@ body {
 .mb-logo-holder {
     display: none;
 }
+.fg-logo-holder,
+.rs-logo-holder {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 1rem ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0; 
+    background: clear;
+    z-index: -1; 
+} 
 .auth-logo-holder {
     width: 100%;
     display: flex;

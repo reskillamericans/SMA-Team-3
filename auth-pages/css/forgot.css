@@ -1,4 +1,4 @@
-/* LOGIN STYLES */
+/* FORGOT STYLES */
 
 :root {
     --epilogue: 'Epilogue', sans-serif;
@@ -42,84 +42,51 @@ body {
     overflow-y: hidden;
 }
 body {
-    background:  linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
-}
-.bg-holder {
-    margin: 0 auto;
-    width: 1400px;
-    height: 1400px;
-    /* top: 0;
-    left: 0%;
-    transform: translate(-10%, -20%); */
-
-}
-.bg-img{
-    /* display: none; */
-    
-    /* position: fixed; */
-    /* display: flex;
-    width: auto; */
-    width: 100%;
-    height: 100vh;
-    background-image: url("images/fg-triangles.svg");
-    background-size: cover;
+    background-image: url(/SMA-Team-3/auth-pages/images/fg-triangles.svg), linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    /* transform: rotate(45deg) */
-
 }
-
 .forgot-window{
-    
     position: fixed;
-    max-width:550px;
+    max-width: 900px;
+    min-width: 250px;
     height: auto;
     top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     text-align: center;
     color: white;
 }
-/* .forgot-window {
-    display: none;
-} */
 .fg-form{
     max-width: 450px;
     height: 90%; 
     margin: 2rem auto;
     display: flex;
     flex-direction: column;
-    /* color: white; */
     padding: 2rem auto;
-    /* border: 2px solid green; */
-
 }
 .forgot-form-title,
 .forgot-form-text{
     width: 100%;
-    height: 50px;
-    margin-bottom: 3rem;
+
+    margin-bottom: 2rem;
 }
 .forgot-form-text{
-    margin-bottom: 4.5rem;
+    margin-bottom: 4rem;
 }
 
 .fg-title{
     font-size: 36px;
     font-weight: var(--fw-sbold);
+    text-shadow: 0px 4px 4px var(--blue);
 }
 .fg-text{
     font-size: 24px;
     font-weight: var(--fw-med);
-    /* margin-bottom: 3.3rem; */
+    text-shadow: 0px 4px 4px var(--blue);
 }
 .fg-form-container {
     display: flex;
@@ -149,10 +116,10 @@ body {
 .fg-input-icon {
     width: 37px;
     height: 34px;
-    /* margin-bottom: 1rem; */
     padding: 8px;
     text-align: center;
-    background: var(--input-bg);
+    background: white;
+    opacity: 75%;
     border: none;
     border-radius: 5px 0 0 5px;
 }
@@ -161,12 +128,12 @@ body {
     max-width: 411px;
     min-width: 213px;
     height: 34px;
-    /* margin-bottom: 1rem; */
     outline: none;
     border: 2px solid var(--very-lt-gray);
     border-radius: 0  5px 5px 0; 
     padding-left: 10px;
-    background: var(--input-bg);
+    background: white;
+    opacity: 50%;
     
 }
 .fg-submit {
@@ -194,33 +161,51 @@ body {
     background: transparent;
     margin: 2rem auto;
 }
-@media screen and (max-width: 850px) {
-    .bg-holder {
-        margin: 0 auto;
-        width:700x;
-        height: auto;
-        /* top: 0;
-        left: 0%;
-        transform: translate(-10%, -20%); */
-    
-    }
-    .bg-img{
-        /* display: none; */
-        /* width: 1279px;
-        position: fixed; */
-        /* display: flex;
-        width: auto; */
-        /* width: 100%;
-        height: 100vh; */
-        background-image: url("images/lg-triangles.svg");
-        background-size: 800px;
+@media screen and (max-width: 1360px) {
+    body {
+        background: linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
         background-repeat: no-repeat;
-        background-position: 20px -70px;
         background-attachment: fixed;
-        /* transform: rotate(-35deg) */
-    
     }
-    
+    .bg-holder {
+        position: fixed;
+        margin: 0 auto;
+        width: 900px;
+        height: 100%;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        background-image: none;
+    }
+    .bg-img {
+        width: 800px;
+        height: 100%;
+        margin: 0 auto;
+        background: url(/SMA-Team-3/auth-pages/images/lg-triangles.svg) no-repeat;
+        background-position: 90px 0%; 
+        background-size: auto;
+        transform: rotate(-20deg);
+    }
+    .forgot-window {
+        height: 750px; 
+    }
+    .fg-form {
+        justify-content: stretch;
+        height: 100%;
+        margin-bottom: 0;
+    }
+    .fg-text {
+        height: auto;
+        margin-bottom: 6.5rem;
+    }
+    .fg-label {
+        color: white;
+        font-weight: var(--fw-med);
+        text-shadow: 0px 4px 4px var(--blue);
+    }
+
+}
+@media screen and (max-width: 850px) {
     .fg-title {
         font-size: 30px;
     }
@@ -229,15 +214,19 @@ body {
     }
 }
 @media screen and (max-width: 600px) {
-    /* .bg-img {
+    html,
+    body {
+        overflow-y: hidden;
         width: 100%;
-        display: flex;
-        background-size: cover;
-    } */
+    }
+    body {
+        position: relative;
+    }
     .fg-title {
         font-size: 24px;
     }
     .fg-text {
         font-size: 14px;
     }
+    
 }

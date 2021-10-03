@@ -48,7 +48,7 @@
     top: 0;
     width: 21px;
     height: 21px;
-    background: #C4C4C3;
+    background: rgba(196, 196, 195, 70%);
     border: none;
 }
 .container >[type="checkbox"]:checked + label::before {
@@ -62,7 +62,7 @@
     margin: 2.5px 3px;
     width: 21px;
     height: 21px;
-    background-image: url(images/check.svg);
+    background-image: url(/SMA-Team-3/auth-pages/images/check.svg);
     background-size: 17px;
     background-repeat: no-repeat, no-repeat;
     transform: scale(1);
@@ -78,7 +78,7 @@
     top: 0;
     width: 21px;
     height: 21px;
-    background-image: url(images/check.svg);
+    background-image: url(/SMA-Team-3/auth-pages/images/check.svg);
     background-size: 17px;
     background-repeat: no-repeat, no-repeat;
     transform:scale(0);

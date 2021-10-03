@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="checkbox.css" />
-    <link rel="stylesheet" href="auth-header.css" />
-    <link rel="stylesheet" href="registration.css" />
+    <link rel="stylesheet" href="css/checkbox.css" />
+    <link rel="stylesheet" href="css/auth-header.css" />
+    <link rel="stylesheet" href="css/registration.css" />
     
     <title>Registration Page</title>
     
@@ -51,7 +51,7 @@
                         
                             <!-- <i id="cell-phone-icon" class="fas fa-mobile-alt" style= "color:blue; font-weight: bold;"></i> -->
                             <!-- First Name -->
-                            <label class="reg-label" for="f_name">FULL NAME</label>
+                            <label class="reg-label" for="f_name">FIRST NAME</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
                                 <input class="reg-input" name="f_name" type="text" id="f_name" autocomplete="on" required/>
@@ -59,7 +59,7 @@
                             <!-- /First Name -->
 
                             <!-- Last Name -->
-                            <label class="reg-label" for="l_name">FULL NAME</label>
+                            <label class="reg-label" for="l_name">LAST NAME</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
                                 <input class="reg-input" name="l_name" type="text" id="l_name" autocomplete="on" required/>
@@ -86,7 +86,7 @@
                             <label class="reg-label" for="user_bio">BIO</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_bio" type="text" id="reg_user_bio" autocomplete="on" required/>
+                                <input class="reg-input" name="user_bio" type="text" id="reg_user_bio" autocomplete="on" />
                             </div>
                             <!-- /BIO -->
 
@@ -94,7 +94,7 @@
                             <label class="reg-label" for="phone">PHONE NUMBER</label>
                             <div class="reg-form-container">
                                 <i class="reg-input-icon fas fa-phone" style= "color:blue;"></i>
-                                <input class="reg-input" name="phone" type="tel" id="phone" autocomplete="off" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                                <input class="reg-input" name="phone" type="tel" id="phone" placeholder= "123-456-7890" autocomplete="off" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
                             </div>
                             <!-- /Phone Number  -->
 
@@ -102,7 +102,7 @@
                             <label class="reg-label" for="user_avatar">AVATAR</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_avatar" type="email" id="reg_user_avatar" autocomplete="on" required/>
+                                <input class="reg-input" name="user_avatar" type="text" id="reg_user_avatar" autocomplete="on" />
                             </div>
                             <!-- /AVATAR -->
 
@@ -110,7 +110,7 @@
                             <label class="reg-label" for="user_job">OCCUPATION</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon briefcase" src="images/briefcase.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_job" type="text" id="reg_user_job" autocomplete="on" required/>
+                                <input class="reg-input" name="user_job" type="text" id="reg_user_job" autocomplete="on" />
                             </div>
                             <!-- /OCCUPATION -->
 
@@ -157,11 +157,7 @@
             
                             <!-- New user-->
                             <p class="reg-acct-already">
-                                ALREADY HAVE AN ACCOUNT? 
-                            </p>
-                            <p class="reg-signin-link">
-                                <input class="reg-signin-link" id="reg_signin" type="submit" value="SIGN IN">
-                                <input class="reg-forgot" id="reg-forgot" type="submit" value="FORGOT YOUR PASSWORD?">
+                                ALREADY HAVE AN ACCOUNT? <input id="rg-signin" class="reg-signin-link" id="reg_signin" type="submit" value="SIGN IN">
                             </p>
                             <!-- /New user-->
  
@@ -185,4 +181,5 @@
         
     </section>
     <!-- /Registration -->
+    <script src="auth.js"></script>
 </body>

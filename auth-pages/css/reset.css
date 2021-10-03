@@ -1,0 +1,242 @@
+/* Reset Styles */
+
+:root {
+    --epilogue: 'Epilogue', sans-serif;
+
+    /* font-sizes */
+    --fs-12: 12px;
+    --fs-14: 14px;
+    --fs-15: 15px;
+    --fs-18: 18px;
+    --fs-24: 24px;
+    --fs-36: 36px;
+
+    /* font-weight */
+    --fw-lt: 300;
+    --fw-norm: 400;
+    --fw-med: 500; 
+    --fw-sbold: 600;
+    --fw-bold: 700;
+    --fw-super-bold: 900;
+
+    /* colors */
+    --blue: #384989;
+    --lt-blue: #639CC8;
+    --yellow: #F8C164;
+    --orange: #EE9062;
+    --pk-violet: #914C75;
+    --auth-bg: #E5E5E5;
+    --input-bg: rgba(196, 196, 195, 50%);
+    --input-mid: rgba(196, 196, 195, 80%);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--epilogue);  
+    overflow-y: hidden;
+}
+body {
+    background-image: url(/SMA-Team-3/auth-pages/images/fg-triangles.svg), linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.reset-window{
+    position: fixed;
+    max-width: 900px;
+    min-width: 250px;
+    height: auto;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+.rs-form{
+    max-width: 450px;
+    height: 90%; 
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem auto;
+}
+.reset-form-title,
+.reset-form-text{
+    width: 100%;
+    /* margin: 1.5rem auto; */
+}
+.reset-form-title { 
+    margin-top: 2.2rem;
+    margin-bottom: 3rem;
+}
+
+.reset-form-text{
+    margin-bottom: 4rem;
+}
+.rs-title{
+    font-size: 36px;
+    font-weight: var(--fw-sbold);
+    text-shadow: 0px 4px 4px var(--blue);
+}
+.rs-text{
+    font-size: 24px;
+    font-weight: var(--fw-med);
+    text-shadow: 0px 4px 4px var(--blue);
+}
+.rs-form-container {
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem auto;
+    align-items: center;  
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+}
+.rs-label{
+    width: 100%;
+    max-width: 450px;
+    min-width: 241px;
+    text-align: left;
+    margin: .75rem auto;
+    margin-bottom: 0;
+    padding-left: 2px;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: var(--fw-med);
+    line-height: 12.3px;
+}
+.rs-input-icon {
+    width: 37px;
+    height: 34px;
+    padding: 8px;
+    text-align: center;
+    background: white;
+    opacity: 75%;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    margin-bottom: 2rem;
+}
+.rs-input {
+    width: 100%;
+    max-width: 411px;
+    min-width: 213px;
+    height: 34px;
+    outline: none;
+    border: 2px solid var(--very-lt-gray);
+    border-radius: 0  5px 5px 0; 
+    padding-left: 10px;
+    background: white;
+    opacity: 50%;
+    margin-bottom: 2rem;
+    
+}
+.rs-submit {
+    width: 243px;
+    max-width: 243px;
+    height: 38px;
+    margin: 2rem auto;
+    margin-bottom: .3rem;
+    font-size: 15px;
+    font-weight: var(--fw-sbold);
+    color: var(--blue);
+    background: var(--orange);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
+}
+.rs-icon-holder {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+.rs-icon-btn {
+    border: none;
+    background: transparent;
+    margin: 2rem auto;
+}
+@media screen and (max-width: 1360px) {
+    body {
+        background: linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .bg-holder {
+        position: fixed;
+        margin: 0 auto;
+        width: 900px;
+        height: 100%;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        background-image: none;
+    }
+    .bg-img {
+        width: 800px;
+        height: 100%;
+        margin: 0 auto;
+        /* background: url(./auth-pages/images/lg-triangles.svg) no-repeat; */
+        background: url(/SMA-Team-3/auth-pages/images/lg-triangles.svg) no-repeat;
+        background-position: 90px 0%; 
+        background-size: auto;
+        transform: rotate(-20deg);
+    }
+    .reset-window {
+        height: 750px; 
+    }
+    .rs-form {
+        justify-content: stretch;
+        height: 100%;
+        margin-bottom: 0;
+    }
+    .reset-form-text {
+        margin-bottom: 1.5rem;
+    }
+    .rs-text {
+        height: auto;
+        margin-bottom: 3rem;
+    }
+    .rs-label {
+        color: white;
+        font-weight: var(--fw-med);
+        text-shadow: 0px 4px 4px var(--blue);
+    }
+
+}
+@media screen and (max-width: 850px) {
+    .rs-title {
+        font-size: 30px;
+    }
+    .rs-text {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 600px) {
+    html,
+    body {
+        overflow-y: hidden;
+        width: 100%;
+    }
+    body {
+        position: relative;
+    }
+    .rs-title {
+        font-size: 24px;
+    }
+    .rs-text {
+        font-size: 14px;
+    }
+    
+}
