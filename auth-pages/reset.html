@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Pia Torain" />
+    <meta name="description" content="Social Media App Team 3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/auth-header.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    
+    <title>Reset Password Page</title>
+    
+</head>
+<body>
+    <div class="bg-holder">
+        <div class="bg-img"></div>
+    </div>
+    <!-- HOME BUTTON -->
+    <div class="rs-logo-holder">
+        <button id="auth-sma-btn" class="auth-icon-btn">
+            <img id="auth-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+        </button>
+    </div>  
+    <!-- /HOME BUTTON --> 
+   
+    
+
+    <!-- Reset Password Page -->
+    <section id="reset_page" class="reset-window">
+       
+        <form action="/reset" method="POST" id="reset-form" class="rs-form">
+            <div class="reset-form-title">
+                <p class="rs-title">RESET PASSWORD</p>
+            </div>
+            <div class="reset-form-text">
+                <p class="rs-text">
+                    PLEASE RESET YOUR EMAIL ADDRESS 
+                    BELOW
+                </p>
+            </div>
+
+            
+            <!-- Password Reset -->
+            <label class="rs-label" for="new-pwd">NEW PASSWORD</label>
+            <div class="rs-form-container">
+                <img class="rs-input-icon" src="images/mail.svg"alt="lock icon"/>
+                <input class="rs-input" name="new-pwd" type="password" id="new-pwd" autocomplete="off" required/>
+            </div>
+
+            <label class="rs-label" for="conf-pwd">CONFRIM PASSWORD</label>
+            <div class="rs-form-container">
+                <img class="rs-input-icon" src="images/mail.svg"alt="lock icon"/>
+                <input class="rs-input" name="conf-pwd" type="password" id="conf-pwd" autocomplete="off" required/>
+            </div>
+            <!-- / Paswword Reset -->
+
+            <!-- Reset Password Button-->
+            <div class="rs-form-container">
+                <input class="rs-submit" id="rs-btn" type="submit" value="RESET PASSWORD" /> 
+            </div>
+            <!-- /Reset Password Button-->
+    
+        </form>
+        <!-- /Reset Password Form -->
+
+    </section>
+
+   
+    <!-- /RESET PASSWORD -->
+    <script src="js/reset.js"></script>
+</body>

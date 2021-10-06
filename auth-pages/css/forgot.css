@@ -1,0 +1,266 @@
+/* FORGOT STYLES */
+
+:root {
+    --epilogue: 'Epilogue', sans-serif;
+
+    /* font-sizes */
+    --fs-12: 12px;
+    --fs-14: 14px;
+    --fs-15: 15px;
+    --fs-18: 18px;
+    --fs-24: 24px;
+    --fs-36: 36px;
+
+    /* font-weight */
+    --fw-lt: 300;
+    --fw-norm: 400;
+    --fw-med: 500; 
+    --fw-sbold: 600;
+    --fw-bold: 700;
+    --fw-super-bold: 900;
+
+    /* colors */
+    --blue: #384989;
+    --lt-blue: #639CC8;
+    --yellow: #F8C164;
+    --orange: #EE9062;
+    --pk-violet: #914C75;
+    --auth-bg: #E5E5E5;
+    --fg-input-bg: rgba(196, 196, 195, 60%);
+    --fg-input-mid: rgba(196, 196, 195, 80%);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--epilogue);  
+    overflow-y: hidden;
+}
+body {
+    background-image: url(/SMA-Team-3/auth-pages/images/fg-triangles.svg), linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+/* Styling forgot and verify windows */
+.forgot-window,
+.verify-window {
+    position: fixed;
+    max-width: 900px;
+    min-width: 250px;
+    height: auto;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+/* setting verify window to display none */
+.verify-window {
+    display: none;
+}
+/* form */
+.fg-form{
+    max-width: 450px;
+    height: 90%; 
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem auto;
+}
+.forgot-form-title,
+.forgot-form-text,
+.verify-title,
+.ver-form-text {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.forgot-form-text{
+    margin-bottom: 4rem;
+}
+
+.fg-title,
+.ver-title {
+    font-size: 36px;
+    font-weight: var(--fw-sbold);
+    text-shadow: 0px 4px 4px var(--blue);
+}
+.fg-text,
+.ver-text {
+    font-size: 24px;
+    font-weight: var(--fw-med);
+    text-shadow: 0px 4px 4px var(--blue);
+}
+.fg-form-container,
+.ver-form-container {
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem auto;
+    align-items: center;  
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+}
+.fg-label{
+    width: 100%;
+    max-width: 450px;
+    min-width: 241px;
+    text-align: left;
+    margin: .75rem auto;
+    margin-bottom: 0;
+    padding-left: 2px;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: var(--fw-med);
+    line-height: 12.3px;
+}
+.fg-input-icon {
+    position: absolute;
+    width: 37px;
+    height: 34px;
+    padding: 8px;
+    text-align: center;
+    opacity: 75%;
+    border-radius: 5px 0 0 5px;
+}
+.fg-input {
+    width: 100%;
+    max-width: 450px;
+    min-width: 213px;
+    height: 34px;
+    outline: none;
+    border: 2px solid var(--very-lt-gray);
+    border-radius: 5px; 
+    padding-left: 40px;
+    background: var(--fg-input-bg);
+    border: 1px solid var(--orange);
+    
+}
+.fg-input:hover {
+    border: 1px solid var(--blue);
+    cursor: pointer;
+}
+.fg-submit,
+.ver-submit {
+    width: 243px;
+    max-width: 243px;
+    height: 38px;
+    margin: 2.5rem auto;
+    margin-bottom: .3rem;
+    font-size: 15px;
+    font-weight: var(--fw-sbold);
+    color: var(--blue);
+    background: var(--orange);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
+}
+.fg-submit:hover,
+.ver-submit:hover {
+    opacity: 80%;
+    cursor: pointer;
+
+}
+.fg-icon-holder {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+.fg-icon-btn {
+    border: none;
+    background: transparent;
+    margin: 2rem auto;
+}
+@media screen and (max-width: 1360px) {
+    /* removing traingles from body */
+    body {
+        background: linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    /* sizing the triangle holder and positioning it */
+    .bg-holder {
+        position: fixed;
+        margin: 0 auto;
+        width: 900px;
+        height: 100%;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        background-image: none;
+    }
+    /* sizing the bg img and positioning it */
+    .bg-img {
+        width: 800px;
+        height: 100%;
+        margin: 0 auto;
+        background: url(/SMA-Team-3/auth-pages/images/lg-triangles.svg) no-repeat;
+        background-position: 90px 0%; 
+        background-size: auto;
+        transform: rotate(-20deg);
+    }
+    .forgot-window {
+        height: 750px; 
+    }
+    .fg-form {
+        justify-content: stretch;
+        height: 100%;
+        margin-bottom: 0;
+    }
+    .fg-text {
+        height: auto;
+        margin-bottom: 6.5rem;
+    }
+    .fg-label {
+        color: white;
+        font-weight: var(--fw-med);
+        text-shadow: 0px 4px 4px var(--blue);
+    }
+
+}
+@media screen and (max-width: 1000px) {
+    .ver-text {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .fg-title,
+    .ver-title {
+        font-size: 30px;
+    }
+    .fg-text,
+    .ver-text {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 600px) {
+    html,
+    body {
+        overflow-y: hidden;
+        width: 100%;
+    }
+    body {
+        position: relative;
+    }
+    .fg-title,
+    .ver-title {
+        font-size: 24px;
+    }
+    .fg-text,
+    .ver-text {
+        font-size: 14px;
+    }
+    
+}

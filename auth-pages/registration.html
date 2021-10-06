@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Pia Torain" />
+    <meta name="description" content="Social Media App Team 3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/checkbox.css" />
+    <link rel="stylesheet" href="css/auth-header.css" />
+    <link rel="stylesheet" href="css/registration.css" />
+    
+    <title>Registration Page</title>
+    
+</head>
+<body>
+    <!-- MB HOME BUTTON -->
+    <div class="mb-logo-holder">
+        <button id="mb-sma-btn" class="auth-icon-btn">
+            <img id="mb-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+        </button>
+    </div>  
+    <!-- / MB HOME BUTTON --> 
+    
+
+    <!-- Registration Page -->
+    <section id="registration_page" class="registration-window">
+        
+        <!-- Left Side -->
+        <article class="registration-left">
+            <!-- DK HOME BUTTON -->
+            <div class="auth-logo-holder">
+                <button id="auth-sma-btn" class="auth-icon-btn">
+                    <img id="auth-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+                </button>
+            </div>   
+            <!--/ DK HOME BUTTON -->
+            <div id="reg-left-triangles" class="reg-left-triangles-holder">
+                <div id="reg-holder" class="reg-left-holder">
+                    <div class="reg-form-holder">
+                        <!-- Registration Form -->
+                        <form action="/registration" method="POST" id="registration-form" class="reg-form">
+                            <div class="reg-form-title">
+                                <p class="reg-title">REGISTER TO JOIN US</p>
+                            </div>
+
+                        
+
+                            <!-- First Name -->
+                            <label class="reg-label" for="f_name">FIRST NAME</label>
+                            <div class="reg-form-container">
+                                <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
+                                <input class="reg-input" name="f_name" type="text" id="f_name" autocomplete="on" required/>
+                            </div>
+                            <!-- /First Name -->
+
+                            <!-- Last Name -->
+                            <label class="reg-label" for="l_name">LAST NAME</label>
+                            <div class="reg-form-container">
+                                <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
+                                <input class="reg-input" name="l_name" type="text" id="l_name" autocomplete="on" required/>
+                            </div>
+                            <!-- /Last Name -->
+
+                            <!-- User Name-->
+                            <label class="reg-label" for="user_name">USERNAME</label>
+                            <div class="reg-form-container">
+                                <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
+                                <input class="reg-input" name="user_name" type="text" id="user_name" autocomplete="on" required/>
+                            </div>
+                            <!-- /User Name -->
+
+                            <!-- Email -->
+                            <label class="reg-label" for="new_email">E-MAIL ADDRESS</label>
+                            <div class="reg-form-container">
+                                <img class="reg-input-icon" src="images/mail.svg"alt="email icon"/>
+                                <input class="reg-input" name="new_email" type="email" id="new_email" autocomplete="on" />
+                            </div>
+                            <!-- /Email -->
+
+                            <!-- BIO-->
+                            <label class="reg-label" for="user_bio">BIO</label>
+                            <div class="reg-form-container">
+                                <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
+                                <input class="reg-input" name="user_bio" type="text" id="user_bio" autocomplete="on" />
+                            </div>
+                            <!-- /BIO -->
+
+                            <!-- Phone Number  -->
+                            <label class="reg-label" for="phone">PHONE NUMBER</label>
+                            <div class="reg-form-container">
+                                <i class="reg-input-icon fas fa-phone phone" ></i>
+                                <input class="reg-input" name="phone" type="tel" id="phone" placeholder= "123-456-7890" autocomplete="off" pattern="[1]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                            </div>
+                            <!-- /Phone Number  -->
+
+                            <!-- OCCUPATION-->
+                            <label class="reg-label" for="user_job">OCCUPATION</label>
+                            <div class="reg-form-container">
+                                <img class="reg-input-icon briefcase" src="images/briefcase.svg"alt="user icon"  />
+                                <input class="reg-input" name="user_job" type="text" id="user_job" autocomplete="on" />
+                            </div>
+                            <!-- /OCCUPATION -->
+
+                            <!-- COMPANY Note: commented out for spacing reasons-->
+                            <label class="reg-label" for="user_comp">COMPANY</label>
+                            <div class="reg-form-container">
+                                <i class="reg-input-icon far fa-building company"></i>
+                                <input class="reg-input" name="user_comp" type="text" id="user_comp" autocomplete="on" required/>
+                            </div>
+                            <!-- /COMPANY -->
+
+                            <!-- Registration Password-->
+                            <label class="reg-label" for="new_password">PASSWORD</label>
+                            <div class="reg-form-container">
+                                <img class="reg-input-icon lock" src="images/lock.svg" alt="password-icon"/>
+                                <input class="reg-input password" name="new_password" type="password" id="new_password"  autocomplete="off" required/>
+                            </div>
+                            <!-- /Registration Password -->
+
+                            <!-- Confirm Password -->
+                            <label class="reg-label" for="conf_password">COMFIRM PASSWORD</label>
+                            <div class="reg-form-container">
+                                <img class="reg-input-icon lock" src="images/lock.svg" alt="password-icon"/>
+                                <input class="reg-input conf-password" name="conf_password" type="password" id="conf_password"  autocomplete="off" required/>
+                            </div>
+                            <!-- /Confirm Password -->
+                            <!-- AVATAR-->
+                            <label class="reg-label select" for="fileupload-btn" >SELECT AN AVATAR</label>
+                            <div class="reg-form-container file">
+    
+                                <input class="reg-input" name="fileupload-btn" type="file" id="fileupload-btn" hidden />
+                                <label class="file-btn" for="fileupload-btn" >Choose File</label>
+                                <span id="file-chosen">No File Chosen</span>
+                            </div>
+                            <!-- /AVATAR -->
+                            
+                            <!-- Stay signed in -->
+                            <div class="reg-mark">
+                                <div class="container">
+                                <!-- <form> -->
+                                    <input type="checkbox" id="keep" name="sign"  hidden>
+                                    <label id="kp-reg" class="keep-reg" for="keep" >KEEP ME LOGGED IN</label>
+                                <!-- </form> -->
+                                </div>
+                            </div>   
+                            <!-- /Stay signed in  -->
+                            
+                            <!-- Register and Go to Login -->
+                            <div class="reg-form-container">
+                                <input class="reg-submit" id="reg-btn" type="submit" value="REGISTER" /> 
+                            </div>
+                            <!-- /Register and Go to Login -->
+            
+                            <!-- New user-->
+                            <p class="reg-acct-already">
+                                ALREADY HAVE AN ACCOUNT? <input id="rg-signin" class="reg-signin-link" id="reg_signin" type="submit" value="SIGN IN">
+                            </p>
+                            <!-- /New user-->
+                            
+ 
+                            
+                        </form>
+                        <!-- /Registration Form -->
+                    </div> 
+                </div>
+        </div>
+        </article>
+         <!-- /Left Side -->
+
+
+
+         <!-- Right Side -->
+        <article id="reg-right" class="registration-right">
+            
+            <div id="reg-triangles" class="reg-triangles-holder"></div>                
+        </article>
+        <!-- /Right Side -->
+        
+    </section>
+    <!-- /Registration -->
+    <script src="js/registration.js"></script>
+</body>
