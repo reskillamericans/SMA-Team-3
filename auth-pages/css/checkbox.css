@@ -33,7 +33,7 @@
     height: 21px;
     border: 1px solid #CCCCCC;
     border-radius: 5px;
-    background: #C4C4C3;
+    background: rgba(196, 196, 195, 50%);
 }
 .container > [type="checkbox"] + label::before {
     width: 21px;

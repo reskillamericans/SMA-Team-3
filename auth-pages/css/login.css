@@ -145,7 +145,7 @@ body {
     display: flex;
     width: 100%;
     max-width: 450px;
-    /* height: 55px; */
+    height: auto;
     margin: 0 auto;
     padding: 1rem auto;
     align-items: center;  
@@ -155,43 +155,49 @@ body {
 }
 .login-label {
     width: 100%;
+    height: 38px;
     max-width: 450px;
     min-width: 241px;
     text-align: left;
+    align-content: bottom;
     margin: 0 auto;
     margin-bottom: 0;
     padding-left: 2px;
+    padding-top: 26px;
     font-size: 12px;
     font-weight: var(--fw-med);
     line-height: 12.3px;
 }
 .input-icon {
+    position: absolute;
     padding: 8px;
-    background: var(--input-mid);
-    width: 37px;
-    height: 34px;
-    margin-bottom: 1.5rem;
+    min-width: 37px;
+    height: 32px;
+    margin-top: 0;
     text-align: center;
     color: var(--blue);
-    border: 1px solid #CCCCCC;
-    border-right: none;
+    border: transparent;
     border-radius: 5px 0 0 5px;
+    background: none;
 }
 
 .login-input{
     width: 100%;
-    max-width: 413px;
+    max-width: 450px;
     min-width: 213px;
     height: 34px;
-    margin-bottom: 1.5rem;
     outline: none;
     border: none;
-    border-left: none;
-    border-radius: 0  5px 5px 0; 
-    padding-left: 10px;
+    border-radius: 5px; 
+    padding-left: 40px;
     background:var(--input-bg);
+    border: 1px solid var(--orange);
 }
-.password,
+.login-input:hover {
+    border: 1px solid var(--blue);
+    cursor: pointer;
+}
+/* .password, */
 .lock {
     margin-top: 0rem;
     padding: 6px 8px;
@@ -206,7 +212,9 @@ body {
     text-align: left;
     color: var(--blue);
 }
-
+.container {
+    margin-top: 1rem;
+}
 .container label {
     margin-left: 8px;
 }
@@ -231,6 +239,11 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
 }
+.login-submit:hover {
+    opacity: 80%;
+    cursor: pointer;
+    
+}
 .new-user {
     margin-bottom: 1rem;
     text-align: center;
@@ -251,17 +264,7 @@ body {
     width: 100%;
     text-align: center;
 }
-.icon-holder {
-    width: 100%;
-    height: auto;
-    margin-top: 4rem;
-    margin-bottom: 0;
-    text-align: center;
-}
-.icon-btn {
-    border: none;
-    background: transparent;
-}
+
 
 /*  max-width 1360px*/
 @media screen and (max-width: 1360px) {
@@ -294,7 +297,7 @@ body {
     .triangles-holder {
         margin: auto 0;
         position: relative;
-        background-position: 50px -35%; 
+        background-position: 100px -35%; 
         background-size: 800px;
     }
     .login-right-side {
@@ -331,6 +334,9 @@ body {
     }
     .input-icon {
         width: 40px;
+    }
+    .new-user {
+        color: white;
     }
     
     .login-submit {
@@ -369,10 +375,5 @@ body {
     .login-label,
     #kp-login {
         font-weight: var(--fw-sbold);
-    }
-    .login-input,
-    .input-icon {
-        background: var(--input-mid);
-
     }
 } 

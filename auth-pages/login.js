@@ -80,39 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     btnLogFor.addEventListener('click', showForgot);
 
-    // Check Registration Inputs    Empty?
-    // rgForm.addEventListener('input', function(e) {
-    //     btnReg.addEventListener('click', function(e) {
-    //         e.preventDefault();
-    //     }); 
-    //     btnReg.addEventListener('click', checkReg)
-    // }); 
-    // function getInput() {
-    //     Array.from(rgInput).forEach(function(rgInput) {
-    //         btnReg.addEventListener('click', checkReg);
-    //     }); 
-
-    // }
-    // function checkReg () {
-        // Array.from(rgInput).forEach(function(btnReg) {
-        //     btnReg.addEventListener('click', checkReg);
-        // }); 
-    //     if(lname.value !== "" && fname.value !== ""  && userName.value !== ""  && newEmail.value.validity == "valid" && newPass.value == confPass.value){
-            
-    //         btnReg.addEventListener('click', showLogin);
-    //     }else {
-    //         btnReg.style.backgroundColor = "#ff0000";
-    //     } 
-        
-    // }
-    // function showLogin() {
-    //     window.location = "login.html"; 
-    //     lgForm.reset(); 
-    // };
-    // btnRegLog.addEventListener('click', function(e) {
-    //     e.preventDefault();
-    // });
-    // btnRegLog.addEventListener('click', showLogin);
+   
 
    
 });

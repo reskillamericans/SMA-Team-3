@@ -20,8 +20,8 @@
 <body>
     <!-- MB HOME BUTTON -->
     <div class="mb-logo-holder">
-        <button id="auth-sma-btn" class="auth-icon-btn">
-            <img id="auth-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
+        <button id="mb-sma-btn" class="auth-icon-btn">
+            <img id="mb-header-logo" class="auth-header-logo" src="images/sma-logo.svg"  alt="home button">
         </button>
     </div>  
     <!-- / MB HOME BUTTON --> 
@@ -49,7 +49,7 @@
                             </div>
 
                         
-                            <!-- <i id="cell-phone-icon" class="fas fa-mobile-alt" style= "color:blue; font-weight: bold;"></i> -->
+
                             <!-- First Name -->
                             <label class="reg-label" for="f_name">FIRST NAME</label>
                             <div class="reg-form-container">
@@ -70,7 +70,7 @@
                             <label class="reg-label" for="user_name">USERNAME</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_name" type="text" id="reg_user_name" autocomplete="on" required/>
+                                <input class="reg-input" name="user_name" type="text" id="user_name" autocomplete="on" required/>
                             </div>
                             <!-- /User Name -->
 
@@ -78,7 +78,7 @@
                             <label class="reg-label" for="new_email">E-MAIL ADDRESS</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/mail.svg"alt="email icon"/>
-                                <input class="reg-input" name="new_email" type="email" id="new_email" autocomplete="on" required/>
+                                <input class="reg-input" name="new_email" type="email" id="new_email" autocomplete="on" />
                             </div>
                             <!-- /Email -->
 
@@ -86,31 +86,32 @@
                             <label class="reg-label" for="user_bio">BIO</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_bio" type="text" id="reg_user_bio" autocomplete="on" />
+                                <input class="reg-input" name="user_bio" type="text" id="user_bio" autocomplete="on" />
                             </div>
                             <!-- /BIO -->
 
                             <!-- Phone Number  -->
                             <label class="reg-label" for="phone">PHONE NUMBER</label>
                             <div class="reg-form-container">
-                                <i class="reg-input-icon fas fa-phone" style= "color:blue;"></i>
-                                <input class="reg-input" name="phone" type="tel" id="phone" placeholder= "123-456-7890" autocomplete="off" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                                <i class="reg-input-icon fas fa-phone phone" ></i>
+                                <input class="reg-input" name="phone" type="tel" id="phone" placeholder= "123-456-7890" autocomplete="off" pattern="[1]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
                             </div>
                             <!-- /Phone Number  -->
 
                             <!-- AVATAR-->
-                            <label class="reg-label" for="user_avatar">AVATAR</label>
+                            <label class="reg-label" for="fileupload" id="fileupload">SELECT AN AVATAR</label>
                             <div class="reg-form-container">
                                 <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_avatar" type="text" id="reg_user_avatar" autocomplete="on" />
+                                <input class="reg-input" name="user_avatar" type="file" id="user_avatar" autocomplete="on" />
+                                <input class="file-sub" type="submit" value="SUBMIT">
                             </div>
                             <!-- /AVATAR -->
 
                             <!-- OCCUPATION-->
                             <label class="reg-label" for="user_job">OCCUPATION</label>
                             <div class="reg-form-container">
-                                <img class="reg-input-icon briefcase" src="images/briefcase.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_job" type="text" id="reg_user_job" autocomplete="on" />
+                                <img class="reg-input-icon briefcase" src="images/briefcase.svg"alt="user icon"  />
+                                <input class="reg-input" name="user_job" type="text" id="user_job" autocomplete="on" />
                             </div>
                             <!-- /OCCUPATION -->
 
@@ -181,5 +182,5 @@
         
     </section>
     <!-- /Registration -->
-    <script src="auth.js"></script>
+    <script src="registration.js"></script>
 </body>

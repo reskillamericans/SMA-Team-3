@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Select All Home Buttons Elements
     const btnHome = document.querySelectorAll(".auth-icon-btn");
+    const required = document.querySelectorAll("input[required]");
+    const labels = document.getElementsByTagName("label");
     
     // Select Login page button element
     const lgForm = document.getElementById("login-form");
@@ -28,7 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const newPass = document.getElementById("new_password");
     const confPass = document.getElementById("conf_password");
     
-
+    // function changeLabel() {
+    //     if(inputs.value !== "") {
+    //         inputs.style.backgroundColor = "#99AABB";
+    //         inputs.style.opacity = ".60";
+    //     }
+    // }
+    // inputs.addEventListener("mouseover", e => {
+    //     inputs.style.border = "1 solid #ff00DD";
+    // })
 
     function showHome() {
         window.location = "/SMA-Team-3/landing-pages/landing.html";
@@ -42,77 +52,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }); 
 
     // Link to registration page
-    function showRegistration() {
-        window.location = "registration.html"; 
-        lgForm.reset(); 
-    };
+    // function showRegistration() {
+    //     window.location = "registration.html"; 
+    //     lgForm.reset(); 
+    // };
 
     // Check login form inputs
-    lgForm.addEventListener('input', function(e) {
-        btnLogin.addEventListener('click', function(e) {
-            e.preventDefault();
-        }); 
-        btnLogin.addEventListener('click', checkLogin)
-    }); 
+    // lgForm.addEventListener('input', function(e) {
+    //     btnLogin.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //     }); 
+    //     btnLogin.addEventListener('click', checkLogin)
+    // }); 
 
     // are login form inputs empty  NOTE: goes to homepage bc profile page is made
-    function checkLogin() {
-        if(curPwd.value !== "" && logEmail.value !== "") {
-            showHome();
-        } else {
-            btnLogin.style.backgroundColor = "#53B6E0";
-        };
-    };
+    // function checkLogin() {
+    //     if(curPwd.value !== "" && logEmail.value !== "") {
+    //         showHome();
+    //     } else {
+    //         btnLogin.style.backgroundColor = "#53B6E0";
+    //     };
+    // };
     
     // Login page registration link
-    btnLogReg.addEventListener('click', function(e) {
-        e.preventDefault();
-    });
-    btnLogReg.addEventListener('click', showRegistration);
+    // btnLogReg.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    // });
+    // btnLogReg.addEventListener('click', showRegistration);
    
     // Login page link to forgot password
-    function showForgot() {
-        window.location = "forgot.html"; 
-        lgForm.reset(); 
-    };
-    btnLogFor.addEventListener('click', function(e) {
-        e.preventDefault();
-    });
-    btnLogFor.addEventListener('click', showForgot);
+    // function showForgot() {
+    //     window.location = "forgot.html"; 
+    //     lgForm.reset(); 
+    // };
+    // btnLogFor.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    // });
+    // btnLogFor.addEventListener('click', showForgot);
 
     // Check Registration Inputs    Empty?
-    rgForm.addEventListener('input', function(e) {
-        btnReg.addEventListener('click', function(e) {
-            e.preventDefault();
-        }); 
-        btnReg.addEventListener('click', checkReg)
-    }); 
+    // rgForm.addEventListener('input', function(e) {
+    //     btnReg.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //     }); 
+    //     btnReg.addEventListener('click', checkReg)
+    // }); 
     // function getInput() {
     //     Array.from(rgInput).forEach(function(rgInput) {
     //         btnReg.addEventListener('click', checkReg);
     //     }); 
 
     // }
-    function checkReg () {
+    // function checkReg () {
         // Array.from(rgInput).forEach(function(btnReg) {
         //     btnReg.addEventListener('click', checkReg);
         // }); 
-        if(lname.value !== "" && fname.value !== ""  && userName.value !== ""  && newEmail.value.validity == "valid" && newPass.value == confPass.value){
+    //     if(lname.value !== "" && fname.value !== ""  && userName.value !== ""  && newEmail.value.validity == "valid" && newPass.value == confPass.value){
             
-            btnReg.addEventListener('click', showLogin);
-        }else {
-            btnReg.style.backgroundColor = "#ff0000";
-        } 
+    //         btnReg.addEventListener('click', showLogin);
+    //     }else {
+    //         btnReg.style.backgroundColor = "#ff0000";
+    //     } 
         
-    }
-    function showLogin() {
-        window.location = "login.html"; 
-        lgForm.reset(); 
-    };
-    btnRegLog.addEventListener('click', function(e) {
-        e.preventDefault();
-    });
-    btnRegLog.addEventListener('click', showLogin);
+    // }
+    // function showLogin() {
+    //     window.location = "login.html"; 
+    //     lgForm.reset(); 
+    // };
+    // btnRegLog.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    // });
+    // btnRegLog.addEventListener('click', showLogin);
 
    
 });

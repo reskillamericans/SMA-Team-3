@@ -26,7 +26,7 @@
     --orange: #EE9062;
     --pk-violet: #914C75;
     --auth-bg: #E5E5E5;
-    --input-bg: rgba(196, 196, 195, 50%);
+    --rs-input-bg: rgba(196, 196, 195, 60%);
     --input-mid: rgba(196, 196, 195, 80%);
 }
 *,
@@ -118,11 +118,12 @@ body {
     line-height: 12.3px;
 }
 .rs-input-icon {
+    position: absolute;
     width: 37px;
-    height: 34px;
+    height: 32px;
     padding: 8px;
     text-align: center;
-    background: white;
+    background: none;
     opacity: 75%;
     border: none;
     border-radius: 5px 0 0 5px;
@@ -130,15 +131,15 @@ body {
 }
 .rs-input {
     width: 100%;
-    max-width: 411px;
+    max-width: 450px;
     min-width: 213px;
     height: 34px;
     outline: none;
     border: 2px solid var(--very-lt-gray);
-    border-radius: 0  5px 5px 0; 
-    padding-left: 10px;
-    background: white;
-    opacity: 50%;
+    border-radius: 5px; 
+    padding-left: 40px;
+    background: var(--rs-input-bg);
+    /* opacity: 50%; */
     margin-bottom: 2rem;
     
 }
