@@ -98,15 +98,6 @@
                             </div>
                             <!-- /Phone Number  -->
 
-                            <!-- AVATAR-->
-                            <label class="reg-label" for="fileupload" id="fileupload">SELECT AN AVATAR</label>
-                            <div class="reg-form-container">
-                                <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_avatar" type="file" id="user_avatar" autocomplete="on" />
-                                <input class="file-sub" type="submit" value="SUBMIT">
-                            </div>
-                            <!-- /AVATAR -->
-
                             <!-- OCCUPATION-->
                             <label class="reg-label" for="user_job">OCCUPATION</label>
                             <div class="reg-form-container">
@@ -116,11 +107,11 @@
                             <!-- /OCCUPATION -->
 
                             <!-- COMPANY Note: commented out for spacing reasons-->
-                            <!-- <label class="reg-label" for="user_comp">COMPANY</label>
+                            <label class="reg-label" for="user_comp">COMPANY</label>
                             <div class="reg-form-container">
-                                <img class="reg-input-icon" src="images/user.svg"alt="user icon"/>
-                                <input class="reg-input" name="user_comp" type="text" id="reg_user_comp" autocomplete="on" required/>
-                            </div> -->
+                                <i class="reg-input-icon far fa-building company"></i>
+                                <input class="reg-input" name="user_comp" type="text" id="user_comp" autocomplete="on" required/>
+                            </div>
                             <!-- /COMPANY -->
 
                             <!-- Registration Password-->
@@ -138,6 +129,15 @@
                                 <input class="reg-input conf-password" name="conf_password" type="password" id="conf_password"  autocomplete="off" required/>
                             </div>
                             <!-- /Confirm Password -->
+                            <!-- AVATAR-->
+                            <label class="reg-label select" for="fileupload-btn" >SELECT AN AVATAR</label>
+                            <div class="reg-form-container file">
+    
+                                <input class="reg-input" name="fileupload-btn" type="file" id="fileupload-btn" hidden />
+                                <label class="file-btn" for="fileupload-btn" >Choose File</label>
+                                <span id="file-chosen">No File Chosen</span>
+                            </div>
+                            <!-- /AVATAR -->
                             
                             <!-- Stay signed in -->
                             <div class="reg-mark">
@@ -161,6 +161,7 @@
                                 ALREADY HAVE AN ACCOUNT? <input id="rg-signin" class="reg-signin-link" id="reg_signin" type="submit" value="SIGN IN">
                             </p>
                             <!-- /New user-->
+                            
  
                             
                         </form>
@@ -182,5 +183,5 @@
         
     </section>
     <!-- /Registration -->
-    <script src="registration.js"></script>
+    <script src="js/registration.js"></script>
 </body>

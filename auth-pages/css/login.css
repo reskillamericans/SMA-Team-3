@@ -43,7 +43,7 @@ body {
     font-family: var(--epilogue);  
     overflow-y: hidden;
 }
-
+/* Window */
 .login-window {
     width: 100%;
     height: 100%;
@@ -52,6 +52,7 @@ body {
     flex-direction: row;
     justify-content: stretch;
 }
+/* left side */
 .login-left {
     width: 50%;
     height: 100%;
@@ -120,6 +121,7 @@ body {
     padding-top: 2rem;
     
 }
+/* form */
 .lg-form {
     width: 450px;
     min-width: 262.5px;
@@ -153,6 +155,7 @@ body {
     line-height: 21px;
     text-align: center;
 }
+/* labels */
 .login-label {
     width: 100%;
     height: 38px;
@@ -168,6 +171,7 @@ body {
     font-weight: var(--fw-med);
     line-height: 12.3px;
 }
+/* icons */
 .input-icon {
     position: absolute;
     padding: 8px;
@@ -180,7 +184,7 @@ body {
     border-radius: 5px 0 0 5px;
     background: none;
 }
-
+/* inputs */
 .login-input{
     width: 100%;
     max-width: 450px;
@@ -268,10 +272,12 @@ body {
 
 /*  max-width 1360px*/
 @media screen and (max-width: 1360px) {
+    /* apply bg img to body */
     body {
         background-image: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, 
             var(--blue) 100%);
     }
+    /* resize the window */
     .login-window {
         position: fixed;
         width: 900px;
@@ -285,6 +291,7 @@ body {
     .login-left-holder{
         display:none;
     }
+    /* resize and reposition the left side */
     .login-left {
         position: absolute;
         top: 50%;
@@ -294,12 +301,14 @@ body {
         background-image: none;
        
     }
+    /* position the triangles */
     .triangles-holder {
         margin: auto 0;
         position: relative;
         background-position: 100px -35%; 
         background-size: 800px;
     }
+    /* resize and position the right side */
     .login-right-side {
         top: 0;
         left: 50%;

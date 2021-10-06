@@ -48,7 +48,9 @@ body {
     background-position: center;
     background-attachment: fixed;
 }
-.forgot-window{
+/* Styling forgot and verify windows */
+.forgot-window,
+.verify-window {
     position: fixed;
     max-width: 900px;
     min-width: 250px;
@@ -61,6 +63,11 @@ body {
     text-align: center;
     color: white;
 }
+/* setting verify window to display none */
+.verify-window {
+    display: none;
+}
+/* form */
 .fg-form{
     max-width: 450px;
     height: 90%; 
@@ -70,26 +77,30 @@ body {
     padding: 2rem auto;
 }
 .forgot-form-title,
-.forgot-form-text{
+.forgot-form-text,
+.verify-title,
+.ver-form-text {
     width: 100%;
-
     margin-bottom: 2rem;
 }
 .forgot-form-text{
     margin-bottom: 4rem;
 }
 
-.fg-title{
+.fg-title,
+.ver-title {
     font-size: 36px;
     font-weight: var(--fw-sbold);
     text-shadow: 0px 4px 4px var(--blue);
 }
-.fg-text{
+.fg-text,
+.ver-text {
     font-size: 24px;
     font-weight: var(--fw-med);
     text-shadow: 0px 4px 4px var(--blue);
 }
-.fg-form-container {
+.fg-form-container,
+.ver-form-container {
     display: flex;
     width: 100%;
     max-width: 450px;
@@ -120,7 +131,6 @@ body {
     height: 34px;
     padding: 8px;
     text-align: center;
-    /* background: var(--fg-input-mid); */
     opacity: 75%;
     border-radius: 5px 0 0 5px;
 }
@@ -141,7 +151,8 @@ body {
     border: 1px solid var(--blue);
     cursor: pointer;
 }
-.fg-submit {
+.fg-submit,
+.ver-submit {
     width: 243px;
     max-width: 243px;
     height: 38px;
@@ -155,7 +166,8 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85)
 }
-.fg-submit:hover {
+.fg-submit:hover,
+.ver-submit:hover {
     opacity: 80%;
     cursor: pointer;
 
@@ -172,11 +184,13 @@ body {
     margin: 2rem auto;
 }
 @media screen and (max-width: 1360px) {
+    /* removing traingles from body */
     body {
         background: linear-gradient(180deg, var(--orange) 41.67%, var(--blue) 100%); 
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+    /* sizing the triangle holder and positioning it */
     .bg-holder {
         position: fixed;
         margin: 0 auto;
@@ -187,6 +201,7 @@ body {
         transform: translate(-50%, -50%);
         background-image: none;
     }
+    /* sizing the bg img and positioning it */
     .bg-img {
         width: 800px;
         height: 100%;
@@ -215,11 +230,18 @@ body {
     }
 
 }
+@media screen and (max-width: 1000px) {
+    .ver-text {
+        font-size: 20px;
+    }
+}
 @media screen and (max-width: 850px) {
-    .fg-title {
+    .fg-title,
+    .ver-title {
         font-size: 30px;
     }
-    .fg-text {
+    .fg-text,
+    .ver-text {
         font-size: 18px;
     }
 }
@@ -232,10 +254,12 @@ body {
     body {
         position: relative;
     }
-    .fg-title {
+    .fg-title,
+    .ver-title {
         font-size: 24px;
     }
-    .fg-text {
+    .fg-text,
+    .ver-text {
         font-size: 14px;
     }
     

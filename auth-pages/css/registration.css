@@ -26,23 +26,26 @@
     --orange: #EE9062;
     --pk-violet: #914C75;
     --auth-bg: #E5E5E5;
-    --input-bg: rgba(196, 196, 195, 55%);
+    --input-bg: rgba(196, 196, 195, 50%);
     --input-mid: rgba(196, 196, 195, 90%);
    
 
 }
+html {
+    box-sizing: border-box; 
+}
 *,
-*::before,
-*::after {
-    box-sizing: border-box;
+*:before,
+*:after {
+    box-sizing: inherit;
     margin: 0;
 }
-html,
+
 body {
     width: 100%;
     height: 100%;
     font-family: var(--epilogue);  
-    overflow-y: hidden;
+   
 }
 .registration-window {
     width: 100%;
@@ -50,8 +53,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: stretch;
+    
 }
-
 
 /* Left Side */
 .registration-left {
@@ -62,6 +65,7 @@ body {
     justify-content: center;
     align-content: center;
     background: var(--auth-bg);
+    
 }
 .reg-left-triangles-holder {
     height: 100%;
@@ -86,6 +90,7 @@ body {
     text-align: center;
     flex-direction: column;
     margin: 0 auto;
+    
 }
 .reg-form-title {
     width: 100%;
@@ -110,9 +115,8 @@ body {
     font-size: 18px;
     line-height: 21px;
     text-align: center;
-    /* margin-bottom: 6px; */
 }
-
+/* labels */
 .reg-label {
     width: 100%;
     height: 38px;
@@ -127,6 +131,7 @@ body {
     font-weight: var(--fw-med);
     line-height: 12.3px;
 }
+/* input-icons */
 .reg-input-icon {
     position: absolute;
     width: 37px;
@@ -139,7 +144,8 @@ body {
     background: none;
 }
 .phone,
-.briefcase {
+.briefcase,
+.company {
     color: #3333ff;
 
 }
@@ -147,13 +153,12 @@ body {
     padding: 6px;
     
 }
-
+/* inputs */
 .reg-input{
     width: 100%;
     max-width: 450px;
     min-width: 213px;
     height: 34px;
-    /* margin-bottom: 1.5rem; */
     outline: none;
     border: 2px solid var(--very-lt-gray);
     border-radius: 5px; 
@@ -167,24 +172,32 @@ body {
 .reg-input[type="text"]:valid {
     border: 1px solid va(--lt-blue);
 }
-.reg-input[type=file] {
-    padding-top: 5px;
-    max-width: 300px;
-    min-width: auto;
+/* AVATAR FILE */
+.select {
+    height: 28px;
+    padding-top:15px;
 }
-.file-sub {
-    margin-left: 20px;
+.file-btn {
     height: 34px;
-    width: 150px;
-    min-width: auto;
+    background-color: var(--pk-violet);
     color: white;
     font-size: 16px;
-    border: none;
+    padding: 0.5rem;
     border-radius: 5px;
-    background: var(--blue);
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-top: 0;
     box-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
 }
-.file-sub:hover {
+#file-chosen {
+    margin-left: 10px;
+    font-size: 16px;
+}
+.file {
+    height: 36px;
+}
+
+.file-btn:hover {
     opacity: 80%;
     cursor: pointer;
 }
@@ -208,6 +221,7 @@ body {
     font-size: var(--fs-12); 
     color: var(--blue); 
 }
+/* SUBMIT BUTTON */
 .reg-submit {
     width: 54%;
     max-width: 243px;
@@ -224,10 +238,8 @@ body {
 }
 .reg-submit:hover {
     opacity: 80%;
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
-
 .reg-acct-already {
     margin-bottom:.1rem;
     text-align: center;
@@ -235,7 +247,6 @@ body {
     font-weight: var(--fw-med);
     color: var(--blue);
 }
-
 #rg-signin {
     margin-bottom:.4rem;
     font-size: var(--fs-12);
@@ -244,10 +255,6 @@ body {
     border: none;
     background: none;
 }
-/* #rg-signin {
-    color: var(--pink);
-} */
-
 .reg-icon-holder {
     width: 100%;
     height: auto;
@@ -260,6 +267,7 @@ body {
 }
 
 /* Right Side */
+/* background */
 .registration-right {
     width: 50%;
     height: 100%;
@@ -278,7 +286,7 @@ body {
     background-size: auto;
     transform: rotate(45deg);  
 }
-
+/* BREAKPOINTS */
 @media screen and (max-width: 1360px) {
     body {
         background-image: linear-gradient(180deg, rgba(99, 156, 200, 0.85) 60.42%, 
@@ -325,11 +333,18 @@ body {
         width: 100%;
         margin: 0 auto;
     }
+    .reg-form {
+        overflow-x: visible;
+    }
     .reg-title,
     .reg-label,
+    #file-chosen,
     #kp-reg {
         color: white;
         text-shadow: 0px 4px 4px rgba(99, 156, 200, 0.85);
+    }
+    #file-chosen {
+        color: white;
     }
     .reg-acct-already {
         color: white;
@@ -367,15 +382,21 @@ body {
         width: 40px;
     }
 } 
+
 @media screen and (max-width: 457px) {
     html,
     body {
-        overflow-y: hidden;
+        
         width: 100%;
     }
     body {
         position: relative;
     }
+    /* .registration-window {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    } */
     .reg-triangles-holder {
         background-position: 60% 90% ; 
         background-size: 700px;
@@ -385,15 +406,22 @@ body {
         font-size: 24px;
 
     }
+    .reg-form-holder {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
     .reg-form {
         width: 70%;
+        height: 80vh;
         min-width: 241px;
         margin: 0 auto;   
+        
+    }
+    .reg-input-icon {
+        display: none;
     }
     .reg-label,
     #kp-reg {
         font-weight: var(--fw-sbold);
     }
-    
-    
 }

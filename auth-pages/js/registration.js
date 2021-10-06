@@ -11,21 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnReg = document.getElementById("reg-btn");
     const btnRegLog = document.getElementById("rg-signin");
 
-    const fname = document.getElementById("f_name");
-    const lname = document.getElementById("l_name");
-    const userName = document.getElementById("user_name");
-    const newEmail = document.getElementById("new_email");
-    const bio = document.getElementById("user_bio");
-    const phone = document.getElementById("phone");
-    const useAvatar = document.getElementById("user_avatar");
-    const userJob = document.getElementById("user_job");
-    const newPass = document.getElementById("new_password");
-    const confPass = document.getElementById("conf_password");
-    
 
+    
+    // SELECT AVATAR ELEMENTS
+    const fileBtn = document.getElementById("fileupload-btn");
+    const fileChosen = document.getElementById("file-chosen");
+
+    // DISPLAY FILE SELECTED
+    fileBtn.addEventListener('change', function(){
+        fileChosen.textContent = this.files[0].name
+    })
     
    
-
+    // RETURN TO LANDING PAGE
     function showHome() {
         window.location = "/SMA-Team-3/landing-pages/landing.html";
 
@@ -36,17 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
         btnHome.addEventListener('click', showHome);
     }); 
 
-    
+    // FUNCTION GO TO LOGIN 
     function showLogin() {
         window.location = "login.html"; 
-        rgForm.reset();
         
     };
+
+    // TO LOGIN AFTER REGISTERING
+    btnReg.addEventListener('click', function(e) {
+        e.preventDefault();
+    });
+    btnReg.addEventListener('click', showLogin);
+
+    // TO LOGIN IF ALREADY HAVE AN ACCT
     btnRegLog.addEventListener('click', function(e) {
         e.preventDefault();
     });
     btnRegLog.addEventListener('click', showLogin);
-
    
 });
 

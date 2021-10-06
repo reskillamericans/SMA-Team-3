@@ -31,7 +31,7 @@
     
 
     <!-- Forgot Password Page -->
-    <section id="forgot_page" class="forgot-window">
+    <section id="forgot-page" class="forgot-window">
        
         <form action="/forgot" method="POST" id="forgot-form" class="fg-form">
             <div class="forgot-form-title">
@@ -58,18 +58,31 @@
                 <input class="fg-submit" id="fg-btn" type="submit" value="VERIFY EMAIL" /> 
             </div>
             <!-- /Verify Email Button-->
-            
-
-
-            
         </form>
         <!-- /Forgot Form -->
 
     </section>
 
+    <section id="verify-popup" class="verify-window">
+        <div class="verify-title">
+            <p class="ver-title">EMAIL VERIFIED</p>
+        </div>
+        <div class="ver-form-text">
+            <p class="ver-text">
+                YOUR EMAIL HAS BEEN VERIFIED. CONTINUE TO 
+                RESET YOUR PASSWORD
+            </p>
+        </div>
+         <!-- Verified-->
+         <div class="ver-form-container">
+            <input class="ver-submit" id="verified-btn" type="submit" value="CONTINUE" /> 
+        </div>
+        <!-- /Verified-->
+    </section>
+
    
     <!-- /FORGOT PASSWORD -->
 
-    <script src="auth.js"></script>
+    <script src="js/forgot.js"></script>
     
 </body>

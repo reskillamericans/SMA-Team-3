@@ -9,33 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnLogin = document.getElementById("login-btn");
     const btnLogReg = document.getElementById("log-reg");
     const btnLogFor = document.getElementById("log-forgot");
-   
-
-
-    // const rgForm = document.getElementById("registration-form");
-    // const rgInput = document.querySelectorAll(".reg-input");
-    // const btnReg = document.getElementById("reg-btn");
-    // const btnRegLog = document.getElementById("rg-signin");
-
-    // const fname = document.getElementById("f_name");
-    // const lname = document.getElementById("l_name");
-    // const userName = document.getElementById("reg_user_name");
-    // const newEmail = document.getElementById("new_email");
-    // const bio = document.getElementById("reg_user_bio");
-    // const phone = document.getElementById("phone");
-    // const useAvatar = document.getElementById("reg_user_avatar");
-    // const userJob = document.getElementById("reg_user_job");
-    // const newPass = document.getElementById("new_password");
-    // const confPass = document.getElementById("conf_password");
-    
 
 
     function showHome() {
         window.location = "/SMA-Team-3/landing-pages/landing.html";
-        // lgForm.reset();
-        // rgForm.reset();
         
     };
+
     // All home button will link to home
     Array.from(btnHome).forEach(function(btnHome) {
         btnHome.addEventListener('click', showHome);
@@ -55,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnLogin.addEventListener('click', checkLogin)
     }); 
 
-    // are login form inputs empty  NOTE: goes to homepage bc profile page is made
+    // are login form inputs empty  NOTE: goes to homepage bc profile page is not made
     function checkLogin() {
         if(curPwd.value !== "" && logEmail.value !== "") {
             showHome();
