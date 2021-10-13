@@ -1,0 +1,50 @@
+/* desktop header */
+.profile-container .box-1 {
+    display: none;
+}
+/* mobile header */
+.profile-container .box-9 {
+    grid-column: 1 / 13;
+    grid-row: 1 / 2;
+    background: linear-gradient(270deg, var(--yellow), 1.27%, rgba(248, 193, 100, .05) 96.26%);
+    padding: 0 10px;
+    border-radius: 0;
+}
+.header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* flex: 25% 75%; */
+    justify-content: space-between;
+}
+.mb-hd-right {
+    width: 75%;
+    margin: auto 0;
+    /* justify-content: flex-end; */
+}
+.mb-hd-icons {
+    width: 45%;
+    margin: auto 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: space-between;
+    float: right;
+}
+
+
+
+/* mobile footer */
+.profile-container .box-8 {
+    background: linear-gradient(-270deg, var(--yellow), 10%, rgba(248, 193, 100, .05)  100%);
+    padding: 0 10px;
+    
+    border-radius: 0;
+    
+}
+.mb-ft-holder {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
