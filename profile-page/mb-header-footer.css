@@ -1,3 +1,5 @@
+
+
 /* desktop header */
 .profile-container .box-1 {
     display: none;
@@ -5,6 +7,7 @@
 /* mobile header */
 .profile-container .box-9,
 .profile-container .box-1 {
+    font-family: var(--epilogue);
     grid-column: 1 / 13;
     grid-row: 1 / 2;
     background: linear-gradient(270deg, var(--yellow), 1.27%, rgba(248, 193, 100, .05) 96.26%);
@@ -65,4 +68,20 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 20px;
+}
+.dk-hd-links button {
+    background: transparent;
+    border: none;
+}
+.dk-hd-links a {
+    font-family: var(--epilogue);
+    font-size: 20px;
+    color: var(--blue);
+    text-decoration: none;
+}
+.hd-icons {
+    padding-right: 7px;
+    color: var(--blue);
+    /* height: 30px;
+    width: 30px; */
 }

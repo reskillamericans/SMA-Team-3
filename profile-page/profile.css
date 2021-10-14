@@ -36,6 +36,7 @@
 }
 
 [class ^= "box-"] {
+    font-family: var(--epilogue);
     display: grid;
     /* place-items: center; */
     border: solid 1px orangered;
