@@ -19,6 +19,8 @@
 </head>
 <body>
     <div class="profile-container">
+        <!-- HEADER -->
+        <!-- Mobile Header -->
         <div class="box-9 header-mb"> 
             <div class="header-content">
                 <div class="mb-img-holder">
@@ -26,37 +28,84 @@
                 </div>
                 <div class="mb-hd-right">
                     <div class="mb-hd-icons">
-                        <img src="images/pen.svg" alt="pen">
-                        <img src="images/alert.svg" alt="alert bell">
-                        <img src="images/search.svg" alt="magnifying glass">
+
+                        <button class="search-btn"><img src="images/search.svg" alt="magnifying glass"></button>
+                        <button class="pen-btn"><img src="images/pen.svg" alt="pen"></button>
+                        <button class="alert-btn"> <img src="images/alert.svg" alt="alert bell"></button>
                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Mobile Header -->
+         
+        <!-- Desktop Header -->
+        <div class="box-1 header">
+            <div class="header-content">
+                <div class="dk-img-holder">
+                    <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+                </div>
+                <div class="form-container-dk">
+
+                </div>
+                <div class="dk-hd-links">
+                    <button><a href="#" alt=""><img src="images/home.svg" alt=""> Home </a></button>
+                    <button><a href="#" alt=""><img src="images/friends.svg" alt=""> Home </a></button>
+                    <button><a href="#" alt=""><img src="images/mail.svg" alt=""> Home </a></button>
+                    <button><a href="#" alt=""><img src="images/user.svg" alt=""> Home </a></button>
+                    <button><a href="#" alt=""><img src="images/jason.svg" alt="" width= "64" height="64"></a></button>
                 </div>
             </div>
         </div>
 
 
 
-
-
-
-        <div class="box-1 header">Header (1)</div>
         <div class="box-2 jason-bg"></div>
+
+
         <div class="box-11 jason-photo">
             <div class="jason-holder">
-                <img class="mb-jason" src="images/jason.svg" alt="profile picture" width="84" height="84">
+                <img class="mb-jason" src="images/jason.svg" alt="profile picture">
             </div>
         </div>
+        <!-- /Desktop Header -->
+        <!-- /HEADER -->
 
         <!-- Profile Title -->
         <div class="box-3 jason-title">
-            <span class="title">
-                Jason Bourne
-            </span> 
+            <div class="title">
+                <p class="name"> Jason Bourne</p>
+                <!-- <button class="btn-follow-dk">Follow</button> -->
+                <span class="dk-f-btn-holder"><button class="btn-follow-dk">Follow</button></span>
+            </div> 
+            
         </div>
         <!-- /Profile Title -->
         
+        <!-- FOLLOW -->
+        <div class="box-12 follow">
+            <div class="f-btn-holder">
+                <button class="btn-follow">Follow</button>
+            </div>
+        </div>
+        <!-- /FOLLOW -->
+
+
         <!-- Messages -->
-        <div class="box-4 message">Message(4)</div>
+        <div class="box-4 message">
+            <div class="mb-msg">
+                <button class="btn-msg">Message</button>
+            </div>
+
+            <div class="dk-msg">
+                <p class="send">
+                    Send Jason a message
+                </p>
+                <textarea class="msg-text">
+
+                </textarea>
+                <button class="btn-send">Send</button>
+            </div>
+        </div>
         <!-- /Messages -->
 
         <!-- Bio -->
@@ -79,16 +128,68 @@
         </div>
         <!-- /Bio -->
         
-        <div class="box-6 main">Main (6)</div>
-        <div class="box-7 followers">Followers (7)</div>
+        <!-- Main -->
+        <div class="box-6 main">
+            <div class="activity-box one">
+                <div class="recent one">
+                    <p class="recent-title">
+                        Recent Activity
+                    </p>
+                    <p class="recent-one content">
+                        Jason liked a <a href="" alt="post">post</a> in 
+                        <span class="topic">New to Git.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="activity-box two">
+                <div class="recent two">
+                    <p class="recent-two content">
+                        Jason answered a <a href="" alt="post">question</a> in 
+                        <span class="topic">HTML is NOT CSS.</span>
+                    </p>
+
+                </div>
+            </div>
+            <div class="activity-box three">
+                <div class="recent three">
+                    <p class="recent-three content">
+                        Jason posted  a question in 
+                        <span class="topic">Backend Help Desk.</span>
+                        <div class="question">
+                            <blockquote class="block">Hi, I am having trouble with Python.
+                                I am trying to build a database for a social media website.
+                            </blockquote>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- /Main -->
+        <div class="box-7 following">
+            <div class="following-text">
+                <p class="p-following" >
+                    Following <span class="follow-ct">(127)</span>
+                </p>
+            </div>
+            <div class="fol-img">
+                <img src="images/follow1.svg">
+                <img class="mid" src="images/follow2.svg">
+                <img src="images/follow3.svg">
+                <img src="images/follow4.svg">
+                <img class="mid" src="images/follow5.svg">
+                <img src="images/follow6.svg">
+                <!-- <img src="images/follow4.svg"> -->
+            </div>
+        </div>
 
         <!-- MOBILE FOOTER -->
         <div class="box-8 footer-mobile">
             <div class="mb-ft-holder">
-                <img src="images/home.svg" alt="pen">
-                <img src="images/friends.svg" alt="alert bell">
-                <img src="images/mail.svg" alt="magnifying glass">
-                <img src="images/jason.svg" alt="user-img" width ="65" height="65">
+                <button class="home-btn"><img src="images/home.svg" alt="pen"></button>
+                <button class="friends-btn"><img src="images/friends.svg" alt="alert bell"></button>
+                <button class="mail-btn"><img src="images/mail.svg" alt="magnifying glass"></button>
+                <button class="jason-btn"><img src="images/jason.svg" alt="user-img" width ="65" height="65"></button>
             </div>
         </div>
         <!--/ MOBILE FOOTER -->
