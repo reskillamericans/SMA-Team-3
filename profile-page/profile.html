@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="mobile-search.css" />
     <link rel="stylesheet" href="search.css" />
     <link rel="stylesheet" href="profile.css" />
-    <!-- <link rel="stylesheet" href="css/login.css" /> -->
+
     
     <title>Profile Page</title>
     
@@ -45,14 +45,20 @@
         <div class="box-1 header">
             <div class="header-content">
                 <div class="dk-img-holder">
-                    <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+                    <button id="landing-home" class="hd-home" type="button">
+                        <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+                    </button>
                 </div>
+                <!-- Searchbar -->
                 <form action="" class="search-bar">
                     <input type="search" name="search"  required>
                     <button class="search-btn" type="submit">
-                      <!-- <span>Search</span> -->
+                      <span hidden>Search</span>
                     </button>
                 </form>
+                <!-- /Searchbar -->
+
+                <!-- Tablet header -->
                 <div class="tablet-header">
                     <button><i class="fas fa-home tb-icons" width="20" height="20"></i></button>
                     <button><i class="fas fa-user-friends tb-icons"></i></button>
@@ -60,6 +66,9 @@
                     <button><i class="fas fa-user tb-icons"></i></button>
                     <button><img class="tb-jason" src="images/jason.svg" alt="profile image" width= "64" height="64"></button>
                 </div>
+                <!-- Tablet header -->
+
+                <!-- Desktop Header -->
                 <div class="dk-hd-links">
                     <button><i class="fas fa-home hd-icons home"></i><a href="#" alt="home link"> Home </a></button>
                     <button><i class="fas fa-user-friends hd-icons feed"></i><a href="#" alt="feed link"></a> Feed </a></button>
@@ -67,23 +76,28 @@
                     <button><i class="fas fa-user hd-icons follow"></i><a href="#" alt="inbox link followers"></a> Followers </a></button>
                     <button><a href="#" alt="profile link"><img class="hd-jason" src="images/jason.svg" alt="profile image" width= "64" height="64"></a></button>
                 </div>
+                <!--/Desktop Header -->
+                
             </div>
         </div>
+        <!-- /HEADER -->
 
 
-
+        <!--  PROFILE BACKGROUND -->
         <div class="box-2 jason-bg"></div>
+        <!-- / PROFILE BACKGROUND -->
 
-
+        <!--  PROFILE IMAGE-->
         <div class="box-11 jason-photo">
             <div class="jason-holder">
                 <img class="mb-jason" src="images/jason.svg" alt="profile picture">
             </div>
         </div>
-        <!-- /Desktop Header -->
-        <!-- /HEADER -->
+         <!--  /PROFILE IMAGE-->
 
-        <!-- Profile Title -->
+       
+
+        <!-- PROFILE TITLE -->
         <div id="title" class="box-3 jason-title">
             <div class="title">
                 <p class="name"> Jason Bourne</p>
@@ -92,48 +106,49 @@
             </div> 
             
         </div>
-        <!-- /Profile Title -->
+        <!-- /PROFILE TITLE-->
         
-        <!-- FOLLOW -->
+        <!-- FOLLOW BUTTON -->
         <div class="box-12 follow">
             <div class="f-btn-holder">
                 <button class="btn-follow">Follow</button>
             </div>
         </div>
-        <!-- /FOLLOW -->
+        <!-- /FOLLOW BUTTON-->
 
 
-        <!-- Messages -->
+        <!-- SEND MESSAGE -->
         <div id="messages" class="box-4 message">
+            <!-- Moblie msg -->
             <div class="mb-msg">
                 <button id="mb-msg-btn" class="btn-msg">Message</button>
                 <div id="mb-msg-box" class="mb-msg-holder">
                     <form action="" class="mb-msg-container">
-                        
-                        <textarea id="mb-textarea" class="mb-msg-input" placeholder="Type message.." name="msg" required></textarea>
-                        <button id="btn-send-msg" class="msg-submit">OK</button>
+                        <textarea id="mb-textarea" class="mb-msg-input" placeholder="Type a message or CANCEL" name="msg" required></textarea>
+                        <button id="btn-cancel-msg" class="msg-submit cancel" type="submit">X</button>
+                        <button id="btn-send-msg" class="msg-submit ok" type="submit">OK</button>
                     </form>
-                    <!-- <div class="btn-send-holder">
-                        <button class="btn-send">Send</button>
-                    </div> -->
                 </div>
             </div>
+            <!-- /Moblie msg -->
 
+            <!-- Desktop msg -->
             <div class="dk-msg">
                 <label class="msg-header" for="msg">Send Jason a message</label>
                 <div class="msg-holder">
-                    <form action="" class="msg-container">
-                        <textarea class="msg-input" placeholder="Type message.." name="msg" required></textarea>
+                    <form id="dk-msg-form" name="dk-msg-form" action="" class="msg-container">
+                        <textarea id="dk-textarea" class="msg-input" name="dk-textarea" placeholder="Type message.." name="msg" required></textarea>
                     </form>
                     <div class="btn-send-holder">
-                        <button class="btn-send">Send</button>
+                        <input id="btn-send-dk" class="btn-send" type="button" value="Send" />
                     </div>
                 </div>
             </div>
+            <!-- /Desktop msg -->
         </div>
-        <!-- /Messages -->
+        <!-- /SEND MESSAGE -->
 
-        <!-- Bio -->
+        <!-- /BIO -->
         <div class="box-5 bio">
             <p  class="bio-hd">
                 A bit about Jason
@@ -151,9 +166,9 @@
                 </span>
             </p>
         </div>
-        <!-- /Bio -->
+        <!-- /BIO -->
         
-        <!-- Main -->
+        <!-- MAIN -->
         <div class="box-6 main">
             <div class="activity-box one">
                 <div class="recent one">
@@ -189,8 +204,9 @@
                 </div>
             </div>
         </div>
+        <!-- /MAIN-->
 
-        <!-- /Main -->
+        <!-- FOLLOWING -->
         <div class="box-7 following">
             <div class="following-text">
                 <p class="p-following" >
@@ -199,19 +215,20 @@
             </div>
             <div class="fol-img">
                 <img src="images/follow1.svg">
-                <img class="mid" src="images/follow2.svg">
+                <img src="images/follow2.svg">
                 <img src="images/follow3.svg">
-                <img src="images/follow4.svg">
-                <img class="mid" src="images/follow5.svg">
+                <img class="desktop-img"  src="images/follow4.svg">
+                <img src="images/follow5.svg">
                 <img src="images/follow6.svg">
-                <img class="tablet-img" src="images/follow1.svg">
-                <img class="tablet-img" src="images/follow2.svg">
-                <img class="tablet-img" src="images/follow4.svg">
-                <img class="tablet-img" src="images/follow3.svg">
-                <img class="desktop-img" src="images/follow5.svg">
-                <img class="desktop-img" src="images/follow6.svg">
+                <img src="images/pic7.png" >
+                <img src="images/pic8.png">
+                <img class="tablet-img" src="images/pic9.png">
+                <img class="desktop-img" src="images/pic10.png">
+                <img  src="images/pic11.png" >
+                <img class="tablet-img" src="images/pic12.png">
             </div>
         </div>
+        <!-- /FOLLOWING -->
 
         <!-- MOBILE FOOTER -->
         <div class="box-8 footer-mobile">
@@ -219,14 +236,13 @@
                 <button class="home-btn"><i class="fas fa-home"></i></button>
                 <button class="friends-btn"><i class="fas fa-user-friends"></i></button>
                 <button class="mail-btn"><i class="fas fa-envelope"></i></button>
-                <button class="jason-btn"><img src="images/jason.svg" alt="user-img" width ="65" height="65"></button>
+                <button id="landing-home" class="hd-home" type="button">
+                    <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+                </button>
             </div>
         </div>
         <!--/ MOBILE FOOTER -->
 
-    <!-- <button class="home-btn"><i class="fas fa-home footer-icons"></button>
-        <button class="friends-btn"><i class="fas fa-user-friends footer-icons"></button>
-        <button class="mail-btn"><i class="fas fa-envelope footer-icons"></i></button> -->
 
     </div>
     

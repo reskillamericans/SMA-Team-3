@@ -1,6 +1,6 @@
+/* MOBILE HEADER/FOOTER, TABLET & DESKTOP HEADER */
 
-
-/* desktop header */
+/* Desktop header */
 .profile-container .box-1 {
     display: none;
     
@@ -9,10 +9,11 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    /* flex: 25% 75%; */
     justify-content: space-between;
 }
-/* mobile header */
+
+
+/* Mobile header */
 .profile-container .box-9,
 .profile-container .box-1 {
     font-family: var(--epilogue);
@@ -79,7 +80,11 @@
 
 
 
-/* Tablet and Desktop Header */
+/* Tablet and Desktop Headers */
+.hd-home {
+    background: transparent;
+    border: none;
+}
 .tablet-header {
     width: 100%;
     display: flex;
