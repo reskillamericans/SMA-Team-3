@@ -76,7 +76,7 @@ body {
 .profile-container .box-2 {
     grid-column: 1 / 13;
     grid-row: 2/ 4;
-    background-image: url(images/profile-bg.svg);
+    background-image: url(/SMA-Team-3/profile-page/images/profile-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: fixed;
