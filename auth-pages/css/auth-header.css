@@ -38,26 +38,6 @@ body {
     font-family: var(--epilogue);
     overflow: hidden;
 }
-/* ALL INPUTS */
-/* input[type=text]:valid,
-input[type=email]:valid,
-input[type=password]:valid,
-input[type=tel]:valid{
-    border: solid var(--lt-blue) 2px;
-    border-radius: 5px;
-    background-color: var(--input-bg);
-   
-}
-input[type=text]:invalid,
-input[type=email]:invalid,
-input[type=password]:invalid,
-input[type=tel]:invalid{
-    border: solid var(--orange) 2px;
-    background-color: transparent;
-    
-    
-} */
-
 
 /* LEFT SIDE */
 .mb-logo-holder {
@@ -80,6 +60,7 @@ input[type=tel]:invalid{
     width: 100%;
     display: flex;
     margin: 1rem auto;
+    margin-bottom: 0;
     padding-left: 1rem;
     align-items: center;
 }

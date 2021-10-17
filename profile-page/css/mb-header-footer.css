@@ -1,0 +1,134 @@
+/* MOBILE HEADER/FOOTER, TABLET & DESKTOP HEADER */
+
+/* Desktop header */
+.profile-container .box-1 {
+    display: none;
+    
+}
+.header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* Mobile header */
+.profile-container .box-9,
+.profile-container .box-1 {
+    font-family: var(--epilogue);
+    grid-column: 1 / 13;
+    grid-row: 1 / 2;
+    background: linear-gradient(270deg, var(--yellow), 1.27%, rgba(248, 193, 100, .05) 96.26%);
+    padding: 0 ;
+    border-radius: 0;
+}
+.mb-header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mb-hd-icons {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.mb-hd-icons  button {
+    width: 50%;
+    margin: auto ;
+    margin-right: 0;
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    border: none;
+    background: transparent;
+
+    color:#384989;
+    font-size: 20px;
+}
+.mb-hd-icons button:hover{
+    cursor: pointer;
+    color: #639CC8;
+}
+
+
+
+/* mobile footer */
+.profile-container .box-8 {
+    background: linear-gradient(-270deg, var(--yellow), 10%, rgba(248, 193, 100, .05)  100%);
+    padding: 0 5px;
+    
+    border-radius: 0;
+    
+}
+.mb-ft-holder {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.mb-ft-holder button {
+    border: none;
+    background: transparent;
+    padding-right: 5px;
+    color: #384989;
+    font-size: 20px;
+}
+
+
+
+/* Tablet and Desktop Headers */
+.hd-home {
+    background: transparent;
+    border: none;
+}
+.tablet-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+.dk-hd-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* font-size: 20px; */
+}
+.tablet-header button,
+.dk-hd-links button {
+    font-size: 20px;
+    color: #384989;
+    flex-direction: row;
+    margin: auto 0;
+    background: transparent;
+    border: none;
+}
+.tablet-header a {
+    width: 20%;
+    font-family: var(--epilogue);
+    font-size: 16px;
+    color: var(--blue);
+    text-decoration: none;
+}
+.dk-hd-links a {
+    width: 20%;
+    margin: auto;
+    font-family: var(--epilogue);
+    color: #384989;
+    text-decoration: none;
+}
+.dk-hd-links a:hover,
+.dk-hd-links button:hover,
+.dk-ht-linls input:hover,
+.tablet-header a:hover,
+.tablet-header button:hover,
+.tablet-header input:hover{
+    color: #639CC8;
+    cursor: pointer;
+}
+
+
