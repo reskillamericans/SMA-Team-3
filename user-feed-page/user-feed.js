@@ -10,13 +10,74 @@ document.addEventListener("DOMContentLoaded", () => {
     Array.from(btnHomepage).forEach(function(btnHomepage) {
         btnHomepage.addEventListener('click', Homepage);
     }); 
-    // btnHomepage.addEventListener('click', function(e) {
-    //     e.preventDefault();
-    // });
-    // btnHomepage.addEventListener('click', Homepage);
     
+    
+    // FOLLOW BUTTONS
 
 
+    const followHolder = document.querySelectorAll(".follow-holder");
+    const btnFollow = document.querySelectorAll(".follow");
+    const btnUnFollow = document.querySelectorAll(".following");
+    
+    
+    const mbFollow = document.getElementById("mb-follow");
+    const dkFollow = document.getElementById("user-follow");
+    btnFollow.forEach(Follow);
+
+    function Follow(item) {
+        var num = document.getElementById("num");
+        let count = document.getElementById("num").getAttribute("placeholder");
+       
+        let numbers = Number(count);
+        
+        for (i = 0; i < followHolder.length - 1; i++) {    
+            if (btnFollow[i].innerHTML == "Follow") {
+                mbFollow.innerHTML = "Following";
+                dkFollow.innerHTML = "Following";
+                mbFollow.style.backgroundColor = "#F8C164";
+                dkFollow.style.backgroundColor = "#F8C164";
+
+                numbers += 2
+                var numbersUp = Number(numbers);
+                console.log(numbersUp);
+                
+                let countUp = `${numbersUp}`
+                num.value = `${countUp}`
+
+            } else if(btnFollow[i].innerHTML == "Following") {
+                let newCount = Number(num.value)
+
+                mbFollow.innerHTML = "Follow";
+                dkFollow.innerHTML = "Follow";
+                mbFollow.style.backgroundColor = "#EE9062";
+                dkFollow.style.backgroundColor = "#EE9062";
+                newCount -= 1
+                var numbersDown = Number(newCount);
+                
+                let countDown = `${numbersDown}`
+                console.log(countDown)
+                num.value = `${countDown}`
+            }
+        }
+        function FollowDown(){
+            for (i = 0; i < followHolder.length - 1; i++) {
+                if (btnFollow[i].innerHTML = "Following")  {
+                    btnFollow[i].style.backgroundColor = "#EE9062";
+                    btnFollow[i].innerHTML = "Follow";
+                    
+                    let numbersDown = numbersUp - 1 ;
+                    console.log(numbersDown)
+                }
+            }
+        };
+    }; 
+    Array.from(btnFollow).forEach(function(btnFollow) {
+        btnFollow.addEventListener('click', Follow);
+    }); 
+    
+   
+    
+   
     // MESSAGE ELEMENTS - MOBILE
     // mobile
     const btnMsg = document.getElementById("mb-msg-btn");
