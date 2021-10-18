@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // FOLLOW BUTTONS
 
-
     const followHolder = document.querySelectorAll(".follow-holder");
     const btnFollow = document.querySelectorAll(".follow");
     const btnUnFollow = document.querySelectorAll(".following");
@@ -59,17 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 num.value = `${countDown}`
             }
         }
-        function FollowDown(){
-            for (i = 0; i < followHolder.length - 1; i++) {
-                if (btnFollow[i].innerHTML = "Following")  {
-                    btnFollow[i].style.backgroundColor = "#EE9062";
-                    btnFollow[i].innerHTML = "Follow";
-                    
-                    let numbersDown = numbersUp - 1 ;
-                    console.log(numbersDown)
-                }
-            }
-        };
+       
     }; 
     Array.from(btnFollow).forEach(function(btnFollow) {
         btnFollow.addEventListener('click', Follow);
