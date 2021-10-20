@@ -1,7 +1,9 @@
 /* MOBILE HEADER/FOOTER, TABLET & DESKTOP HEADER */
 
 /* Desktop header */
-.profile-container .box-1 {
+.profile-container .box-1,
+.user-feed-container .box-1,
+.general-feed-container .box-1 {
     display: none;
     
 }
@@ -15,7 +17,11 @@
 
 /* Mobile header */
 .profile-container .box-9,
-.profile-container .box-1 {
+.profile-container .box-1,
+.user-feed-container .box-9,
+.user-feed-container .box-1, 
+.general-feed-container .box-9,
+.general-feed-container .box-1 {
     font-family: var(--epilogue);
     grid-column: 1 / 13;
     grid-row: 1 / 2;
@@ -56,11 +62,14 @@
 
 
 /* mobile footer */
-.profile-container .box-8 {
+.profile-container .box-8,
+.user-feed-container .box-8,
+.general-feed-container .box-8 {
     background: linear-gradient(-270deg, var(--yellow), 10%, rgba(248, 193, 100, .05)  100%);
     padding: 0 5px;
     
     border-radius: 0;
+    z-index: 100;
     
 }
 .mb-ft-holder {

@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 mbFollow.style.backgroundColor = "#F8C164";
                 dkFollow.style.backgroundColor = "#F8C164";
 
-                numbers += 2
+                numbers += 1
                 var numbersUp = Number(numbers);
                 console.log(numbersUp);
                 

@@ -20,7 +20,7 @@
     
 </head>
 <body>
-    <div class="profile-container">
+    <div class="user-feed-container">
         <!-- HEADER -->
         <!-- Mobile Header -->
         <div class="box-9 header-mb"> 
@@ -32,7 +32,7 @@
                     </button>
                 </form>
                 <div class="mb-hd-icons">
-                    <button class="pen-btn"><i class="fas fa-pencil-alt"  alt="pencil"></i></button>
+                    <button class="pen-btn"><i class="fas fa-pencil-alt"  name="pencil"></i></button>
                     <button class="alert-btn"><i class="fas fa-bell" alt="alert bell"></i></button>
                     
                 </div>
@@ -83,23 +83,23 @@
         <!-- /HEADER -->
 
 
-        <!--  PROFILE BACKGROUND -->
-        <div class="box-2 tracey-bg"></div>
-        <!-- / PROFILE BACKGROUND -->
+        <!--  USER-FEED BACKGROUND -->
+        <div class="box-2 user-feed-bg"></div>
+        <!-- / USER-FEED  BACKGROUND -->
 
-        <!--  PROFILE IMAGE-->
+        <!--  USER-FEED  IMAGE-->
         <div class="box-11 tracey-photo">
-            <div class="tracey-holder">
-                <img class="mb-tracey" src="images/tracey.png" width="84" height="84" alt="profile picture">
-                <img class="dk-tracey" src="images/tracey.png"  alt="profile picture">
-            </div>
+            <!-- <div class="tracey-holder"> -->
+                <img class="mb-user-img" src="images/tracey.png" width="84" height="84" alt="profile picture">
+                <img class="dk-user-img" src="images/tracey.png"  alt="profile picture">
+            <!-- </div> -->
         </div>
-         <!--  /PROFILE IMAGE-->
+         <!--  /USER-FEED  IMAGE-->
 
        
 
-        <!-- PROFILE TITLE -->
-        <div id="title" class="box-3 tracey-title">
+        <!-- USER-FEED  TITLE -->
+        <div id="title" class="box-3 user-feed-title">
             <div class="uf-title">
                 <p class="uf-name"> Tracey McFarlane</p>
                 <span class="uf-contact">@TraceyFacey</span>
@@ -107,12 +107,12 @@
     
             </div> 
             <div class="follow-holder">
-                <span class="dk-f-btn-holder"><button id="user-follow" class="follow" type="button">Follow</button></span>
-                <span class="dk-f-btn-holder"><button id="user-following" class="following" type="button">Following</button></span>
+                <span class="dk-f-btn-holder"><button id="user-follow" class="follow dk-follow" type="button">Follow</button></span>
+               
             </div>
             
         </div>
-        <!-- /PROFILE TITLE-->
+        <!-- /USER-FEED  TITLE-->
         
         <!-- FOLLOW BUTTON -->
         <div class="box-12 followed">
@@ -166,80 +166,152 @@
             </p>
             <p class="bio-stats">
                <!-- <form> -->
-                <input id="num" type="number"  class="stat-num" placeholder="1528" />
-                    <!-- 1528 -->
-                
-            <!-- </form> -->
-                <span class="stat-followers">
+                <input id="num" type="text"  class="stat-num" placeholder="1528" />
+                <label for="num" name="num" class="stat-followers">
                     Followers
-                </span>
+                </label>
             </p>
         </div>
         <!-- /BIO -->
-        
-        <!-- MAIN -->
-        <div class="box-6 main">
-            <div class="activity-box one">
-                <div class="recent one">
-                    <p class="recent-title">
-                        Recent Activity
-                    </p>
-                    <p class="recent-one content">
-                        Tracey liked a <a href="" alt="post">post</a> in 
-                        <span class="topic">New to Git.</span>
-                    </p>
-                </div>
-            </div>
-            <div class="activity-box two">
-                <div class="recent two">
-                    <p class="recent-two content">
-                        Tracey answered a <a href="" alt="post">question</a> in 
-                        <span class="topic">HTML is NOT CSS.</span>
-                    </p>
 
-                </div>
-            </div>
-            <div class="activity-box three">
-                <div class="recent three">
-                    <p class="recent-three content">
-                        Tracey posted  a question in 
-                        <span class="topic">Backend Help Desk.</span>
-                        <div class="question">
-                            <blockquote class="block">Hi, I am having trouble with Python.
-                                I am trying to build a database for a social media website.
-                            </blockquote>
-                        </div>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- /MAIN-->
-
-        <!-- FOLLOWING -->
-        <div class="box-7 followed">
-            <div class="following-text">
+         <!-- FOLLOWING -->
+         <div class="box-7 followed">
+            <!-- <div class="following-text"> -->
                 <p class="p-following" >
                     Following <span class="follow-ct">(999)</span>
                 </p>
-            </div>
+            <!-- </div> -->
             <div class="fol-img">
-                <img  src="images/pic11.png" >
-                <img  src="images/pic9.png">
-                <img class="mid-tablet-img" src="images/follow5.svg">
-                <img src="images/follow1.svg">
-                <img class="mid-tablet-img" src="images/follow2.svg">
-                <img src="images/follow3.svg">
-                <img class="desktop-img"  src="images/follow4.svg">
-                <img class="desktop-img" src="images/follow6.svg">
-                <img class="tablet-img" src="images/pic7.png" >
-                <img class="mid-tablet-img" src="images/pic8.png">
-                <img  class="mid-tablet-img" src="images/pic10.png">
-                <img class="tablet-img" src="images/pic12.png">
+                <img src="images/pic11.png"  alt="following image 1">
+                <img src="images/pic9.png" alt="following image 2">
+                <img src="images/follow5.svg" alt="following image 3">
+                <img src="images/pic10.png" alt="following image 4">
+                <img class="tablet-img" src="images/follow2.svg" alt="following image 5">
+                <img class="tablet-img" src="images/follow3.svg" alt="following image 6">
+                <img class="desktop-img" src="images/pic7.png" alt="following image 7">
+                <img class="desktop-img" src="images/follow1.svg" alt="following image 8">
+                <img class="last-img " src="images/pic8.png" alt="following image 9">
+            
             </div>
         </div>
         <!-- /FOLLOWING -->
 
-        <!-- MOBILE FOOTER -->
+        
+        <!-- MAIN -->
+        <div class="box-6 main">
+            <div class="user-feed content-1">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/tracey-hd.png" alt= "user-image">
+
+                    <p class="user-feed-name">Tracey McFarlane<span class="user-feed-info"> @TraceyFacey</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/tracey-hd.png" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="user-feed-name-desktop">Tracey McFarlane<span class="user-feed-info-desktop"> @TraceyFacey</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">
+                                <a href="#" alt="friend link">@AnikaTheeForeman</a>
+                                I hope your day gets better girl! Call me later to talk about your day!
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+
+            <div class="user-feed content-2">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/tracey-hd.png" alt= "user-image">
+
+                    <p class="user-feed-name">Tracey McFarlane<span class="user-feed-info"> @TraceyFacey</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/tracey-hd.png" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="user-feed-name-desktop">Tracey McFarlane<span class="user-feed-info-desktop"> @TraceyFacey</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">  
+                                I am so excited because we're having puppied come to the office! I love puppies!
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="user-feed content-3">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/tracey-hd.png" alt= "user-image">
+
+                    <p class="user-feed-name">Tracey McFarlane<span class="user-feed-info"> @TraceyFacey</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/tracey-hd.png" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="user-feed-name-desktop">Tracey McFarlane<span class="user-feed-info-desktop"> @TraceyFacey</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">  
+                                I am so excited because
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        <!-- /MAIN-->
+
+       
+       
+
+
+    </div>
+     <!-- MOBILE FOOTER -->
         <div class="box-8 footer-mobile">
             <div class="mb-ft-holder">
                 <button class="home-btn"><i class="fas fa-home"></i></button>
@@ -251,9 +323,6 @@
             </div>
         </div>
         <!--/ MOBILE FOOTER -->
-
-
-    </div>
     
     <script src="user-feed.js"></script>
 </body>

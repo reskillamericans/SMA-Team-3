@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Pia Torain" />
+    <meta name="description" content="Social Media App Team 3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/mb-header-footer.css" />
+    <link rel="stylesheet" href="css/mobile-search.css" />
+    
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="css/general-feed.css" />
+
+    
+    <title>General Feed</title>
+    
+</head>
+<body>
+    <div class="general-feed-container">
+        <!-- HEADER -->
+        <!-- Mobile Header -->
+        <div class="box-9 header-mb"> 
+            <div class="mb-header-content">
+                <form action="" class="mb-search-bar">
+                    <input type="search" name="search"  required>
+                    <button class="mb-search-btn" type="submit">
+                        <!-- <span>Search</span> -->
+                    </button>
+                </form>
+                <div class="mb-hd-icons">
+                    <button class="pen-btn"><i class="fas fa-pencil-alt"  name="pencil"></i></button>
+                    <button class="alert-btn"><i class="fas fa-bell" alt="alert bell"></i></button>
+                    
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+        <!-- /Mobile Header -->
+         
+        <!-- Desktop Header -->
+        <div class="box-1 header">
+            <div class="header-content">
+                <div class="dk-img-holder">
+                    <button id="landing-home" class="hd-home" type="button">
+                        <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+                    </button>
+                </div>
+                <!-- Searchbar -->
+                <form action="" class="search-bar">
+                    <input type="search" name="search"  required>
+                    <button class="search-btn" type="submit">
+                      <span hidden>Search</span>
+                    </button>
+                </form>
+                <!-- /Searchbar -->
+
+                <!-- Tablet header -->
+                <div class="tablet-header">
+                    <button><i class="fas fa-home tb-icons" width="20" height="20"></i></button>
+                    <button><i class="fas fa-user-friends tb-icons"></i></button>
+                    <button><i class="fas fa-envelope tb-icons"></i></button>
+                    <button><i class="fas fa-user tb-icons"></i></button>
+                    <button><img class="tb-tracey" src="images/tracey-hd.png" alt="profile image" width= "64" height="64"></button>
+                </div>
+                <!-- Tablet header -->
+
+                <!-- Desktop Header -->
+                <div class="dk-hd-links">
+                    <button><i class="fas fa-home hd-icons home"></i><a href="#" alt="home link"> Home </a></button>
+                    <button><i class="fas fa-user-friends hd-icons feed"></i><a href="#" alt="feed link"></a> Feed </a></button>
+                    <button><i class="fas fa-envelope hd-icons inbox"></i><a href="#" alt="inbox link inbox"></a> Inbox </a></button>
+                    <button><i class="fas fa-user hd-icons followers"></i><a href="#" alt="inbox link followers"></a> Followers </a></button>
+                    <button><a href="#" alt="profile link"><img class="hd-tracey" src="images/tracey-hd.png" alt="profile image" width= "64" height="64"></a></button>
+                </div>
+                <!--/Desktop Header -->
+                
+            </div>
+        </div>
+        <!-- /HEADER -->
+
+
+        <!-- MAKE A POST -->
+        <div class="box-2 post-now">
+            <div class="general-post">
+                <p class="post-label"><label for="post-it-now" class="general-feed-post">MAKE A POST</label></p>
+                <input class="post-input" id="post-it-now" name="post-it-now" type="text" placeholder="What's on your mind?" />
+                <div class="post-choices">
+                    <div class="choice-holder">
+                        <button class="post-pic"><img src="images/camera.svg" alt="click camera to post an image" /></button>
+                        <button class="delete-post"><img src="images/trash.svg" alt="click trash can to delete post" /></button>
+                        <button class="post">POST</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- /MAKE A POST -->
+
+        <!-- PEOPLE YOU KNOW-->
+        <div class="box-3 people">
+            <div class="people-box">
+                <p  class="people-hd">
+                People You May Know
+                </p>
+                <div class="people-images">
+                    <img class="img-one" src="images/people-1.png"  alt="people you may know image 1">
+                    <img class="img-two" src="images/people-2.png" alt="people you may know image 2">
+                    <img class="img-three" src="images/people-3.png" alt="people you may know image 3">
+                    <img class="img-four" src="images/people-4.png" alt="people you may know image 4">
+                </div>
+
+                <p class="topics-title">
+                    Topics That May Interest You
+                </p>
+                <div class="interests">
+                    <div class="topics-left">
+                        <div class="topic-left-holder">
+                            <span class="">Backend</span>
+                            <span class="">Help Desk</span>
+                        </div>
+                    </div>
+                    <div class="topics-right">
+                        <div class="topic-right-holder">
+                            <span class="right">Frontend</span>
+                            <span class="right">Help Desk</span>
+                        </div>
+                    </div>
+                    <div class="topics-left">
+                        <div class="topic-left-holder">
+                            <span class="">UI/UX Help</span>
+                            <span class="">Desk</span>
+                        </div>
+                    </div>
+                    <div class="topics-right">
+                        <div class="topic-right-holder">
+                            <span class="right">Mobile</span>
+                            <span class="right">App Help</span>
+                            <span class="right">Desk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /PEOPLE YOU KNOW -->
+
+        <!-- GENERAL FEED-->
+        <div class="box-4 main">
+            <div class="general-feed gf-1">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/anika.png" alt= "user-image">
+
+                    <p class="general-feed-name">Anika Foreman<span class="general-feed-info"> @AnikaTheeForeman</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/anika.png" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="general-feed-name-desktop">Anika Foreman<span class="general-feed-info-desktop"> @TraceyFacey</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">
+                                I had a hard day at the office and definitely looking forward to seeing my dog when I get home!
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+
+            <div class="general-feed gf-2">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/tracey-hd.png" alt= "user-image">
+
+                    <p class="general-feed-name">Tracey McFarlane<span class="general-feed-info"> @TraceyFacey</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box comment">
+                    <img class="mobile-feed-img-desktop" src="images/tracey-hd.png" alt= "user-image">
+                    
+                    <div class="post-content-box comment">
+                        <p class="general-feed-name-desktop">Tracey McFarlane<span class="general-feed-info-desktop"> @TraceyFacey</span></p>
+                       
+                        <div class="post-text comment">
+                            <p class="post ">  
+                                <a href="#" alt="friend link">@AnikaTheeForeman</a>
+                                I hope your day gets better girl! Call me later to talk about your day!
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="general-feed gf-3">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/jason.svg" alt= "user-image">
+
+                    <p class="general-feed-name">Jason Bourne<span class="general-feed-info"> @notMattDamon</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/jason.svg" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="general-feed-name-desktop">Jason Bourne<span class="general-feed-info-desktop"> @notMattDamon</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">  
+                                Today's my birthday and as a long-standing tradition of watching my namesake's trilogy.
+                                FYI, my parents named me after a friend of my dad's and king of regretted it.
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="general-feed gf-4">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/armand.png" alt= "user-image">
+
+                    <p class="general-feed-name">Armand G.<span class="general-feed-info"> @armandoooo</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/armand.png" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="general-feed-name-desktop">Armand G<span class="general-feed-info-desktop"> @armandoooo</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">  
+                                Took this amazing shot today and I couldn't wait to shate it with you all! 
+                                I love taking pictures!
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="general-feed gf-5">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/follow6.svg" alt= "user-image">
+
+                    <p class="general-feed-name">Manuel H<span class="general-feed-info"> @oddmanOut</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/follow6.svg" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="general-feed-name-desktop">Manuel H<span class="general-feed-info-desktop"> @oddManOut</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">  
+                                Took this amazing shot today and I couldn't wait to shate it with you all! 
+                                I love taking pictures!
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+           
+        <!-- / GENERAL FEED -->
+
+        
+
+        
+
+         <!-- FOLLOWING -->
+         <!-- <div class="box-7 followed"> -->
+            <!-- <div class="following-text"> -->
+                <!-- <p class="p-following" >
+                    Following <span class="follow-ct">(999)</span>
+                </p> -->
+            <!-- </div> -->
+            <!-- <div class="fol-img">
+               
+                <img class="tablet-img" src="images/follow2.svg" alt="following image 5">
+                <img class="tablet-img" src="images/follow3.svg" alt="following image 6">
+                <img class="desktop-img" src="images/pic7.png" alt="following image 7">
+                <img class="desktop-img" src="images/follow1.svg" alt="following image 8">
+                <img class="last-img " src="images/pic8.png" alt="following image 9">
+            
+            </div> -->
+        <!-- </div> -->
+        <!-- /FOLLOWING -->
+
+        
+        <!-- MAIN -->
+       
+
+       
+       
+
+
+    </div>
+     <!-- MOBILE FOOTER -->
+     <div class="box-8 footer-mobile">
+        <div class="mb-ft-holder">
+            <button class="home-btn"><i class="fas fa-home"></i></button>
+            <button class="friends-btn"><i class="fas fa-user-friends"></i></button>
+            <button class="mail-btn"><i class="fas fa-envelope"></i></button>
+            <button id="landing-home" class="hd-home" type="button">
+                <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+            </button>
+        </div>
+    </div>
+    <!--/ MOBILE FOOTER -->
+    
+    <script src="user-feed.js"></script>
+</body>
