@@ -196,6 +196,9 @@ body {
     font-size: 14px;
     font-weight: var(--fw-sbold);
 }
+.general-feed a {
+    text-decoration: none;
+}
 .general-feed-name-desktop {
     display: none;
 }
