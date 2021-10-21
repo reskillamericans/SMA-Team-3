@@ -10,12 +10,59 @@ document.addEventListener("DOMContentLoaded", () => {
     Array.from(btnHomepage).forEach(function(btnHomepage) {
         btnHomepage.addEventListener('click', Homepage);
     }); 
-    // btnHomepage.addEventListener('click', function(e) {
-    //     e.preventDefault();
-    // });
-    // btnHomepage.addEventListener('click', Homepage);
     
+    
+     // FOLLOW BUTTONS
 
+     const btnHolder = document.querySelectorAll(".follow-container");
+     const followBtn = document.querySelectorAll(".btn-follow");
+     
+     
+     
+     const mobileFollow = document.getElementById("mobile-follow");
+     const deskFollow = document.getElementById("desk-follow");
+     followBtn.forEach(Follow);
+ 
+     function Follow(item) {
+         var num = document.getElementById("pf-num");
+         let count = document.getElementById("pf-num").getAttribute("placeholder");
+        
+         let numbers = Number(count);
+         
+         for (i = 0; i < btnHolder.length - 1; i++) {    
+             if (followBtn[i].innerHTML == "Follow") {
+                 mobileFollow.innerHTML = "Following";
+                 deskFollow.innerHTML = "Following";
+                 mobileFollow.style.backgroundColor = "#F8C164";
+                 deskFollow.style.backgroundColor = "#F8C164";
+ 
+                 numbers += 1
+                 var numbersUp = Number(numbers);
+                 console.log(numbersUp);
+                 
+                 let countUp = `${numbersUp}`
+                 num.value = `${countUp}`
+ 
+             } else if(followBtn[i].innerHTML == "Following") {
+                 let newCount = Number(num.value)
+ 
+                 mobileFollow.innerHTML = "Follow";
+                 deskFollow.innerHTML = "Follow";
+                 mobileFollow.style.backgroundColor = "#EE9062";
+                 deskFollow.style.backgroundColor = "#EE9062";
+                 newCount -= 1
+                 var numbersDown = Number(newCount);
+                 
+                 let countDown = `${numbersDown}`
+                 console.log(countDown)
+                 num.value = `${countDown}`
+             }
+         }
+        
+     }; 
+     Array.from(followBtn).forEach(function(followBtn) {
+         followBtn.addEventListener('click', Follow);
+     }); 
 
     // MESSAGE ELEMENTS - MOBILE
     // mobile

@@ -237,7 +237,7 @@ body {
     font-weight: var(--fw-sbold);
 }
 .stat-num {
-    padding: 10 auto;
+    padding: 10px auto;
     width: 32px;
     float: bottom;
     color: white;

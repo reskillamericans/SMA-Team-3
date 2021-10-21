@@ -260,9 +260,12 @@ body {
 .expressions button {
     display: inline-flex;
     margin: auto 0;
-    color: var(--pk-violet);
+    color: #914C75;
     background: none;
     border: none;
+}
+.color-change {
+    color: #914C75;
 }
 .expressions img {
     width: 15px;

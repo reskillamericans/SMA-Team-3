@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const followHolder = document.querySelectorAll(".follow-holder");
     const btnFollow = document.querySelectorAll(".follow");
-    const btnUnFollow = document.querySelectorAll(".following");
+    
     
     
     const mbFollow = document.getElementById("mb-follow");

@@ -227,6 +227,17 @@ body {
     text-align: right;
     font-weight: var(--fw-sbold);
 }
+.stat-num {
+    padding: 10 auto;
+    width: 25px;
+    float: bottom;
+    color: white;
+    font-weight: var(--fw-sbold);
+    background: none;
+}
+.stat-num::placeholder{
+    color: white;
+}
 .stat-num,
 .stat-followers {
     text-decoration: underline;
@@ -246,7 +257,6 @@ body {
     padding-top: 5px;
     color: var(--blue);
 }
-
 .recent-title {
     margin-bottom: 5px;
     padding: 0 15px;
