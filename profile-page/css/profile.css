@@ -289,6 +289,9 @@ blockquote {
 .profile-container .box-7 {
     grid-row: 7/ 8;
     grid-column: 1 / 13;
+    /* grid-template-rows: repeat(auto-fit, minmax(66px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(66px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, 1fr);
     background: var(--blue);
     color: white;
     font-size: 13px;
@@ -301,12 +304,17 @@ blockquote {
 .fol-img img {
     padding: 0 5px;
 }
-.tablet-img {
+.tablet-img-one, 
+.tablet-img-two,
+.tablet-img-three, 
+.tablet-img-four {
     display: none;
 }
-.desktop-img {
+.desktop-img,
+.desktop-img-one {
     display: none;
 }
+
 
 /* Mobile Footer */
 .profile-container .box-8 {
@@ -606,6 +614,12 @@ blockquote {
         text-align: center;
         padding: 7px;
     }
+    .tablet-img-one,
+    .tablet-img-two,
+    .tablet-img-three,
+    .tablet-img-four {
+        display:block;
+    }
     /* footer */
     .profile-container .box-8 {
         display: none;
@@ -671,7 +685,9 @@ blockquote {
         width: 90%;
         font-size: 20px;
     }
-    
+    .desktop-img-one {
+        display: grid;
+    }
 }
 
 @media (min-width: 1370px){

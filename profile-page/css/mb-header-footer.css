@@ -35,7 +35,7 @@
     display: flex;
     justify-content: space-evenly;
 }
-.mb-hd-icons  button {
+.mb-hd-icons  a {
     width: 50%;
     margin: auto ;
     margin-right: 0;
@@ -47,8 +47,9 @@
 
     color:#384989;
     font-size: 20px;
+    text-decoration: none;
 }
-.mb-hd-icons button:hover{
+.mb-hd-icons a:hover{
     cursor: pointer;
     color: #639CC8;
 }
@@ -70,7 +71,8 @@
     justify-content: space-between;
 
 }
-.mb-ft-holder button {
+.mb-ft-holder a {
+    margin: auto 0;
     border: none;
     background: transparent;
     padding-right: 5px;
@@ -98,7 +100,7 @@
     justify-content: space-evenly;
     /* font-size: 20px; */
 }
-.tablet-header button,
+.tablet-header a,
 .dk-hd-links button {
     font-size: 20px;
     color: #384989;
@@ -106,6 +108,9 @@
     margin: auto 0;
     background: transparent;
     border: none;
+}
+.tb-icons {
+    font-size: 20px;
 }
 .tablet-header a {
     width: 20%;
@@ -123,7 +128,7 @@
 }
 .dk-hd-links a:hover,
 .dk-hd-links button:hover,
-.dk-ht-linls input:hover,
+.dk-ht-links input:hover,
 .tablet-header a:hover,
 .tablet-header button:hover,
 .tablet-header input:hover{

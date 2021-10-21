@@ -26,14 +26,15 @@
         <div class="box-9 header-mb"> 
             <div class="mb-header-content">
                 <form action="" class="mb-search-bar">
-                    <input type="search" name="search"  required>
-                    <button class="mb-search-btn" type="submit">
-                        <!-- <span>Search</span> -->
+                    <label for="mobile-search" class="search-icon" hidden>Search</label>
+                    <input id="mobile-search" type="search" name="mobile-search"  required>
+                    <button class="mb-search-button" type="submit">
+                        <span>Search</span>
                     </button>
                 </form>
                 <div class="mb-hd-icons">
-                    <button class="pen-btn"><i class="fas fa-pencil-alt"  name="pencil"></i></button>
-                    <button class="alert-btn"><i class="fas fa-bell" alt="alert bell"></i></button>
+                    <a href="#" class="post-option" alt="link to post"><i class="fas fa-pencil-alt"  alt="pencil"></i></a>
+                    <a href="#" class="open-notifications"><i class="fas fa-bell" alt="alert bell"></i></a>
                     
                 </div>
                 <!-- </div> -->
@@ -45,14 +46,15 @@
         <div class="box-1 header">
             <div class="header-content">
                 <div class="dk-img-holder">
-                    <button id="landing-home" class="hd-home" type="button">
+                    <button id="desktop-landing-home" class="hd-home" type="button">
                         <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
                     </button>
                 </div>
                 <!-- Searchbar -->
                 <form action="" class="search-bar">
-                    <input type="search" name="search"  required>
-                    <button class="search-btn" type="submit">
+                    <label for="tablet-search-button" class="search-icon" hidden>Search</label>
+                    <input id="tablet-search-button" type="search" name="tablet-search-button"  required>
+                    <button class="search-button" type="submit">
                       <span hidden>Search</span>
                     </button>
                 </form>
@@ -60,21 +62,21 @@
 
                 <!-- Tablet header -->
                 <div class="tablet-header">
-                    <button><i class="fas fa-home tb-icons" width="20" height="20"></i></button>
-                    <button><i class="fas fa-user-friends tb-icons"></i></button>
-                    <button><i class="fas fa-envelope tb-icons"></i></button>
-                    <button><i class="fas fa-user tb-icons"></i></button>
-                    <button><img class="tb-tracey" src="images/tracey-hd.png" alt="profile image" width= "64" height="64"></button>
+                    <a class="tablet link-home" href="#" alt="home link"><i class="fas fa-home tb-icons" width="20" height="20"></i></a>
+                    <a class="tablet feed-link" href="#" alt="feed link"><i class="fas fa-user-friends tb-icons"></i></a>
+                    <a class="tablet inbox-link" href="#" alt="inbox link"><i class="fas fa-envelope tb-icons"></i></a>
+                    <a class="tablet followers-links" href="#" alt="followers link"><i class="fas fa-user tb-icons"></i></a>
+                    <a class="tablet profile-links" href="#" alt="profile link"><img class="tb-jason" src="images/jason.svg" alt="profile image" width= "64" height="64"></a>
                 </div>
                 <!-- Tablet header -->
 
                 <!-- Desktop Header -->
                 <div class="dk-hd-links">
-                    <button><i class="fas fa-home hd-icons home"></i><a href="#" alt="home link"> Home </a></button>
-                    <button><i class="fas fa-user-friends hd-icons feed"></i><a href="#" alt="feed link"></a> Feed </a></button>
-                    <button><i class="fas fa-envelope hd-icons inbox"></i><a href="#" alt="inbox link inbox"></a> Inbox </a></button>
-                    <button><i class="fas fa-user hd-icons followers"></i><a href="#" alt="inbox link followers"></a> Followers </a></button>
-                    <button><a href="#" alt="profile link"><img class="hd-tracey" src="images/tracey-hd.png" alt="profile image" width= "64" height="64"></a></button>
+                    <a href="#" alt="home link"><i class="fas fa-home hd-icons home"></i> Home </a>
+                    <a href="#" alt="feed link"> <i class="fas fa-user-friends hd-icons feed"></i> Feed </a>
+                    <a href="#" alt="inbox link inbox"><i class="fas fa-envelope hd-icons inbox"></i> Inbox </a>
+                    <a href="#" alt="followers-link"><i class="fas fa-user hd-icons "></i> Followers </a>
+                    <a href="#" alt="profile link"><img class="hd-jason" src="images/jason.svg" alt="profile image" width= "64" height="64"></a>
                 </div>
                 <!--/Desktop Header -->
                 
@@ -305,24 +307,26 @@
                 </div>     
             </div>
         <!-- /MAIN-->
-
+        
+        
        
        
 
 
     </div>
-     <!-- MOBILE FOOTER -->
-        <div class="box-8 footer-mobile">
-            <div class="mb-ft-holder">
-                <button class="home-btn"><i class="fas fa-home"></i></button>
-                <button class="friends-btn"><i class="fas fa-user-friends"></i></button>
-                <button class="mail-btn"><i class="fas fa-envelope"></i></button>
-                <button id="landing-home" class="hd-home" type="button">
-                    <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
-                </button>
-            </div>
+    <!-- MOBILE FOOTER -->
+    <div class="box-8 footer-mobile">
+        <div class="mb-ft-holder">
+            <a href="#" class="profile-link"><i class="fas fa-home" alt="footer link to profile"></i></a>
+            <a href="#" class="friends-link"><i class="fas fa-user-friends" alt="footer link to friends page"></i></a>
+            <a href="#" class="inbox-link"><i class="fas fa-envelope" alt="footer link to inbox"></i></a>
+            <a href="#" id="mobile-landing-home" class="hd-home" alt= "footer link to homepage">
+                <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+            </a>
         </div>
-        <!--/ MOBILE FOOTER -->
+    </div>
+    <!--/ MOBILE FOOTER -->
+     
     
     <script src="user-feed.js"></script>
 </body>

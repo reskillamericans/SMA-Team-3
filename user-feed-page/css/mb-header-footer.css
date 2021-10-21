@@ -19,9 +19,9 @@
 .profile-container .box-9,
 .profile-container .box-1,
 .user-feed-container .box-9,
-.user-feed-container .box-1, 
+.user-feed-container .box-1,
 .general-feed-container .box-9,
-.general-feed-container .box-1 {
+.general-feed-container .box-1  {
     font-family: var(--epilogue);
     grid-column: 1 / 13;
     grid-row: 1 / 2;
@@ -41,7 +41,7 @@
     display: flex;
     justify-content: space-evenly;
 }
-.mb-hd-icons  button {
+.mb-hd-icons  a {
     width: 50%;
     margin: auto ;
     margin-right: 0;
@@ -53,8 +53,9 @@
 
     color:#384989;
     font-size: 20px;
+    text-decoration: none;
 }
-.mb-hd-icons button:hover{
+.mb-hd-icons a:hover{
     cursor: pointer;
     color: #639CC8;
 }
@@ -65,11 +66,10 @@
 .profile-container .box-8,
 .user-feed-container .box-8,
 .general-feed-container .box-8 {
-    background: linear-gradient(-270deg, var(--yellow), 10%, rgba(248, 193, 100, .05)  100%);
+    background: linear-gradient(-270deg, #F8C164, 10%, rgba(248, 193, 100, .05)  100%);
     padding: 0 5px;
     
     border-radius: 0;
-    z-index: 100;
     
 }
 .mb-ft-holder {
@@ -79,8 +79,9 @@
     justify-content: space-between;
 
 }
-.mb-ft-holder button {
+.mb-ft-holder a {
     border: none;
+    margin: auto 0;
     background: transparent;
     padding-right: 5px;
     color: #384989;
@@ -107,14 +108,17 @@
     justify-content: space-evenly;
     /* font-size: 20px; */
 }
-.tablet-header button,
-.dk-hd-links button {
+.tablet-header a,
+.dk-hd-links a {
     font-size: 20px;
     color: #384989;
     flex-direction: row;
     margin: auto 0;
     background: transparent;
     border: none;
+}
+.tb-icons {
+    font-size: 20px;
 }
 .tablet-header a {
     width: 20%;
@@ -132,7 +136,7 @@
 }
 .dk-hd-links a:hover,
 .dk-hd-links button:hover,
-.dk-ht-linls input:hover,
+.dk-ht-links input:hover,
 .tablet-header a:hover,
 .tablet-header button:hover,
 .tablet-header input:hover{
