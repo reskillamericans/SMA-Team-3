@@ -1,7 +1,9 @@
 /* MOBILE HEADER/FOOTER, TABLET & DESKTOP HEADER */
 
 /* Desktop header */
-.profile-container .box-1 {
+.profile-container .box-1,
+.user-feed-container .box-1,
+.general-feed-container .box-1 {
     display: none;
     
 }
@@ -15,7 +17,11 @@
 
 /* Mobile header */
 .profile-container .box-9,
-.profile-container .box-1 {
+.profile-container .box-1,
+.user-feed-container .box-9,
+.user-feed-container .box-1,
+.general-feed-container .box-9,
+.general-feed-container .box-1  {
     font-family: var(--epilogue);
     grid-column: 1 / 13;
     grid-row: 1 / 2;
@@ -57,8 +63,10 @@
 
 
 /* mobile footer */
-.profile-container .box-8 {
-    background: linear-gradient(-270deg, var(--yellow), 10%, rgba(248, 193, 100, .05)  100%);
+.profile-container .box-8,
+.user-feed-container .box-8,
+.general-feed-container .box-8 {
+    background: linear-gradient(-270deg, #F8C164, 10%, rgba(248, 193, 100, .05)  100%);
     padding: 0 5px;
     
     border-radius: 0;
@@ -72,8 +80,8 @@
 
 }
 .mb-ft-holder a {
-    margin: auto 0;
     border: none;
+    margin: auto 0;
     background: transparent;
     padding-right: 5px;
     color: #384989;
@@ -101,7 +109,7 @@
     /* font-size: 20px; */
 }
 .tablet-header a,
-.dk-hd-links button {
+.dk-hd-links a {
     font-size: 20px;
     color: #384989;
     flex-direction: row;

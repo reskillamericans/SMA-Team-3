@@ -111,12 +111,6 @@
     transform: translate(0.2em,0) rotate(45deg);
     transform-origin: 0 50%;
 }
-.search-button span {
-        display: inline-block;
-        overflow: hidden;
-        width: 1px;
-        height: 1px;
-}
 
 /* Active state */
 .search-bar input:focus + .search-button,

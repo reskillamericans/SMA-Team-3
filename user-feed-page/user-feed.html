@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Pia Torain" />
+    <meta name="description" content="Social Media App Team 3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9794dd2b19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/mb-header-footer.css" />
+    <link rel="stylesheet" href="css/mobile-search.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="css/user-feed.css" />
+
+    
+    <title>User Feed</title>
+    
+</head>
+<body>
+    <div class="user-feed-container">
+        <!-- HEADER -->
+        <!-- Mobile Header -->
+        <div class="box-9 header-mb"> 
+            <div class="mb-header-content">
+                <form action="" class="mb-search-bar">
+                    <label for="mobile-search" class="search-icon" hidden>Search</label>
+                    <input id="mobile-search" type="search" name="mobile-search"  required>
+                    <button class="mb-search-button" type="submit">
+                        <span>Search</span>
+                    </button>
+                </form>
+                <div class="mb-hd-icons">
+                    <a href="#" class="post-option" alt="link to post"><i class="fas fa-pencil-alt"  alt="pencil"></i></a>
+                    <a href="#" class="open-notifications"><i class="fas fa-bell" alt="alert bell"></i></a>
+                    
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+        <!-- /Mobile Header -->
+         
+        <!-- Desktop Header -->
+        <div class="box-1 header">
+            <div class="header-content">
+                <div class="dk-img-holder">
+                    <button id="desktop-landing-home" class="hd-home" type="button">
+                        <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+                    </button>
+                </div>
+                <!-- Searchbar -->
+                <form action="" class="search-bar">
+                    <label for="tablet-search-button" class="search-icon" hidden>Search</label>
+                    <input id="tablet-search-button" type="search" name="tablet-search-button"  required>
+                    <button class="search-button" type="submit">
+                      <span hidden>Search</span>
+                    </button>
+                </form>
+                <!-- /Searchbar -->
+
+                <!-- Tablet header -->
+                <div class="tablet-header">
+                    <a class="tablet link-home" href="/SMA-Team-3/user-feed-page/general-feed.html" alt="home link"><i class="fas fa-home tb-icons" width="20" height="20"></i></a>
+                    <a class="tablet feed-link" href="/SMA-Team-3/user-feed-page/user-feed.html" alt="feed link"><i class="fas fa-user-friends tb-icons"></i></a>
+                    <a class="tablet inbox-link" href="#" alt="inbox link"><i class="fas fa-envelope tb-icons"></i></a>
+                    <a class="tablet followers-links" href="#" alt="followers link"><i class="fas fa-user tb-icons"></i></a>
+                    <a class="tablet profile-links" href="#" alt="profile link"><img class="tb-jason" src="images/jason.svg" alt="profile image" width= "64" height="64"></a>
+                </div>
+                <!-- Tablet header -->
+
+                <!-- Desktop Header -->
+                <div class="dk-hd-links">
+                    <a href="/SMA-Team-3/user-feed-page/general-feed.html" alt="home link"><i class="fas fa-home hd-icons home"></i> Home </a>
+                    <a href="/SMA-Team-3/user-feed-page/user-feed.html" alt="feed link"> <i class="fas fa-user-friends hd-icons feed"></i> Feed </a>
+                    <a href="#" alt="inbox link inbox"><i class="fas fa-envelope hd-icons inbox"></i> Inbox </a>
+                    <a href="#" alt="followers-link"><i class="fas fa-user hd-icons "></i> Followers </a>
+                    <a href="/SMA-Team-3/profile-page/profile.html" alt="profile link"><img class="hd-jason" src="images/jason.svg" alt="profile image" width= "64" height="64"></a>
+                </div>
+                <!--/Desktop Header -->
+                
+            </div>
+        </div>
+        <!-- /HEADER -->
+
+
+        <!--  USER-FEED BACKGROUND -->
+        <div class="box-2 user-feed-bg"></div>
+        <!-- / USER-FEED  BACKGROUND -->
+
+        <!--  USER-FEED  IMAGE-->
+        <div class="box-11 tracey-photo">
+            <!-- <div class="tracey-holder"> -->
+                <img class="mb-user-img" src="images/tracey.png" width="84" height="84" alt="profile picture">
+                <img class="dk-user-img" src="images/tracey.png"  alt="profile picture">
+            <!-- </div> -->
+        </div>
+         <!--  /USER-FEED  IMAGE-->
+
+       
+
+        <!-- USER-FEED  TITLE -->
+        <div id="title" class="box-3 user-feed-title">
+            <div class="uf-title">
+                <p class="uf-name"> Tracey McFarlane</p>
+                <span class="uf-contact">@TraceyFacey</span>
+                
+    
+            </div> 
+            <div class="follow-holder">
+                <span class="dk-f-btn-holder"><button id="user-follow" class="follow dk-follow" type="button">Follow</button></span>
+               
+            </div>
+            
+        </div>
+        <!-- /USER-FEED  TITLE-->
+        
+        <!-- FOLLOW BUTTON -->
+        <div class="box-12 followed">
+            <div class="follow-holder">
+                <button id="mb-follow" class="follow" type="button">Follow</button>
+                <!-- <button id="mb-following" class="following" type="button">Following</button> -->
+            </div>
+        </div>
+        <!-- /FOLLOW BUTTON-->
+
+
+        <!-- SEND MESSAGE -->
+        <div id="messages" class="box-4 message">
+            <!-- Moblie msg -->
+            <div class="mb-msg">
+                <button id="mb-msg-btn" class="btn-msg">Message</button>
+                <div id="mb-msg-box" class="mb-msg-holder">
+                    <form action="" class="mb-msg-container">
+                        <textarea id="mb-textarea" class="mb-msg-input" placeholder="Type a message or CANCEL" name="msg" required></textarea>
+                        <button id="btn-cancel-msg" class="msg-submit cancel" type="submit">X</button>
+                        <button id="btn-send-msg" class="msg-submit ok" type="submit">OK</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /Moblie msg -->
+
+            <!-- Desktop msg -->
+            <div class="dk-msg">
+                <label class="msg-header" for="msg">Send Tracey a message</label>
+                <div class="msg-holder">
+                    <form id="dk-msg-form" name="dk-msg-form" action="" class="msg-container">
+                        <textarea id="dk-textarea" class="msg-input" name="dk-textarea" placeholder="Type message.." name="msg" required></textarea>
+                    </form>
+                    <div class="btn-send-holder">
+                        <input id="btn-send-dk" class="btn-send" type="button" value="Send" />
+                    </div>
+                </div>
+            </div>
+            <!-- /Desktop msg -->
+        </div>
+        <!-- /SEND MESSAGE -->
+
+        <!-- /BIO -->
+        <div class="box-5 bio">
+            <p  class="bio-hd">
+                A bit about Tracey
+            </p>
+            <p class="bio-content">
+                Started as Pre-Med and ended up being a UX researcher.
+                Follow me on this journey!
+            </p>
+            <p class="bio-stats">
+               <!-- <form> -->
+                <input id="num" type="text"  class="stat-num" placeholder="1528" />
+                <label for="num" name="num" class="stat-followers">
+                    Followers
+                </label>
+            </p>
+        </div>
+        <!-- /BIO -->
+
+         <!-- FOLLOWING -->
+         <div class="box-7 followed">
+            <!-- <div class="following-text"> -->
+                <p class="p-following" >
+                    Following <span class="follow-ct">(999)</span>
+                </p>
+            <!-- </div> -->
+            <div class="fol-img">
+                <img src="images/pic11.png"  alt="following image 1">
+                <img src="images/pic9.png" alt="following image 2">
+                <img src="images/follow5.svg" alt="following image 3">
+                <img src="images/pic10.png" alt="following image 4">
+                <img class="tablet-img" src="images/follow2.svg" alt="following image 5">
+                <img class="tablet-img" src="images/follow3.svg" alt="following image 6">
+                <img class="desktop-img" src="images/pic7.png" alt="following image 7">
+                <img class="desktop-img" src="images/follow1.svg" alt="following image 8">
+                <img class="last-img " src="images/pic8.png" alt="following image 9">
+            
+            </div>
+        </div>
+        <!-- /FOLLOWING -->
+
+        
+        <!-- MAIN -->
+        <div class="box-6 main">
+            <div class="user-feed content-1">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/tracey-hd.png" alt= "user-image">
+
+                    <p class="user-feed-name">Tracey McFarlane<span class="user-feed-info"> @TraceyFacey</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/tracey-hd.png" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="user-feed-name-desktop">Tracey McFarlane<span class="user-feed-info-desktop"> @TraceyFacey</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">
+                                <a href="#" alt="friend link">@AnikaTheeForeman</a>
+                                I hope your day gets better girl! Call me later to talk about your day!
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+
+            <div class="user-feed content-2">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/tracey-hd.png" alt= "user-image">
+
+                    <p class="user-feed-name">Tracey McFarlane<span class="user-feed-info"> @TraceyFacey</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/tracey-hd.png" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="user-feed-name-desktop">Tracey McFarlane<span class="user-feed-info-desktop"> @TraceyFacey</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">  
+                                I am so excited because we're having puppied come to the office! I love puppies!
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="user-feed content-3">
+                <!-- <div class="title-box"> -->
+                    <img class="mobile-feed-img" src="images/tracey-hd.png" alt= "user-image">
+
+                    <p class="user-feed-name">Tracey McFarlane<span class="user-feed-info"> @TraceyFacey</span></p>
+                    
+                <!-- </div> -->
+                <div class="post-box">
+                    <img class="mobile-feed-img-desktop" src="images/tracey-hd.png" alt= "user-image">
+                    
+                    <div class="post-content-box">
+                        <p class="user-feed-name-desktop">Tracey McFarlane<span class="user-feed-info-desktop"> @TraceyFacey</span></p>
+                       
+                        <div class="post-text">
+                            <p class="post">  
+                                I am so excited because
+                            </p>
+                            <div class="opinion-box">
+                                <div class="expressions">
+                                    <button class="like-button"><img src="images/thumbsup.svg" alt="thumbs up icon"></img><span class="text">Like</span></button>
+                                </div>
+                                <div class="expressions">
+                                    <button class="comment-button" ><img src="images/comment.svg" alt="comment icon"><span class="text">Comment</span> </img></button>
+                                    
+                                </div>
+                                <div class="expressions">
+                                    <button class="share-button" ><img src="images/share.svg" alt="share icon"> <span class="text">Share</span></img></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        <!-- /MAIN-->
+        
+        
+       
+       
+
+
+    </div>
+    <!-- MOBILE FOOTER -->
+    <div class="box-8 footer-mobile">
+        <div class="mb-ft-holder">
+            <a href="/SMA-Team-3/user-feed-page/general-feed.html" class="profile-link"><i class="fas fa-home" alt="footer link to profile"></i></a>
+            <a href="/SMA-Team-3/user-feed-page/user-feed.html" class="friends-link"><i class="fas fa-user-friends" alt="footer link to friends page"></i></a>
+            <a href="#" class="inbox-link"><i class="fas fa-envelope" alt="footer link to inbox"></i></a>
+            <a href="/SMA-Team-3/profile-page/profile.html" id="mobile-landing-home" class="hd-home" alt= "footer link to homepage">
+                <img src="images/feed-triangles.svg" alt="header triangles" width="75" height="75">
+            </a>
+        </div>
+    </div>
+    <!--/ MOBILE FOOTER -->
+     
+    
+    <script src="user-feed.js"></script>
+</body>
